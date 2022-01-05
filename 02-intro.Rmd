@@ -1,0 +1,49 @@
+# Introduction{#intro}
+
+## What is Shiny
+
+Shiny is an R package that makes it incredibly easy to build interactive web applications straight from your R code. It provides an easy way to present R data analysis interactively and over the web. It allows you to create complicated apps without any  prior knowledge of HTML, CSS or JavaScript
+
+To use it, simply open up R Studio and:
+```{r install_shiny, eval=T, echo = T}
+#install.packages("shiny")
+library(shiny)
+```
+Shiny essential wraps your R code and transforms it into a reactive, dynamic web app.
+
+## Another R package - What's so special about Shiny?
+
+It's easier than learning HTML, CSS and JavaScript, although you can use those to build your own custom Shiny elements
+
+You don't need to port any of your R code into another language in order to build a web app
+
+Incredible flexibility, you can generate dynamic UI elements and create interactive plots
+
+It adds reproducibilty to your graphs
+
+**YOU DON'T NEED TO GENERATE A BILLION PLOTS MANUALLY** 
+
+It can easily be added to a markdown document - like this one!
+
+## Example apps
+
+Here are some apps made by Monash bioinformaticians:
+
+* [Stuart's TCP app that went into his Nature paper: ](http://bioapps.erc.monash.edu.ezproxy.lib.monash.edu.au/TCP/) Stuart K. Archer, Nikolay E. Shirokikh, Traude H. Beilharz, & Thomas Preiss. (2016). Dynamics of ribosome scanning and recycling revealed by translation complex profiling. Nature, 2016.
+
+* [Paul's Varistran app](http://rnasystems.erc.monash.edu:3838/pfh/2015/demo-varistran/)
+
+* [Varistran github page](https://github.com/MonashBioinformaticsPlatform/varistran)
+
+# Structure of a Shiny App
+
+A basic Shiny app consists of two objects:
+
+* ui object - contains the code for the UI (user interface) elements i.e the visible part of the app 
+
+* server object - contains the code for all the calculations the app will need. Generates an output which is returned to the ui.
+
+
+<center><img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/shiny_explanation.png?raw=true" width="409" height="240" /></center>
+
+

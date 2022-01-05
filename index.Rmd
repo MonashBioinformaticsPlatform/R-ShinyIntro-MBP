@@ -1,9 +1,69 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "Introduction to R Shiny"
+author: "Nitika K., Adele B., Paul F. H."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+github-repo: nkandhari/R-shiny-MBP
+description: "This is the course mateial for the workshop- `Introduction R Shiny` offered by [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics)."
 ---
 
-# Down the rabbit-hole
+This workshop material is prepared by the [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics) on the Shiny library developed by RStudio.
+
+```{r}
+library(bookdown)
+```
+
+# Prerequisites
+Before the tutorial please install R and RStudio,
+
+[Download R](https://cran.rstudio.com/)
+
+[Download RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+Then install packages from CRAN and Bioconductor with the following R code:
+
+```{r packages, eval=FALSE}
+install.packages("shiny")
+install.packages("DT")
+
+source("https://bioconductor.org/biocLite.R")
+biocLite(c(
+    "BSgenome.Scerevisiae.UCSC.sacCer3",
+    "TxDb.Scerevisiae.UCSC.sacCer3.sgdGene",
+    "GenomicRanges",
+    "rtracklayer",
+    "Gviz"))
+```
+
+Make sure you are running R 3.3 and Bioconductor 3.3, or higher.
+
+```{r bioc, eval=FALSE}
+# To upgrade an old Bioconductor installation
+source("https://bioconductor.org/biocLite.R")
+biocLite("BiocUpgrade")
+```
+
+## Download files
+* [tutorial.R](https://monashbioinformaticsplatform.github.io/2016-11-03-r-shiny/tutorial.R)
+
+Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.
+
+## Overview
+* Introduction to Shiny
+
+* Shiny structure
+
+* Setup a basic Shiny app
+
+* Tutorial: Let's make an app!
+
+## Source code
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
 

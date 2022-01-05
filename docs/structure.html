@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to R Shiny</title>
+  <title>Chapter 3 Structure of a Shiny App | Introduction to R Shiny</title>
   <meta name="description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to R Shiny" />
+  <meta property="og:title" content="Chapter 3 Structure of a Shiny App | Introduction to R Shiny" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="nkandhari/R-shiny-MBP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to R Shiny" />
+  <meta name="twitter:title" content="Chapter 3 Structure of a Shiny App | Introduction to R Shiny" />
   
   <meta name="twitter:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="intro.html"/>
 
-<link rel="next" href="intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,6 +53,17 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="shared/strftime/strftime-min.js"></script>
+<link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="shared/selectize/js/selectize.min.js"></script>
+<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.4.1/accessibility/js/bootstrap-accessibility.min.js"></script>
 
 
 <style type="text/css">
@@ -170,49 +181,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introduction to R Shiny</h1>
-<p class="author"><em>Nitika K., Adele B., Paul F. H.</em></p>
-<p class="date"><em>2022-01-05</em></p>
-</div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Before the tutorial please install R and RStudio,</p>
-<p><a href="https://cran.rstudio.com/">Download R</a></p>
-<p><a href="https://www.rstudio.com/products/rstudio/download/">Download RStudio</a></p>
-<p>Then install packages from CRAN and Bioconductor with the following R code:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span>
-<span id="cb2-2"><a href="index.html#cb2-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
-<span id="cb2-3"><a href="index.html#cb2-3"></a></span>
-<span id="cb2-4"><a href="index.html#cb2-4"></a><span class="kw">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
-<span id="cb2-5"><a href="index.html#cb2-5"></a><span class="kw">biocLite</span>(<span class="kw">c</span>(</span>
-<span id="cb2-6"><a href="index.html#cb2-6"></a>    <span class="st">&quot;BSgenome.Scerevisiae.UCSC.sacCer3&quot;</span>,</span>
-<span id="cb2-7"><a href="index.html#cb2-7"></a>    <span class="st">&quot;TxDb.Scerevisiae.UCSC.sacCer3.sgdGene&quot;</span>,</span>
-<span id="cb2-8"><a href="index.html#cb2-8"></a>    <span class="st">&quot;GenomicRanges&quot;</span>,</span>
-<span id="cb2-9"><a href="index.html#cb2-9"></a>    <span class="st">&quot;rtracklayer&quot;</span>,</span>
-<span id="cb2-10"><a href="index.html#cb2-10"></a>    <span class="st">&quot;Gviz&quot;</span>))</span></code></pre></div>
-<p>Make sure you are running R 3.3 and Bioconductor 3.3, or higher.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1"></a><span class="co"># To upgrade an old Bioconductor installation</span></span>
-<span id="cb3-2"><a href="index.html#cb3-2"></a><span class="kw">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
-<span id="cb3-3"><a href="index.html#cb3-3"></a><span class="kw">biocLite</span>(<span class="st">&quot;BiocUpgrade&quot;</span>)</span></code></pre></div>
-<div id="download-files" class="section level2">
-<h2><span class="header-section-number">1.1</span> Download files</h2>
+<div id="structure" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Structure of a Shiny App</h1>
+<p>A basic Shiny app consists of two objects:</p>
 <ul>
-<li><a href="https://monashbioinformaticsplatform.github.io/2016-11-03-r-shiny/tutorial.R">tutorial.R</a></li>
+<li><p>ui object - contains the code for the UI (user interface) elements i.e the visible part of the app</p></li>
+<li><p>server object - contains the code for all the calculations the app will need. Generates an output which is returned to the ui.</p></li>
 </ul>
-<p>Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.</p>
+<center>
+<img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/shiny_explanation.png?raw=true" width="409" height="240" />
+</center>
+<div id="ui" class="section level2">
+<h2><span class="header-section-number">3.1</span> ui</h2>
+<p>The ui object controls the layout and appearance of the app. The ui makes use of widgets to interact with data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="structure.html#cb1-1"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb1-2"><a href="structure.html#cb1-2"></a><span class="kw">sliderInput</span>(<span class="st">&quot;slider1&quot;</span>,</span>
+<span id="cb1-3"><a href="structure.html#cb1-3"></a>            <span class="dt">label =</span> <span class="kw">h4</span>(<span class="st">&quot;This code will make a slider </span><span class="ch">\n</span><span class="st">&quot;</span>),</span>
+<span id="cb1-4"><a href="structure.html#cb1-4"></a>            <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">100</span>, <span class="dt">value =</span> <span class="dv">50</span>)</span></code></pre></div>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="slider1-label" for="slider1">
+<h4>This code will make a slider 
+</h4>
+</label>
+<input class="js-range-slider" id="slider1" data-skin="shiny" data-min="0" data-max="100" data-from="50" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
 </div>
-<div id="overview" class="section level2">
-<h2><span class="header-section-number">1.2</span> Overview</h2>
-<ul>
-<li><p>Introduction to Shiny</p></li>
-<li><p>Shiny structure</p></li>
-<li><p>Setup a basic Shiny app</p></li>
-<li><p>Tutorial: Let’s make an app!</p></li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="structure.html#cb2-1"></a><span class="kw">renderPrint</span>({<span class="kw">paste</span>(<span class="st">&quot;The number selected by the slider is:&quot;</span>, input<span class="op">$</span>slider1)})</span></code></pre></div>
+</div>
+<div id="example-widgets-and-layout" class="section level2">
+<h2><span class="header-section-number">3.2</span> Example widgets and layout</h2>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+<span class="navbar-brand">Navbar</span>
+</div>
+<ul class="nav navbar-nav" data-tabsetid="4807">
+<li class="active">
+<a href="structure.html#tab-4807-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
+</li>
+<li>
+<a href="structure.html#tab-4807-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
+</li>
 </ul>
 </div>
-<div id="source-code" class="section level2">
-<h2><span class="header-section-number">1.3</span> Source code</h2>
+</nav>
+<div class="container-fluid">
+<div class="tab-content" data-tabsetid="4807">
+<div class="tab-pane active" data-value="Widgets!" id="tab-4807-1">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="select-label" for="select">
+<h3>Select box</h3>
+</label>
+<div>
+<select id="select"><option value="1" selected>Choice 1</option>
+<option value="2">Choice 2</option>
+<option value="3">Choice 3</option></select>
+<script type="application/json" data-for="select" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+</div>
+</div>
+<pre class="shiny-text-output noplaceholder" id="out18cbfe255c70b666"></pre>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="text-label" for="text">
+<h3>Text input</h3>
+</label>
+<input id="text" type="text" class="form-control" value="Enter text..."/>
+</div>
+<pre class="shiny-text-output noplaceholder" id="out1e13e64e7508f11f"></pre>
+</div>
+<div class="tab-pane" data-value="More widgets!" id="tab-4807-2">
+<div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
+<label class="control-label" id="checkGroup-label" for="checkGroup">
+<h3>Checkbox group</h3>
+</label>
+<div class="shiny-options-group">
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="circle" checked="checked"/>
+<span>Circle</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="square"/>
+<span>Square</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="triangle"/>
+<span>Triangle</span>
+</label>
+</div>
+</div>
+</div>
+<pre class="shiny-text-output noplaceholder" id="outf035ba10f96a38f7"></pre>
+</div>
+</div>
+</div>
 
 </div>
 </div>
@@ -221,8 +285,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -253,7 +317,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/index.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/03-structure.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -261,7 +325,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/index.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/03-structure.Rmd",
 "text": null
 },
 "download": null,

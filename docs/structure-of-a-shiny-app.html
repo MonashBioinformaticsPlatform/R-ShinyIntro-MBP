@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 The pool of tears | Introduction to R Shiny</title>
-  <meta name="description" content="Chapter 2 The pool of tears | Introduction to R Shiny" />
+  <title>Chapter 3 Structure of a Shiny App | Introduction to R Shiny</title>
+  <meta name="description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 The pool of tears | Introduction to R Shiny" />
+  <meta property="og:title" content="Chapter 3 Structure of a Shiny App | Introduction to R Shiny" />
   <meta property="og:type" content="book" />
   
   
-  
-  
+  <meta property="og:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
+  <meta name="github-repo" content="nkandhari/R-shiny-MBP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 The pool of tears | Introduction to R Shiny" />
+  <meta name="twitter:title" content="Chapter 3 Structure of a Shiny App | Introduction to R Shiny" />
   
-  
+  <meta name="twitter:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   
 
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="a-caucus-race-and-a-long-tale.html"/>
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="structure.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -137,9 +137,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Intro to R Shiny</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Pre-requisites</a></li>
-<li class="chapter" data-level="2" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>2</b> The pool of tears</a></li>
-<li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#download-files"><i class="fa fa-check"></i><b>1.1</b> Download files</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.2</b> Overview</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#source-code"><i class="fa fa-check"></i><b>1.3</b> Source code</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="structure-of-a-shiny-app.html"><a href="structure-of-a-shiny-app.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a></li>
+<li class="chapter" data-level="4" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>4</b> Structure of a Shiny App</a><ul>
+<li class="chapter" data-level="4.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>4.1</b> ui</a></li>
+<li class="chapter" data-level="4.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>4.2</b> Example widgets and layout</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -159,8 +171,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-pool-of-tears" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> The pool of tears</h1>
+<div id="structure-of-a-shiny-app" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Structure of a Shiny App</h1>
+<p>A basic Shiny app consists of two objects:</p>
+<ul>
+<li><p>ui object - contains the code for the UI (user interface) elements i.e the visible part of the app</p></li>
+<li><p>server object - contains the code for all the calculations the app will need. Generates an output which is returned to the ui.</p></li>
+</ul>
+<center>
+<img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/shiny_explanation.png?raw=true" width="409" height="240" />
+</center>
 
 </div>
             </section>
@@ -168,8 +188,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="a-caucus-race-and-a-long-tale.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="structure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -200,7 +220,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/02-tears.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/02-intro.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -208,7 +228,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/02-tears.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/02-intro.Rmd",
 "text": null
 },
 "download": null,

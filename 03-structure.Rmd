@@ -1,0 +1,47 @@
+# Structure of a Shiny App{#structure}
+
+A basic Shiny app consists of two objects:
+
+* ui object - contains the code for the UI (user interface) elements i.e the visible part of the app 
+
+* server object - contains the code for all the calculations the app will need. Generates an output which is returned to the ui.
+
+
+<center><img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/shiny_explanation.png?raw=true" width="409" height="240" /></center>
+## ui
+The ui object controls the layout and appearance of the app. The ui makes use of widgets to interact with data.
+
+```{r widget1, echo = T}
+library(shiny)
+sliderInput("slider1",
+            label = h4("This code will make a slider \n"),
+            min = 0, max = 100, value = 50)
+```
+
+```{r, echo= T, eval = F}
+renderPrint({paste("The number selected by the slider is:", input$slider1)})
+```
+
+## Example widgets and layout
+
+```{r, echo = F}
+shinyUI(navbarPage("Navbar",
+                   tabPanel("Widgets!",
+                            selectInput("select", label = h3("Select box"), 
+                                        choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3), 
+                                        selected = 1),
+                            renderPrint({input$select}),
+                            textInput("text", label = h3("Text input"), value = "Enter text..."),
+                            renderPrint({input$text})
+                   ),
+                   tabPanel("More widgets!",
+                            checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
+                                               choices = list("Circle" = "circle", "Square" = "square", "Triangle" = "triangle"),
+                                               selected = "circle"),
+                            
+                            renderPrint({ input$checkGroup })
+                   )
+)
+)
+
+```
