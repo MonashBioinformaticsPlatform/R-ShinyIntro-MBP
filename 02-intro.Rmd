@@ -64,4 +64,4 @@ Click on `Run App` in the top right corner (see fig below). Or you can also use 
 
 In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates "this computer" and 5537 is a randomly assigned port number.
 
-Another script, `app_ui.R` let's you select the default datasets in R.
+Another script, `app_ui.R` inside `ShinyApps` folder, let's you select the default datasets in R.
