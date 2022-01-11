@@ -24,7 +24,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-01-05" />
+<meta name="date" content="2022-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="structure-of-a-shiny-app.html"/>
+<link rel="next" href="structure.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -146,11 +146,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="structure-of-a-shiny-app.html"><a href="structure-of-a-shiny-app.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a></li>
-<li class="chapter" data-level="4" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>4</b> Structure of a Shiny App</a><ul>
-<li class="chapter" data-level="4.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>4.1</b> ui</a></li>
-<li class="chapter" data-level="4.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>4.2</b> Example widgets and layout</a></li>
+<li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
+<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> ui</a></li>
+<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Example widgets and layout</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -199,6 +199,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><a href="https://github.com/MonashBioinformaticsPlatform/varistran">Varistran github page</a></p></li>
 </ul>
 </div>
+<div id="create-your-first-shiny-app" class="section level2">
+<h2><span class="header-section-number">2.4</span> Create your first Shiny App</h2>
+<p>Create a new .R file, paste the following code inside, save it as app.R</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1"></a><span class="kw">library</span>(shiny) <span class="co">#1. calls the library `shiny`</span></span>
+<span id="cb2-2"><a href="intro.html#cb2-2"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>( <span class="co">#2. defines user interface, an HTML webpage</span></span>
+<span id="cb2-3"><a href="intro.html#cb2-3"></a>  <span class="st">&quot;Hello, world!&quot;</span> <span class="co"># prints Hello, world! on webpage</span></span>
+<span id="cb2-4"><a href="intro.html#cb2-4"></a>)</span>
+<span id="cb2-5"><a href="intro.html#cb2-5"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) { <span class="co">#3. specifies app behavior</span></span>
+<span id="cb2-6"><a href="intro.html#cb2-6"></a>}</span>
+<span id="cb2-7"><a href="intro.html#cb2-7"></a><span class="kw">shinyApp</span>(ui, server) <span class="co"># 4. starts Shiny application</span></span></code></pre></div>
+<p>This is a trivial Shiny app that performs 4 tasks:</p>
+<ol style="list-style-type: decimal">
+<li><p>Calls <code>shiny</code> package.</p></li>
+<li><p>Defines user interface which in this case is an HTML webpage, for us to interact with. In this user interface, it prints “Hello, world!”.</p></li>
+<li><p>Creates a function called server that specifies app behavior. Currently, the function body is empty. It means this function (and the app) doesn’t do anything except for printing “Hello, world!” We will later add more controls to this function to control app behavior.</p></li>
+<li><p>Construct and start a Shiny application from UI and server.</p></li>
+</ol>
+<p>Click on <code>Run App</code> in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter</p>
+<p><img src="figs/RunApp.png" /></p>
+<p>In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates “this computer” and 5537 is a randomly assigned port number.</p>
+<p>Another script, <code>app_ui.R</code> let’s you select the default datasets in R.</p>
+
+</div>
 </div>
             </section>
 
@@ -206,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="structure-of-a-shiny-app.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="structure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

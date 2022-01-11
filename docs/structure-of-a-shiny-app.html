@@ -147,7 +147,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="structure-of-a-shiny-app.html"><a href="structure-of-a-shiny-app.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a></li>
+<li class="chapter" data-level="3" data-path="structure-of-a-shiny-app.html"><a href="structure-of-a-shiny-app.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
+<li class="chapter" data-level="3.1" data-path="structure-of-a-shiny-app.html"><a href="structure-of-a-shiny-app.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>3.1</b> Create your first Shiny App</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>4</b> Structure of a Shiny App</a><ul>
 <li class="chapter" data-level="4.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>4.1</b> ui</a></li>
 <li class="chapter" data-level="4.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>4.2</b> Example widgets and layout</a></li>
@@ -181,7 +183,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/shiny_explanation.png?raw=true" width="409" height="240" />
 </center>
+<div id="create-your-first-shiny-app" class="section level2">
+<h2><span class="header-section-number">3.1</span> Create your first Shiny App</h2>
+<p>Create a new .R file, paste the following code inside and save it as app.R</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="structure-of-a-shiny-app.html#cb2-1"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb2-2"><a href="structure-of-a-shiny-app.html#cb2-2"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb2-3"><a href="structure-of-a-shiny-app.html#cb2-3"></a>  <span class="st">&quot;Hello, world!&quot;</span></span>
+<span id="cb2-4"><a href="structure-of-a-shiny-app.html#cb2-4"></a>)</span>
+<span id="cb2-5"><a href="structure-of-a-shiny-app.html#cb2-5"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb2-6"><a href="structure-of-a-shiny-app.html#cb2-6"></a>}</span>
+<span id="cb2-7"><a href="structure-of-a-shiny-app.html#cb2-7"></a><span class="kw">shinyApp</span>(ui, server)</span></code></pre></div>
 
+</div>
 </div>
             </section>
 

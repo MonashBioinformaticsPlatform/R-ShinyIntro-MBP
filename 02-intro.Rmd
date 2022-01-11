@@ -35,15 +35,33 @@ Here are some apps made by Monash bioinformaticians:
 
 * [Varistran github page](https://github.com/MonashBioinformaticsPlatform/varistran)
 
-# Structure of a Shiny App
+## Create your first Shiny App
+Create a new .R file, paste the following code inside, save it as app.R
 
-A basic Shiny app consists of two objects:
+```{r, eval = F, echo = T}
+library(shiny) #1. calls the library `shiny`
+ui <- fluidPage( #2. defines user interface, an HTML webpage
+  "Hello, world!" # prints Hello, world! on webpage
+)
+server <- function(input, output, session) { #3. specifies app behavior
+}
+shinyApp(ui, server) # 4. starts Shiny application
+```
 
-* ui object - contains the code for the UI (user interface) elements i.e the visible part of the app 
+This is a trivial Shiny app that performs 4 tasks:
 
-* server object - contains the code for all the calculations the app will need. Generates an output which is returned to the ui.
+1. Calls `shiny` package.
 
+2. Defines user interface which in this case is an HTML webpage, for us to interact with. In this user interface, it prints "Hello, world!".
 
-<center><img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/shiny_explanation.png?raw=true" width="409" height="240" /></center>
+3. Creates a function called server that specifies app behavior. Currently, the function body is empty. It means this function (and the app) doesn't do anything except for printing "Hello, world!" We will later add more controls to this function to control app behavior.
 
+4. Construct and start a Shiny application from UI and server.
 
+Click on `Run App` in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter
+
+![](figs/RunApp.png)
+
+In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates "this computer" and 5537 is a randomly assigned port number.
+
+Another script, `app_ui.R` let's you select the default datasets in R.

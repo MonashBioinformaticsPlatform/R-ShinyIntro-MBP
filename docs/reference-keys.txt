@@ -13,3 +13,6 @@ structure-of-a-shiny-app
 structure
 ui
 example-widgets-and-layout
+create-your-first-shiny-app
+challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following
+server

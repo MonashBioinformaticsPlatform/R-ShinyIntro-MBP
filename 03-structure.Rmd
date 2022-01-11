@@ -8,6 +8,7 @@ A basic Shiny app consists of two objects:
 
 
 <center><img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/shiny_explanation.png?raw=true" width="409" height="240" /></center>
+
 ## ui
 The ui object controls the layout and appearance of the app. The ui makes use of widgets to interact with data.
 
@@ -20,6 +21,23 @@ sliderInput("slider1",
 
 ```{r, echo= T, eval = F}
 renderPrint({paste("The number selected by the slider is:", input$slider1)})
+```
+
+```{r}
+fluidPage(
+    
+  # Copy the chunk below to make a group of checkboxes
+  checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
+    choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
+    selected = 1),
+  
+  
+  hr(),
+  fluidRow(column(3, verbatimTextOutput("value")))
+  
+)
+
+
 ```
 
 ## Example widgets and layout
@@ -45,3 +63,37 @@ shinyUI(navbarPage("Navbar",
 )
 
 ```
+
+> Now, open the `widgets.R` shiny app and try running it. We have different types of widgets you can use in Shiny Apps. Have a go at them!! 
+Please Note: For now, keep the `Server Logic` and `Run the App` as it is. We'll explain this in next sections.
+
+### Challenge 1: Rewrite your `ui` to create a Shiny app that contains following:{- .challenge}
+1. Title that says "Challenge 1"
+
+2. Select `airquality` from the default datasets in R (Hint: Refer to `app_ui.R`).
+
+3. Create three of the widgets:
+
+   * `helpText()` to write "List of variables to choose from".
+   
+   * `selectInput()` to list variables in the `airquality` dataset. 
+   
+   * `sliderInput()` to add a slider where, `min = 0`; `max = 30` and selected values are: `(5,21)`
+   
+4. Try replacing the list options in selectInput by `colnames(airquality)`.
+
+Your Shiny app should look like this:
+
+![](figs/challenge1.png)
+
+
+## Server
+
+The server object contains the code for building the app. 
+
+Data processing, analysis, plotting, this all happens here.
+
+Takes inputs from the ui and re-runs code chunks when the inputs change.
+
+Let's have a look at a handy example from the [Shiny tutorial](http://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
+

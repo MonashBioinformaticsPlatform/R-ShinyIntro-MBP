@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Structure of a Shiny App | 03-structure.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Structure of a Shiny App | 03-structure.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Structure of a Shiny App | 03-structure.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="/Users/nkan0009/BioinformaticsPlatform-MBP/R-ShinyIntro-MBP/libs/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R Shiny</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#section-structure"><i class="fa fa-check"></i><b>1</b> Structure of a Shiny App</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#section-ui"><i class="fa fa-check"></i><b>1.1</b> ui</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#section-example-widgets-and-layout"><i class="fa fa-check"></i><b>1.2</b> Example widgets and layout</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="section-structure" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Structure of a Shiny App</h1>
+<p>A basic Shiny app consists of two objects:</p>
+<ul>
+<li><p>ui object - contains the code for the UI (user interface) elements i.e the visible part of the app</p></li>
+<li><p>server object - contains the code for all the calculations the app will need. Generates an output which is returned to the ui.</p></li>
+</ul>
+<center>
+<img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/shiny_explanation.png?raw=true" width="409" height="240" />
+</center>
+<div id="section-ui" class="section level2">
+<h2><span class="header-section-number">1.1</span> ui</h2>
+<p>The ui object controls the layout and appearance of the app. The ui makes use of widgets to interact with data.</p>
+<div class="sourceCode" id="section-cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">sliderInput</span>(<span class="st">&quot;slider1&quot;</span>,</span>
+<span id="cb1-3"><a href="#cb1-3"></a>            <span class="dt">label =</span> <span class="kw">h4</span>(<span class="st">&quot;This code will make a slider </span><span class="ch">\n</span><span class="st">&quot;</span>),</span>
+<span id="cb1-4"><a href="#cb1-4"></a>            <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">100</span>, <span class="dt">value =</span> <span class="dv">50</span>)</span></code></pre></div>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="slider1-label" for="slider1">
+<h4>This code will make a slider 
+</h4>
+</label>
+<input class="js-range-slider" id="slider1" data-skin="shiny" data-min="0" data-max="100" data-from="50" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
+</div>
+<div class="sourceCode" id="section-cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">renderPrint</span>({<span class="kw">paste</span>(<span class="st">&quot;The number selected by the slider is:&quot;</span>, input<span class="op">$</span>slider1)})</span></code></pre></div>
+<div class="sourceCode" id="section-cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">fluidPage</span>(</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="co"># Copy the chunk below to make a group of checkboxes</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="kw">checkboxGroupInput</span>(<span class="st">&quot;checkGroup&quot;</span>, <span class="dt">label =</span> <span class="kw">h3</span>(<span class="st">&quot;Checkbox group&quot;</span>), </span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;Choice 1&quot;</span> =<span class="st"> </span><span class="dv">1</span>, <span class="st">&quot;Choice 2&quot;</span> =<span class="st"> </span><span class="dv">2</span>, <span class="st">&quot;Choice 3&quot;</span> =<span class="st"> </span><span class="dv">3</span>),</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="dt">selected =</span> <span class="dv">1</span>),</span>
+<span id="cb3-7"><a href="#cb3-7"></a>  </span>
+<span id="cb3-8"><a href="#cb3-8"></a>  </span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="kw">hr</span>(),</span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="kw">fluidRow</span>(<span class="kw">column</span>(<span class="dv">3</span>, <span class="kw">verbatimTextOutput</span>(<span class="st">&quot;value&quot;</span>)))</span>
+<span id="cb3-11"><a href="#cb3-11"></a>  </span>
+<span id="cb3-12"><a href="#cb3-12"></a>)</span></code></pre></div>
+<div class="container-fluid">
+<div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
+<label class="control-label" id="checkGroup-label" for="checkGroup">
+<h3>Checkbox group</h3>
+</label>
+<div class="shiny-options-group">
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="1" checked="checked"/>
+<span>Choice 1</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="2"/>
+<span>Choice 2</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="3"/>
+<span>Choice 3</span>
+</label>
+</div>
+</div>
+</div>
+<hr/>
+<div class="row">
+<div class="col-sm-3">
+<pre class="shiny-text-output noplaceholder" id="value"></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="section-example-widgets-and-layout" class="section level2">
+<h2><span class="header-section-number">1.2</span> Example widgets and layout</h2>
+<p><iframe data-deferred-src="appd4379ad764dc2d24b8d94a746fa80687/?w=&amp;__subapp__=1" width="100%" height="400" class="shiny-frame shiny-frame-deferred"></iframe></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/%s",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/%s",
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

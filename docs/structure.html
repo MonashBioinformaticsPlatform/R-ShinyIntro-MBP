@@ -24,7 +24,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-01-05" />
+<meta name="date" content="2022-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,14 +56,14 @@
 <script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
 <script src="shared/strftime/strftime-min.js"></script>
 <link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
-<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="shared/selectize/js/selectize.min.js"></script>
-<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
 <link href="libs/bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.4.1/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.4.1/accessibility/js/bootstrap-accessibility.min.js"></script>
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="shared/selectize/js/selectize.min.js"></script>
+<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
 
 
 <style type="text/css">
@@ -157,10 +157,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
 <li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> ui</a></li>
-<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Example widgets and layout</a></li>
+<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Example widgets and layout</a><ul>
+<li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -206,6 +210,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <input class="js-range-slider" id="slider1" data-skin="shiny" data-min="0" data-max="100" data-from="50" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
 </div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="structure.html#cb2-1"></a><span class="kw">renderPrint</span>({<span class="kw">paste</span>(<span class="st">&quot;The number selected by the slider is:&quot;</span>, input<span class="op">$</span>slider1)})</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="structure.html#cb3-1"></a><span class="kw">fluidPage</span>(</span>
+<span id="cb3-2"><a href="structure.html#cb3-2"></a>    </span>
+<span id="cb3-3"><a href="structure.html#cb3-3"></a>  <span class="co"># Copy the chunk below to make a group of checkboxes</span></span>
+<span id="cb3-4"><a href="structure.html#cb3-4"></a>  <span class="kw">checkboxGroupInput</span>(<span class="st">&quot;checkGroup&quot;</span>, <span class="dt">label =</span> <span class="kw">h3</span>(<span class="st">&quot;Checkbox group&quot;</span>), </span>
+<span id="cb3-5"><a href="structure.html#cb3-5"></a>    <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;Choice 1&quot;</span> =<span class="st"> </span><span class="dv">1</span>, <span class="st">&quot;Choice 2&quot;</span> =<span class="st"> </span><span class="dv">2</span>, <span class="st">&quot;Choice 3&quot;</span> =<span class="st"> </span><span class="dv">3</span>),</span>
+<span id="cb3-6"><a href="structure.html#cb3-6"></a>    <span class="dt">selected =</span> <span class="dv">1</span>),</span>
+<span id="cb3-7"><a href="structure.html#cb3-7"></a>  </span>
+<span id="cb3-8"><a href="structure.html#cb3-8"></a>  </span>
+<span id="cb3-9"><a href="structure.html#cb3-9"></a>  <span class="kw">hr</span>(),</span>
+<span id="cb3-10"><a href="structure.html#cb3-10"></a>  <span class="kw">fluidRow</span>(<span class="kw">column</span>(<span class="dv">3</span>, <span class="kw">verbatimTextOutput</span>(<span class="st">&quot;value&quot;</span>)))</span>
+<span id="cb3-11"><a href="structure.html#cb3-11"></a>  </span>
+<span id="cb3-12"><a href="structure.html#cb3-12"></a>)</span></code></pre></div>
+<div class="container-fluid">
+<div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
+<label class="control-label" id="checkGroup-label" for="checkGroup">
+<h3>Checkbox group</h3>
+</label>
+<div class="shiny-options-group">
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="1" checked="checked"/>
+<span>Choice 1</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="2"/>
+<span>Choice 2</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="checkGroup" value="3"/>
+<span>Choice 3</span>
+</label>
+</div>
+</div>
+</div>
+<hr/>
+<div class="row">
+<div class="col-sm-3">
+<pre class="shiny-text-output noplaceholder" id="value"></pre>
+</div>
+</div>
+</div>
 </div>
 <div id="example-widgets-and-layout" class="section level2">
 <h2><span class="header-section-number">3.2</span> Example widgets and layout</h2>
@@ -214,19 +263,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="navbar-header">
 <span class="navbar-brand">Navbar</span>
 </div>
-<ul class="nav navbar-nav" data-tabsetid="4807">
+<ul class="nav navbar-nav" data-tabsetid="1960">
 <li class="active">
-<a href="structure.html#tab-4807-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
+<a href="structure.html#tab-1960-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
 </li>
 <li>
-<a href="structure.html#tab-4807-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
+<a href="structure.html#tab-1960-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
 </li>
 </ul>
 </div>
 </nav>
 <div class="container-fluid">
-<div class="tab-content" data-tabsetid="4807">
-<div class="tab-pane active" data-value="Widgets!" id="tab-4807-1">
+<div class="tab-content" data-tabsetid="1960">
+<div class="tab-pane active" data-value="Widgets!" id="tab-1960-1">
 <div class="form-group shiny-input-container">
 <label class="control-label" id="select-label" for="select">
 <h3>Select box</h3>
@@ -238,16 +287,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script type="application/json" data-for="select" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out18cbfe255c70b666"></pre>
+<pre class="shiny-text-output noplaceholder" id="out666854c5602158cf"></pre>
 <div class="form-group shiny-input-container">
 <label class="control-label" id="text-label" for="text">
 <h3>Text input</h3>
 </label>
 <input id="text" type="text" class="form-control" value="Enter text..."/>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out1e13e64e7508f11f"></pre>
+<pre class="shiny-text-output noplaceholder" id="out6d5f262b5e25e7b6"></pre>
 </div>
-<div class="tab-pane" data-value="More widgets!" id="tab-4807-2">
+<div class="tab-pane" data-value="More widgets!" id="tab-1960-2">
 <div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
 <label class="control-label" id="checkGroup-label" for="checkGroup">
 <h3>Checkbox group</h3>
@@ -273,10 +322,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="outf035ba10f96a38f7"></pre>
+<pre class="shiny-text-output noplaceholder" id="outba9d666caaf0f2ea"></pre>
 </div>
 </div>
 </div>
+<blockquote>
+<p>Now, open the <code>widgets.R</code> shiny app and try running it. We have different types of widgets you can use in Shiny Apps. Have a go at them!!
+Please Note: For now, keep the <code>Server Logic</code> and <code>Run the App</code> as it is. We’ll explain this in next sections.</p>
+</blockquote>
+<div id="challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following" class="section level3 unnumbered challenge">
+<h3>Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</h3>
+<ol style="list-style-type: decimal">
+<li><p>Title that says “Challenge 1”</p></li>
+<li><p>Select <code>airquality</code> from the default datasets in R (Hint: Refer to <code>app_ui.R</code>).</p></li>
+<li><p>Create three of the widgets:</p>
+<ul>
+<li><p><code>helpText()</code> to write “List of variables to choose from”.</p></li>
+<li><p><code>selectInput()</code> to list variables in the <code>airquality</code> dataset.</p></li>
+<li><p><code>sliderInput()</code> to add a slider where, <code>min = 0</code>; <code>max = 30</code> and selected values are: <code>(5,21)</code></p></li>
+</ul></li>
+<li><p>Try replacing the list options in selectInput by <code>colnames(airquality)</code>.</p></li>
+</ol>
+<p>Your Shiny app should look like this:</p>
+<p><img src="figs/challenge1.png" /></p>
+</div>
+</div>
+<div id="server" class="section level2">
+<h2><span class="header-section-number">3.3</span> Server</h2>
+<p>The server object contains the code for building the app.</p>
+<p>Data processing, analysis, plotting, this all happens here.</p>
+<p>Takes inputs from the ui and re-runs code chunks when the inputs change.</p>
+<p>Let’s have a look at a handy example from the <a href="http://shiny.rstudio.com/tutorial/written-tutorial/lesson1/">Shiny tutorial</a></p>
 
 </div>
 </div>
