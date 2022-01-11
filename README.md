@@ -1,12 +1,12 @@
 This workshop material is prepared by the [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics) on the Shiny library developed by RStudio.
 
-### Source code {-}
+### Source code
 
 This book was created in R using the `rmarkdown` and `bookdown` packages!
 
 * [GitHub page](https://nkandhari.github.io/R-ShinyIntro-MBP/)
 
-### Authors and copyright {-}
+### Authors and copyright
 
 This course is developed for the Monash Bioinformatics Platform by Nitika Kandhari, Adele Barugahare and Paul Harrison.
 ![](figs/CC-BY.png)
