@@ -1,8 +1,4 @@
-
 library(shiny)
-library(utils)
-
-
 ui <- fluidPage(
     titlePanel("My first app"),
     
@@ -16,7 +12,6 @@ ui <- fluidPage(
                                                 "sample5",
                                                 "sample6"), 
                                  selected = "sample1"),
-                     
                      selectInput(inputId = "y_select", label = "Select y-axis", 
                                  choices = list("Sample 1" = "sample1", 
                                                 "Sample 2" = "sample2", 
@@ -25,12 +20,9 @@ ui <- fluidPage(
                                                 "Sample 5" = "sample5",
                                                 "Sample 6" = "sample6"),  
                                  selected = "sample2")
-                     ),
-        
+        ),
         mainPanel("And this is the main panel"),
-        textOutput(outputId = "check_x_select"),
-        textOutput(outputId = "check_y_select"),
-        # plotOutput(outputId = "my_plot")
+        textOutput(outputId = "check_x_select")
     )
 )
 
@@ -38,20 +30,6 @@ server <- function(input, output) {
     output$check_x_select <- renderText({
         print(input$x_select)
     })
-    
-    output$check_y_select <- renderText({
-        print(input$y_select)
-    })
-        
-    #     output$my_plot <- renderPlot({
-    #         dat <- read.csv("~/BioinformaticsPlatform-MBP/R-ShinyIntro-MBP/data-files/shiny_sample_data.csv", row.names = 1)
-    #         #Pull out the first and second columns in dat
-    #         x_axis <- input$x_select
-    #         y_axis <- input$y_select
-    #         #Create a basic dot plot
-    #         plot(x = x_axis, y_axis)
-    #         
-    # })
 }
 
 shinyApp(ui = ui, server = server)
