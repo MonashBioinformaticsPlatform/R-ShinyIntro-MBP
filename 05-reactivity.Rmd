@@ -1,0 +1,40 @@
+# Reactivity{#reactivity}
+This is an example of reactivity in Shiny Apps.
+```{r, eval = F}
+
+titlePanel("My first app")
+
+#Changed up the input and output IDs so that they don't conflict with the earlier app.  
+sidebarLayout(
+  sidebarPanel("App input control panel",
+               selectInput("x_select2", label = h3("Select x-axis"), 
+                           choices = list("sample1", 
+                                          "sample2", 
+                                          "sample3",
+                                          "sample4",
+                                          "sample5",
+                                          "sample6"), 
+                           selected = "sample1"),
+               selectInput(inputId = "y_select2", label = "Select y-axis", 
+                           choices = list("Sample 1" = "sample1", 
+                                          "Sample 2" = "sample2", 
+                                          "Sample 3" = "sample3",
+                                          "Sample 4" = "sample4",
+                                          "Sample 5" = "sample5",
+                                          "Sample 6" = "sample6"),  
+                           selected = "sample2")
+  ),
+  mainPanel("App output panel",
+            plotOutput("plot2", width = 600, height = 600)
+  )
+)
+
+output$plot2 <- renderPlot({
+  dat <- read.csv("data-files/shiny_sample_data.csv", row.names = 1)
+  x_axis <- dat[, input$x_select2]
+  y_axis <- dat[, input$y_select2]
+  
+  plot(x = x_axis, y = y_axis)
+})
+
+```

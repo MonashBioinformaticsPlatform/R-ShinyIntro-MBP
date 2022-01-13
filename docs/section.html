@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to R Shiny</title>
+  <title>Chapter 5  | Introduction to R Shiny</title>
   <meta name="description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to R Shiny" />
+  <meta property="og:title" content="Chapter 5  | Introduction to R Shiny" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="nkandhari/R-shiny-MBP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to R Shiny" />
+  <meta name="twitter:title" content="Chapter 5  | Introduction to R Shiny" />
   
   <meta name="twitter:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="tutorial.html"/>
 
-<link rel="next" href="intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -157,7 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
 <li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> ui</a></li>
-<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Widgets and layout</a><ul>
+<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Example widgets and layout</a><ul>
 <li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.</a></li>
 <li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</a></li>
 </ul></li>
@@ -167,11 +167,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>4.1</b> Setting up a shiny app</a></li>
 <li class="chapter" data-level="4.2" data-path="tutorial.html"><a href="tutorial.html#building-the-ui-layout"><i class="fa fa-check"></i><b>4.2</b> Building the UI layout</a></li>
 <li class="chapter" data-level="4.3" data-path="tutorial.html"><a href="tutorial.html#data-processing-on-the-server-side"><i class="fa fa-check"></i><b>4.3</b> Data processing on the server side</a><ul>
-<li class="chapter" data-level="" data-path="tutorial.html"><a href="tutorial.html#activity-4-modily-x--and-y-axes-labes"><i class="fa fa-check"></i>Activity 4: Modily x- and y-axes labes</a></li>
-<li class="chapter" data-level="" data-path="tutorial.html"><a href="tutorial.html#challenge-2-modify-the-app-as-following"><i class="fa fa-check"></i>Challenge 2: Modify the app as following</a></li>
+<li class="chapter" data-level="4.3.1" data-path="tutorial.html"><a href="tutorial.html#activity-3-modily-x--and-y-axes-labes--.activity"><i class="fa fa-check"></i><b>4.3.1</b> Activity 3: Modily x- and y-axes labes(- .activity)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity</a></li>
+<li class="chapter" data-level="5" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>5</b> </a><ul>
+<li class="chapter" data-level="" data-path="section.html"><a href="section.html#challenge-2-modify-the-app-as-following"><i class="fa fa-check"></i>Challenge 2: Modify the app as following</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -191,63 +192,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introduction to R Shiny</h1>
-<p class="author"><em>Nitika K., Adele B., Paul F. H.</em></p>
-<p class="date"><em>2022-01-13</em></p>
-</div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Before the tutorial please install R and RStudio,</p>
-<p><a href="https://cran.rstudio.com/">Download R</a></p>
-<p><a href="https://www.rstudio.com/products/rstudio/download/">Download RStudio</a></p>
-<p>Then install packages from CRAN and Bioconductor with the following R code:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span>
-<span id="cb2-2"><a href="index.html#cb2-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
-<span id="cb2-3"><a href="index.html#cb2-3"></a></span>
-<span id="cb2-4"><a href="index.html#cb2-4"></a><span class="kw">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
-<span id="cb2-5"><a href="index.html#cb2-5"></a><span class="kw">biocLite</span>(<span class="kw">c</span>(</span>
-<span id="cb2-6"><a href="index.html#cb2-6"></a>    <span class="st">&quot;BSgenome.Scerevisiae.UCSC.sacCer3&quot;</span>,</span>
-<span id="cb2-7"><a href="index.html#cb2-7"></a>    <span class="st">&quot;TxDb.Scerevisiae.UCSC.sacCer3.sgdGene&quot;</span>,</span>
-<span id="cb2-8"><a href="index.html#cb2-8"></a>    <span class="st">&quot;GenomicRanges&quot;</span>,</span>
-<span id="cb2-9"><a href="index.html#cb2-9"></a>    <span class="st">&quot;rtracklayer&quot;</span>,</span>
-<span id="cb2-10"><a href="index.html#cb2-10"></a>    <span class="st">&quot;Gviz&quot;</span>))</span></code></pre></div>
-<p>Make sure you are running R 3.3 and Bioconductor 3.3, or higher.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1"></a><span class="co"># To upgrade an old Bioconductor installation</span></span>
-<span id="cb3-2"><a href="index.html#cb3-2"></a><span class="kw">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
-<span id="cb3-3"><a href="index.html#cb3-3"></a><span class="kw">biocLite</span>(<span class="st">&quot;BiocUpgrade&quot;</span>)</span></code></pre></div>
-<div id="download-files" class="section level2">
-<h2><span class="header-section-number">1.1</span> Download files</h2>
-<ul>
-<li><a href="https://monashbioinformaticsplatform.github.io/2016-11-03-r-shiny/tutorial.R">tutorial.R</a></li>
-</ul>
-<p>Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.</p>
-</div>
-<div id="overview" class="section level2">
-<h2><span class="header-section-number">1.2</span> Overview</h2>
-<ul>
-<li><p>Introduction to Shiny</p></li>
-<li><p>Shiny structure</p></li>
-<li><p>Setup a basic Shiny app</p></li>
-<li><p>Tutorial: Let’s make an app!</p></li>
-</ul>
-</div>
-<div id="source-code" class="section level2">
-<h2><span class="header-section-number">1.3</span> Source code</h2>
-<div id="source-code-1" class="section level3 unnumbered">
-<h3>Source code</h3>
-<p>This book was created in R using the <code>rmarkdown</code> and <code>bookdown</code> packages!</p>
-<ul>
-<li><a href="https://nkandhari.github.io/R-ShinyIntro-MBP/">GitHub page</a></li>
-</ul>
-</div>
-<div id="authors-and-copyright" class="section level3 unnumbered">
-<h3>Authors and copyright</h3>
-<p>This course is developed for the Monash Bioinformatics Platform by Nitika Kandhari, Adele Barugahare and Paul Harrison.</p>
-<p><img src="figs/CC-BY.png" width="44" /></p>
-<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY-4: Creative Commons Attribution 4.0 International License</a>. The attribution is “Monash Bioinformatics Platform” if copying or modifying these notes.</p>
+<div id="section" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> </h1>
+<p>Now imagine you had an experiment where you had many conditions and you needed to plot each one against each other. Instead of plotting each one individually, with a Shiny app, you could easily visualise the different conditions without having to write code for each one of them and then download them.</p>
+<p>If you want to get a shareable link of your app, so that other people can access it over the web: <code>http://biotraining.erc.monash.edu:3838/your_username/demo/</code>.</p>
+<p>Make sure to change the url to have your biotraining account name in place of <code>your_username</code>.</p>
+<div id="challenge-2-modify-the-app-as-following" class="section level3 unnumbered challenge">
+<h3>Challenge 2: Modify the app as following</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="section.html#cb19-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb19-2"><a href="section.html#cb19-2"></a></span>
+<span id="cb19-3"><a href="section.html#cb19-3"></a><span class="kw">titlePanel</span>(<span class="st">&quot;My slightly more complicated app&quot;</span>)</span>
+<span id="cb19-4"><a href="section.html#cb19-4"></a></span>
+<span id="cb19-5"><a href="section.html#cb19-5"></a><span class="co">#Changed up the input and output IDs so that they don&#39;t conflict with the earlier app.  </span></span>
+<span id="cb19-6"><a href="section.html#cb19-6"></a><span class="kw">sidebarLayout</span>(</span>
+<span id="cb19-7"><a href="section.html#cb19-7"></a>  <span class="kw">sidebarPanel</span>(<span class="st">&quot;App input control panel&quot;</span>,</span>
+<span id="cb19-8"><a href="section.html#cb19-8"></a>               <span class="kw">selectInput</span>(<span class="st">&quot;x_select3&quot;</span>, <span class="dt">label =</span> <span class="kw">h3</span>(<span class="st">&quot;Select x-axis&quot;</span>), </span>
+<span id="cb19-9"><a href="section.html#cb19-9"></a>                           <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb19-10"><a href="section.html#cb19-10"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb19-11"><a href="section.html#cb19-11"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb19-12"><a href="section.html#cb19-12"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb19-13"><a href="section.html#cb19-13"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb19-14"><a href="section.html#cb19-14"></a>                                          <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb19-15"><a href="section.html#cb19-15"></a>                           <span class="dt">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb19-16"><a href="section.html#cb19-16"></a>               <span class="kw">selectInput</span>(<span class="st">&quot;y_select3&quot;</span>, <span class="dt">label =</span> <span class="kw">h3</span>(<span class="st">&quot;Select y-axis&quot;</span>), </span>
+<span id="cb19-17"><a href="section.html#cb19-17"></a>                           <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb19-18"><a href="section.html#cb19-18"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb19-19"><a href="section.html#cb19-19"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb19-20"><a href="section.html#cb19-20"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb19-21"><a href="section.html#cb19-21"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb19-22"><a href="section.html#cb19-22"></a>                                          <span class="st">&quot;sample6&quot;</span>),</span>
+<span id="cb19-23"><a href="section.html#cb19-23"></a>                           <span class="dt">selected =</span> <span class="st">&quot;sample2&quot;</span>),</span>
+<span id="cb19-24"><a href="section.html#cb19-24"></a>               <span class="kw">sliderInput</span>(<span class="st">&quot;n_rows&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select number of rows to show&quot;</span>, <span class="dt">min =</span> <span class="dv">1</span>, <span class="dt">max =</span> <span class="dv">15</span>, <span class="dt">value =</span> <span class="dv">1</span>)</span>
+<span id="cb19-25"><a href="section.html#cb19-25"></a>  ),</span>
+<span id="cb19-26"><a href="section.html#cb19-26"></a>  <span class="kw">mainPanel</span>(<span class="st">&quot;App output panel&quot;</span>,</span>
+<span id="cb19-27"><a href="section.html#cb19-27"></a>            <span class="kw">plotOutput</span>(<span class="st">&quot;plot3&quot;</span>, <span class="dt">width =</span> <span class="dv">600</span>, <span class="dt">height =</span> <span class="dv">600</span>),</span>
+<span id="cb19-28"><a href="section.html#cb19-28"></a>            <span class="kw">tableOutput</span>(<span class="st">&quot;table1&quot;</span>)</span>
+<span id="cb19-29"><a href="section.html#cb19-29"></a>  )</span>
+<span id="cb19-30"><a href="section.html#cb19-30"></a>)</span>
+<span id="cb19-31"><a href="section.html#cb19-31"></a></span>
+<span id="cb19-32"><a href="section.html#cb19-32"></a>output<span class="op">$</span>plot3 &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
+<span id="cb19-33"><a href="section.html#cb19-33"></a>  dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb19-34"><a href="section.html#cb19-34"></a>  x_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>x_select3]</span>
+<span id="cb19-35"><a href="section.html#cb19-35"></a>  y_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>y_select3]</span>
+<span id="cb19-36"><a href="section.html#cb19-36"></a>  </span>
+<span id="cb19-37"><a href="section.html#cb19-37"></a>  <span class="kw">plot</span>(<span class="dt">x =</span> x_axis, <span class="dt">y =</span> y_axis)</span>
+<span id="cb19-38"><a href="section.html#cb19-38"></a>})</span>
+<span id="cb19-39"><a href="section.html#cb19-39"></a></span>
+<span id="cb19-40"><a href="section.html#cb19-40"></a></span>
+<span id="cb19-41"><a href="section.html#cb19-41"></a>output<span class="op">$</span>table1 &lt;-<span class="st"> </span><span class="kw">renderTable</span>({</span>
+<span id="cb19-42"><a href="section.html#cb19-42"></a>  dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb19-43"><a href="section.html#cb19-43"></a>  <span class="kw">head</span>(dat[, <span class="kw">c</span>(input<span class="op">$</span>x_select3, input<span class="op">$</span>y_select3)], input<span class="op">$</span>n_rows)</span>
+<span id="cb19-44"><a href="section.html#cb19-44"></a>})</span></code></pre></div>
+<blockquote>
+<p>Hint:</p>
+<ol style="list-style-type: decimal">
+<li>The first step is to sort out the ui. Two elements have been added to it, an input widget and the other an output.</li>
+</ol>
+<p>The input widget is a slider. The code for a slider looks something like this:</p>
+<pre><code> sliderInput(&quot;slider1&quot;, label = &quot;Slider&quot;, min = 0, max = 100, value = 50)</code></pre>
+<p>To find out more about how a slider works check the <a href="http://shiny.rstudio.com/gallery/widget-gallery.html">Shiny widget gallery</a></p>
+<p>The new output is a <code>tableOutput</code>. The code for it looks like:</p>
+<pre><code> tableOutput(outputId = &quot;table1&quot;)</code></pre>
+</blockquote>
+<blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>Once you have your new ui, move on the server object. You’ll need to direct the result of a <code>renderTable</code> function to the new output</li>
+</ol>
+<p>An important thing to note is that only one thing is returned from inside a render function (usually the last line inside that function). Therefore a variable, such as <code>dat</code> created inside the <code>renderPlot</code> will not exist outside that <code>renderPlot</code> function. You’ll need to read the csv of data back in again in the <code>renderTable</code> function</p>
+<p>The table that is displayed is a subset of the full csv. It shows only the two currently selected columns. Remember that a dataframe can be subsetted to show only certain columns using <code>x[, c(column_a, column_c, column_z)]</code></p>
+<p>Inside the <code>renderTable</code> call, you’ll need a function that shows you the top of a table. The <code>head</code> function is ideal for this. If you aren’t familiar with how head works, check the help manual for <code>head</code> with <code>?head</code> to see the arguements it takes.</p>
+</blockquote>
 
-</div>
 </div>
 </div>
             </section>
@@ -255,8 +270,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="tutorial.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -287,7 +302,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/index.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/04-tutorial.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -295,7 +310,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/index.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/04-tutorial.Rmd",
 "text": null
 },
 "download": null,

@@ -26,3 +26,6 @@ data-processing-on-the-server-side
 challenge-app
 section
 tutorial
+activity-3-modily-x--and-y-axes-labes--.activity
+widgets-and-layout
+reactivity

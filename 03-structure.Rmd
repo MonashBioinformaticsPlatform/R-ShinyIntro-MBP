@@ -40,7 +40,7 @@ fluidPage(
 
 ```
 
-## Example widgets and layout
+## Widgets and layout
 
 ```{r, echo = F}
 shinyUI(navbarPage("Navbar",
