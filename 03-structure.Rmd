@@ -64,8 +64,10 @@ shinyUI(navbarPage("Navbar",
 
 ```
 
-> Now, open the `widgets.R` inside `ShinyApps` folder, and try running it. We have different types of widgets you can use in Shiny Apps. Have a go at them!! 
-Please Note: For now, keep the `Server Logic` and `Run the App` as it is. We'll explain this in next sections.
+### Activity 3: Now, open the `widgets.R` inside `ShinyApps` folder, and try running it.{- .activity}
+We have different types of widgets you can use in Shiny Apps. Have a go at them!!
+
+Please Note: For now, keep the `Server Logic` and `Run the App` as it is. We'll explain these in next sections.
 
 ### Challenge 1: Rewrite your `ui` to create a Shiny app that contains following:{- .challenge}
 

@@ -160,11 +160,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App</a><ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world"><i class="fa fa-check"></i>Activity 1: Creating a ShinyApp that prints “Hello, World!”</a></li>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#breakdown-of-the-code"><i class="fa fa-check"></i><b>2.4.1</b> Breakdown of the code</a></li>
+<li><a href="intro.html#activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does.">Activity 2: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does.</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
 <li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> ui</a></li>
 <li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Example widgets and layout</a><ul>
+<li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.</a></li>
 <li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server</a></li>
@@ -266,19 +271,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="navbar-header">
 <span class="navbar-brand">Navbar</span>
 </div>
-<ul class="nav navbar-nav" data-tabsetid="5304">
+<ul class="nav navbar-nav" data-tabsetid="7655">
 <li class="active">
-<a href="structure.html#tab-5304-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
+<a href="structure.html#tab-7655-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
 </li>
 <li>
-<a href="structure.html#tab-5304-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
+<a href="structure.html#tab-7655-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
 </li>
 </ul>
 </div>
 </nav>
 <div class="container-fluid">
-<div class="tab-content" data-tabsetid="5304">
-<div class="tab-pane active" data-value="Widgets!" id="tab-5304-1">
+<div class="tab-content" data-tabsetid="7655">
+<div class="tab-pane active" data-value="Widgets!" id="tab-7655-1">
 <div class="form-group shiny-input-container">
 <label class="control-label" id="select-label" for="select">
 <h3>Select box</h3>
@@ -290,16 +295,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script type="application/json" data-for="select" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out75317b91434461ff"></pre>
+<pre class="shiny-text-output noplaceholder" id="out5badbaf941f7c493"></pre>
 <div class="form-group shiny-input-container">
 <label class="control-label" id="text-label" for="text">
 <h3>Text input</h3>
 </label>
 <input id="text" type="text" class="form-control" value="Enter text..."/>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out6fc5c6df7dccbaf2"></pre>
+<pre class="shiny-text-output noplaceholder" id="out54e7b84fa4ed5676"></pre>
 </div>
-<div class="tab-pane" data-value="More widgets!" id="tab-5304-2">
+<div class="tab-pane" data-value="More widgets!" id="tab-7655-2">
 <div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
 <label class="control-label" id="checkGroup-label" for="checkGroup">
 <h3>Checkbox group</h3>
@@ -325,14 +330,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out6915c7122945c4ae"></pre>
+<pre class="shiny-text-output noplaceholder" id="out43d47db45cbf5e8c"></pre>
 </div>
 </div>
 </div>
-<blockquote>
-<p>Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it. We have different types of widgets you can use in Shiny Apps. Have a go at them!!
-Please Note: For now, keep the <code>Server Logic</code> and <code>Run the App</code> as it is. We’ll explain this in next sections.</p>
-</blockquote>
+<div id="activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it." class="section level3 unnumbered activity">
+<h3>Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.</h3>
+<p>We have different types of widgets you can use in Shiny Apps. Have a go at them!!</p>
+<p>Please Note: For now, keep the <code>Server Logic</code> and <code>Run the App</code> as it is. We’ll explain these in next sections.</p>
+</div>
 <div id="challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following" class="section level3 unnumbered challenge">
 <h3>Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</h3>
 <ol style="list-style-type: decimal">

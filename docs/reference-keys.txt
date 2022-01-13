@@ -16,3 +16,13 @@ example-widgets-and-layout
 create-your-first-shiny-app
 challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following
 server
+breakdown-of-the-code
+shiny-tutorial
+setting-up-a-shiny-app
+building-the-ui-layout
+using-widgets
+adding-some-outputs
+data-processing-on-the-server-side
+challenge-app
+section
+tutorial

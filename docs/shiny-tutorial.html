@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Shiny tutorial | Introduction to R Shiny</title>
+  <meta name="description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Shiny tutorial | Introduction to R Shiny" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
+  <meta name="github-repo" content="nkandhari/R-shiny-MBP" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Shiny tutorial | Introduction to R Shiny" />
+  
+  <meta name="twitter:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
+  
+
+<meta name="author" content="Nitika K., Adele B., Paul F. H." />
+
+
+<meta name="date" content="2022-01-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="structure.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R Shiny</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#download-files"><i class="fa fa-check"></i><b>1.1</b> Download files</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.2</b> Overview</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#source-code"><i class="fa fa-check"></i><b>1.3</b> Source code</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#source-code-1"><i class="fa fa-check"></i>Source code</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#authors-and-copyright"><i class="fa fa-check"></i>Authors and copyright</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App</a><ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world"><i class="fa fa-check"></i>Activity 1: Creating a ShinyApp that prints “Hello, World!”</a></li>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#breakdown-of-the-code"><i class="fa fa-check"></i><b>2.4.1</b> Breakdown of the code</a></li>
+<li><a href="intro.html#activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does.">Activity 2: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
+<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> ui</a></li>
+<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#example-widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Example widgets and layout</a><ul>
+<li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.</a></li>
+<li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="shiny-tutorial.html"><a href="shiny-tutorial.html"><i class="fa fa-check"></i><b>4</b> Shiny tutorial</a><ul>
+<li class="chapter" data-level="4.1" data-path="shiny-tutorial.html"><a href="shiny-tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>4.1</b> Setting up a shiny app</a></li>
+<li class="chapter" data-level="4.2" data-path="shiny-tutorial.html"><a href="shiny-tutorial.html#building-the-ui-layout"><i class="fa fa-check"></i><b>4.2</b> Building the UI layout</a></li>
+<li class="chapter" data-level="4.3" data-path="shiny-tutorial.html"><a href="shiny-tutorial.html#data-processing-on-the-server-side"><i class="fa fa-check"></i><b>4.3</b> Data processing on the server side</a><ul>
+<li class="chapter" data-level="" data-path="shiny-tutorial.html"><a href="shiny-tutorial.html#challenge-2-modify-the-app-as-following"><i class="fa fa-check"></i>Challenge 2: Modify the app as following</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to R Shiny</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="shiny-tutorial" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Shiny tutorial</h1>
+<p>We’ll build a Shiny App that takes a csv file containing data for 6 samples and the raw counts for 1000 genes. One sample will be plotted on the x-axis and another sample on the y-axis.</p>
+<pre><code>##         sample1 sample2 sample3 sample4 sample5 sample6
+## gene_1       89    4664     274     126    1267     143
+## gene_2      568    3456     201       9     139     504
+## gene_3      275    4307     449     187    7909     188
+## gene_4     3913    5912    4082    4318    8892    3851
+## gene_5     3382     155    2897    2626    2069    3456
+## gene_6     4167    5194    4404    4757    4765    4156
+## gene_7     4831     227    5009    4554     479    4713
+## gene_8     2532    3395    3000    3441    4575    2460
+## gene_9     3274    1658    3074    3189    2293    3277
+## gene_10    3272    4169    3454    3192    7403    3344</code></pre>
+<p><em>Top ten rows of the raw data used to build the shiny app</em></p>
+<div id="setting-up-a-shiny-app" class="section level2">
+<h2><span class="header-section-number">4.1</span> Setting up a shiny app</h2>
+<p>From the console, install and load Shiny.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="shiny-tutorial.html#cb2-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="shiny-tutorial.html#cb3-1"></a><span class="kw">library</span>(shiny)</span></code></pre></div>
+<p>Firstly, in RStudio create a folder called <code>ShinyApps</code>. Make sure you spell the folder name correctly! This directory should created in your home directory. In the files pane, click <code>Home</code>, then click <code>New Folder</code> and enter in <code>ShinyApps</code> as the folder name.</p>
+<p>Create a sub-directory in <code>ShinyApps</code> called <code>demo</code>.</p>
+<p>Then, create one blank R script (Click <code>File</code> &gt; <code>New File</code> &gt; <code>R Script</code>). Save it inside the <code>demo</code> folder with the name <code>app.R</code>.</p>
+<p>Now we’re going to create a blank app, to show what is the bare minimum to create a Shiny app. In app.R, type:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="shiny-tutorial.html#cb4-1"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb4-2"><a href="shiny-tutorial.html#cb4-2"></a></span>
+<span id="cb4-3"><a href="shiny-tutorial.html#cb4-3"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb4-4"><a href="shiny-tutorial.html#cb4-4"></a>  </span>
+<span id="cb4-5"><a href="shiny-tutorial.html#cb4-5"></a>)</span>
+<span id="cb4-6"><a href="shiny-tutorial.html#cb4-6"></a></span>
+<span id="cb4-7"><a href="shiny-tutorial.html#cb4-7"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb4-8"><a href="shiny-tutorial.html#cb4-8"></a>  </span>
+<span id="cb4-9"><a href="shiny-tutorial.html#cb4-9"></a>}</span>
+<span id="cb4-10"><a href="shiny-tutorial.html#cb4-10"></a></span>
+<span id="cb4-11"><a href="shiny-tutorial.html#cb4-11"></a><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</span></code></pre></div>
+<p>This will always be the starting point of a Shiny app, generally everything that will go into the app will end up between the brackets and curly braces of the ui and server objects.</p>
+<p>As soon as you saved the file as app.R, a new button appeared in RStudio called <code>RunApp</code>. Click the <code>Run App</code> button or type <code>runApp()</code> on the console. Or copy the code and paste it directly in the console - this will work too. A blank window should open up, congratulations - you’ve put together the most basic elements of a Shiny app!</p>
+<p>Update the ui object to display some text:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="shiny-tutorial.html#cb5-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb5-2"><a href="shiny-tutorial.html#cb5-2"></a>  <span class="st">&quot;Hello world&quot;</span></span>
+<span id="cb5-3"><a href="shiny-tutorial.html#cb5-3"></a>)</span></code></pre></div>
+<p>Run the app again and have a look at what you get - there should now be some text in the app window.</p>
+</div>
+<div id="building-the-ui-layout" class="section level2">
+<h2><span class="header-section-number">4.2</span> Building the UI layout</h2>
+<p>The ui object controls the appeance of the app. There are a number of layouts and widgets that an app can have. For this tutorial, we will use a title panel with a sidebar layout underneath. This is a common layout for Shiny apps. The sidebar layout will give the app two panels, a sidebar and a main panel. To look up more layouts, check the <a href="http://shiny.rstudio.com/gallery/">Shiny gallery.</a></p>
+<p>Update the ui object to:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="shiny-tutorial.html#cb6-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb6-2"><a href="shiny-tutorial.html#cb6-2"></a>  <span class="kw">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb6-3"><a href="shiny-tutorial.html#cb6-3"></a>  </span>
+<span id="cb6-4"><a href="shiny-tutorial.html#cb6-4"></a>  <span class="kw">sidebarLayout</span>(</span>
+<span id="cb6-5"><a href="shiny-tutorial.html#cb6-5"></a>    <span class="kw">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>),</span>
+<span id="cb6-6"><a href="shiny-tutorial.html#cb6-6"></a>    <span class="kw">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
+<span id="cb6-7"><a href="shiny-tutorial.html#cb6-7"></a>  )</span>
+<span id="cb6-8"><a href="shiny-tutorial.html#cb6-8"></a>)</span></code></pre></div>
+<p>Then run app.</p>
+<p>You should be able to make out the layout of the app now. The top of the window is where the title panel is located and beneath it are two panels, laid out with the sidebar to the left and the larger main panel to the right.</p>
+<p>The sidebar can be moved to the right by adding the position argument to <code>sidebarLayout</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="shiny-tutorial.html#cb7-1"></a><span class="kw">sidebarLayout</span>(<span class="dt">position =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb7-2"><a href="shiny-tutorial.html#cb7-2"></a>              <span class="kw">sidebarPanel</span>( <span class="st">&quot;This is a sidebar panel on the right&quot;</span>),</span>
+<span id="cb7-3"><a href="shiny-tutorial.html#cb7-3"></a>              <span class="kw">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
+<span id="cb7-4"><a href="shiny-tutorial.html#cb7-4"></a>)</span></code></pre></div>
+<div id="using-widgets" class="section level4">
+<h4><span class="header-section-number">4.2.0.1</span> Using widgets</h4>
+<p>We are going to add two widgets to the ui. These will control which samples gets plotted to the x and y axis of the plot and will be located in the sidebar panel. We will use <code>selectInput</code> to create these widgets but these could easily be swapped out for other widgets such radiobuttons. To see what widgets are available, look at the <a href="http://shiny.rstudio.com/gallery/widget-gallery.html">Shiny widget gallery.</a> or consult the <a href="http://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Shiny cheatsheet</a>.</p>
+<p>To start off with, let’s add just one widget to the sidebar.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="shiny-tutorial.html#cb8-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb8-2"><a href="shiny-tutorial.html#cb8-2"></a>  <span class="kw">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb8-3"><a href="shiny-tutorial.html#cb8-3"></a>  </span>
+<span id="cb8-4"><a href="shiny-tutorial.html#cb8-4"></a>  <span class="kw">sidebarLayout</span>(</span>
+<span id="cb8-5"><a href="shiny-tutorial.html#cb8-5"></a>    <span class="kw">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
+<span id="cb8-6"><a href="shiny-tutorial.html#cb8-6"></a>                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
+<span id="cb8-7"><a href="shiny-tutorial.html#cb8-7"></a>                             <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb8-8"><a href="shiny-tutorial.html#cb8-8"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb8-9"><a href="shiny-tutorial.html#cb8-9"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb8-10"><a href="shiny-tutorial.html#cb8-10"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb8-11"><a href="shiny-tutorial.html#cb8-11"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb8-12"><a href="shiny-tutorial.html#cb8-12"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb8-13"><a href="shiny-tutorial.html#cb8-13"></a>                             <span class="dt">selected =</span> <span class="st">&quot;sample1&quot;</span>)</span>
+<span id="cb8-14"><a href="shiny-tutorial.html#cb8-14"></a>    ),</span>
+<span id="cb8-15"><a href="shiny-tutorial.html#cb8-15"></a>    <span class="kw">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
+<span id="cb8-16"><a href="shiny-tutorial.html#cb8-16"></a>  )</span>
+<span id="cb8-17"><a href="shiny-tutorial.html#cb8-17"></a>)</span></code></pre></div>
+<p>This is where Shiny starts to get a little tricky, a lot of ui code will be end up being nested in more code. So far, we have the <code>selectInput</code> widget nested inside <code>sidebarPanel</code> nested inside <code>siderbarLayout</code> <strong>which is nested in</strong> <code>fluidPage</code>. So we’ve stuck a function inside a function inside a function inside a function. Phew, that’s a lot to keep track of! Many common problems that’ll prevent a shiny app from running simply come from just putting a comma or a bracket in the wrong place.</p>
+<blockquote>
+<p>We cannot emphasis this point enough - <strong>keeping track of opening and closing brackets and your commas is a good skill to cultivate when building Shiny apps!</strong> One quick way to check on your brackets is to move the cursor next to a bracket - in RStudio - that will highlight the other bracket paired with if (if one exists, that is!).</p>
+<p><img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/full_brackets.png?raw=true" /></p>
+<p><em>Fig 1. The cursor is placed next the opening bracket for <code>mainPanel</code> and the closing bracket is highlighted.</em></p>
+<p><img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/missing_bracket.png?raw=true" /></p>
+<p><em>Fig 2. Here, though the cursor is in the same place but the original closing bracket to <code>mainPanel</code> is missing. The next closing bracket is used by <code>mainPanel</code> instead, which now means <code>sidebarLayout</code> does not have a closing bracket. The app would not work in this situation.</em></p>
+</blockquote>
+<p>Moving back to our ui, let’s break down the <code>selectInput</code> function. <code>inputId</code> is the name of widget, in this case <code>x_select</code> is the name that’ll be used in the server object to access the current value of the widget. The <code>labels</code> argument takes a string that will be used to label above the widget.</p>
+<p><code>choices</code> takes a list of values and can be a bit confusing to understand. For simplicity’s sake, we have given an unnamed list, which will directly display the values themselves. <code>"sample1"</code> happens to be a column name in the data the app will be using, so this widget can be used to select which column gets plotted. However, if the names of the choices needs to be different from the values, a named list can be used.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="shiny-tutorial.html#cb9-1"></a>choices =<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;Sample 1&quot;</span> =<span class="st"> &quot;sample1&quot;</span>, </span>
+<span id="cb9-2"><a href="shiny-tutorial.html#cb9-2"></a>               <span class="st">&quot;Sample 2&quot;</span> =<span class="st"> &quot;sample2&quot;</span>, </span>
+<span id="cb9-3"><a href="shiny-tutorial.html#cb9-3"></a>               <span class="st">&quot;Sample 3&quot;</span> =<span class="st"> &quot;sample3&quot;</span>,</span>
+<span id="cb9-4"><a href="shiny-tutorial.html#cb9-4"></a>               <span class="st">&quot;Sample 4&quot;</span> =<span class="st"> &quot;sample4&quot;</span>,</span>
+<span id="cb9-5"><a href="shiny-tutorial.html#cb9-5"></a>               <span class="st">&quot;Sample 5&quot;</span> =<span class="st"> &quot;sample5&quot;</span>,</span>
+<span id="cb9-6"><a href="shiny-tutorial.html#cb9-6"></a>               <span class="st">&quot;Sample 6&quot;</span> =<span class="st"> &quot;sample6&quot;</span>)</span></code></pre></div>
+<p>In <code>"Sample 1" = "sample1"</code> the string <code>"Sample 1"</code> is the text that will appear in the widget, whereas <code>"sample1"</code> is the value that will be returned from the widget. Using this would make a much neater looking widget. Think of the name as purely cosmetic and what you’ll see while the value is what’s important and will be used behind the scenes for calculations. You could change the names to whatever you wanted without having an effect the app.</p>
+<p>Finally, <code>selected</code> chooses which value the widget will start on when the app is run.</p>
+<p>Now to add the second widget. To show the difference between an unamed and a named list, the second widget will use a named list for <code>choices</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="shiny-tutorial.html#cb10-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb10-2"><a href="shiny-tutorial.html#cb10-2"></a>  <span class="kw">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb10-3"><a href="shiny-tutorial.html#cb10-3"></a>  </span>
+<span id="cb10-4"><a href="shiny-tutorial.html#cb10-4"></a>  <span class="kw">sidebarLayout</span>(</span>
+<span id="cb10-5"><a href="shiny-tutorial.html#cb10-5"></a>    <span class="kw">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
+<span id="cb10-6"><a href="shiny-tutorial.html#cb10-6"></a>                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
+<span id="cb10-7"><a href="shiny-tutorial.html#cb10-7"></a>                             <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb10-8"><a href="shiny-tutorial.html#cb10-8"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb10-9"><a href="shiny-tutorial.html#cb10-9"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb10-10"><a href="shiny-tutorial.html#cb10-10"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb10-11"><a href="shiny-tutorial.html#cb10-11"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb10-12"><a href="shiny-tutorial.html#cb10-12"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb10-13"><a href="shiny-tutorial.html#cb10-13"></a>                             <span class="dt">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb10-14"><a href="shiny-tutorial.html#cb10-14"></a>                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb10-15"><a href="shiny-tutorial.html#cb10-15"></a>                             <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;Sample 1&quot;</span> =<span class="st"> &quot;sample1&quot;</span>, </span>
+<span id="cb10-16"><a href="shiny-tutorial.html#cb10-16"></a>                                            <span class="st">&quot;Sample 2&quot;</span> =<span class="st"> &quot;sample2&quot;</span>, </span>
+<span id="cb10-17"><a href="shiny-tutorial.html#cb10-17"></a>                                            <span class="st">&quot;Sample 3&quot;</span> =<span class="st"> &quot;sample3&quot;</span>,</span>
+<span id="cb10-18"><a href="shiny-tutorial.html#cb10-18"></a>                                            <span class="st">&quot;Sample 4&quot;</span> =<span class="st"> &quot;sample4&quot;</span>,</span>
+<span id="cb10-19"><a href="shiny-tutorial.html#cb10-19"></a>                                            <span class="st">&quot;Sample 5&quot;</span> =<span class="st"> &quot;sample5&quot;</span>,</span>
+<span id="cb10-20"><a href="shiny-tutorial.html#cb10-20"></a>                                            <span class="st">&quot;Sample 6&quot;</span> =<span class="st"> &quot;sample6&quot;</span>),  </span>
+<span id="cb10-21"><a href="shiny-tutorial.html#cb10-21"></a>                             <span class="dt">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb10-22"><a href="shiny-tutorial.html#cb10-22"></a>    ),</span>
+<span id="cb10-23"><a href="shiny-tutorial.html#cb10-23"></a>    <span class="kw">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
+<span id="cb10-24"><a href="shiny-tutorial.html#cb10-24"></a>  )</span>
+<span id="cb10-25"><a href="shiny-tutorial.html#cb10-25"></a>)</span></code></pre></div>
+<p>This widget is nearly identical to the first, all that has changed is the name of the widget, the use of a named list and which sample has been pre-selected. This widget has been called <code>y_select</code> and it will start on the value <code>sample2</code> so that the columns selected for the x and y axis will be different.</p>
+</div>
+<div id="adding-some-outputs" class="section level4">
+<h4><span class="header-section-number">4.2.0.2</span> Adding some outputs</h4>
+<p>There’s one last thing to do before moving onto the server object. The app has inputs now, but it doesn’t have any outputs! For this app, we will use three outputs. Two are going to be purely diagnostic so we can check that our <code>selectInputs</code> are working. They will not be included in our final app. The one output that will remain in our final app is <code>plotOutput</code>, as we want to generate a plot and it will be located in the main panel. There are numerous types of outputs Shiny can generate - to find out what other outputs Shiny is capable of, consult the <a href="http://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Shiny cheatsheet</a> or the <a href="https://shiny.rstudio.com/reference/shiny/latest/">Shiny website</a>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="shiny-tutorial.html#cb11-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb11-2"><a href="shiny-tutorial.html#cb11-2"></a>  <span class="kw">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb11-3"><a href="shiny-tutorial.html#cb11-3"></a>  </span>
+<span id="cb11-4"><a href="shiny-tutorial.html#cb11-4"></a>  <span class="kw">sidebarLayout</span>(</span>
+<span id="cb11-5"><a href="shiny-tutorial.html#cb11-5"></a>    <span class="kw">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
+<span id="cb11-6"><a href="shiny-tutorial.html#cb11-6"></a>                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
+<span id="cb11-7"><a href="shiny-tutorial.html#cb11-7"></a>                             <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb11-8"><a href="shiny-tutorial.html#cb11-8"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb11-9"><a href="shiny-tutorial.html#cb11-9"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb11-10"><a href="shiny-tutorial.html#cb11-10"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb11-11"><a href="shiny-tutorial.html#cb11-11"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb11-12"><a href="shiny-tutorial.html#cb11-12"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb11-13"><a href="shiny-tutorial.html#cb11-13"></a>                             <span class="dt">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb11-14"><a href="shiny-tutorial.html#cb11-14"></a>                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb11-15"><a href="shiny-tutorial.html#cb11-15"></a>                             <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;Sample 1&quot;</span> =<span class="st"> &quot;sample1&quot;</span>, </span>
+<span id="cb11-16"><a href="shiny-tutorial.html#cb11-16"></a>                                            <span class="st">&quot;Sample 2&quot;</span> =<span class="st"> &quot;sample2&quot;</span>, </span>
+<span id="cb11-17"><a href="shiny-tutorial.html#cb11-17"></a>                                            <span class="st">&quot;Sample 3&quot;</span> =<span class="st"> &quot;sample3&quot;</span>,</span>
+<span id="cb11-18"><a href="shiny-tutorial.html#cb11-18"></a>                                            <span class="st">&quot;Sample 4&quot;</span> =<span class="st"> &quot;sample4&quot;</span>,</span>
+<span id="cb11-19"><a href="shiny-tutorial.html#cb11-19"></a>                                            <span class="st">&quot;Sample 5&quot;</span> =<span class="st"> &quot;sample5&quot;</span>,</span>
+<span id="cb11-20"><a href="shiny-tutorial.html#cb11-20"></a>                                            <span class="st">&quot;Sample 6&quot;</span> =<span class="st"> &quot;sample6&quot;</span>),  </span>
+<span id="cb11-21"><a href="shiny-tutorial.html#cb11-21"></a>                             <span class="dt">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb11-22"><a href="shiny-tutorial.html#cb11-22"></a>    ),</span>
+<span id="cb11-23"><a href="shiny-tutorial.html#cb11-23"></a>        <span class="kw">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>,</span>
+<span id="cb11-24"><a href="shiny-tutorial.html#cb11-24"></a>              <span class="kw">textOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;check_x_select&quot;</span>),</span>
+<span id="cb11-25"><a href="shiny-tutorial.html#cb11-25"></a>              <span class="kw">textOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;check_y_select&quot;</span>),</span>
+<span id="cb11-26"><a href="shiny-tutorial.html#cb11-26"></a>              <span class="kw">plotOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;my_plot&quot;</span>)</span>
+<span id="cb11-27"><a href="shiny-tutorial.html#cb11-27"></a>    )</span>
+<span id="cb11-28"><a href="shiny-tutorial.html#cb11-28"></a>  )</span>
+<span id="cb11-29"><a href="shiny-tutorial.html#cb11-29"></a>)</span></code></pre></div>
+<p><code>my_plot</code> is the ID of the <code>plotoutput</code> and it tells the server object file where to direct data. Same goes for the two textOutputs. Run the app and see what you’ll get. Does it look any different?</p>
+<p>At the moment, the app will display nothing because we haven’t told it do any calculations and generate a plot or display text. To do that, we need to move on to the server side.</p>
+</div>
+</div>
+<div id="data-processing-on-the-server-side" class="section level2">
+<h2><span class="header-section-number">4.3</span> Data processing on the server side</h2>
+<p>The app now has a full UI but nothing is happening on the backend. To make the app interactive, that’s where the server object comes into play. Think of it as the object that contains an R analysis. The structure of this object can vary immensely depending on the complexity of the app itself.</p>
+<p>First, we need to check on our two <code>selectInput</code> widgets, see if they are working correctly, before we move on to plotting. When building a Shiny app, it’s useful to have create outputs to check to see if parts of the app are doing what they should be, for both the ui and the server code. This step can be omitted, but we’ll go through it to demonstrate what the <code>selectInputs</code> are doing.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="shiny-tutorial.html#cb12-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb12-2"><a href="shiny-tutorial.html#cb12-2"></a>  </span>
+<span id="cb12-3"><a href="shiny-tutorial.html#cb12-3"></a>  output<span class="op">$</span>check_x_select &lt;-<span class="st"> </span><span class="kw">renderText</span>({</span>
+<span id="cb12-4"><a href="shiny-tutorial.html#cb12-4"></a>    <span class="kw">print</span>(input<span class="op">$</span>x_select)</span>
+<span id="cb12-5"><a href="shiny-tutorial.html#cb12-5"></a>  })</span>
+<span id="cb12-6"><a href="shiny-tutorial.html#cb12-6"></a>  </span>
+<span id="cb12-7"><a href="shiny-tutorial.html#cb12-7"></a>  output<span class="op">$</span>check_y_select &lt;-<span class="st"> </span><span class="kw">renderText</span>({</span>
+<span id="cb12-8"><a href="shiny-tutorial.html#cb12-8"></a>    <span class="kw">print</span>(input<span class="op">$</span>y_select)</span>
+<span id="cb12-9"><a href="shiny-tutorial.html#cb12-9"></a>  })</span>
+<span id="cb12-10"><a href="shiny-tutorial.html#cb12-10"></a>}</span></code></pre></div>
+<p>Now run the app.</p>
+<p>There are a number of <code>render</code> functions in Shiny, <code>renderTable</code>, <code>renderText</code>, <code>renderPrint</code>, etc, depending on what type of data needs to be output. If you want to check what render options exist, got the <a href="http://shiny.rstudio.com/reference/shiny/latest/">Shiny website reference page</a>.</p>
+<p>Whenever a <code>render</code> function is called, it needs to be directed to an output that exists in the ui object. In the case of <code>output$check_x_select</code>, we have pointed the <code>renderText</code> function to <code>check_x_select</code>, which was the id of a <code>textOutput</code> in the UI. This means that the result of <code>renderText</code> is sent to the <code>check_x_select</code> output.</p>
+<p>Inside the <code>renderText</code> function, we <code>print</code> the value of the <code>x_select</code>. To access a value of a input widget, we use <code>input$input_Id</code>. Once the app is running, every time the value of the input changes, a render function that depends on it will be re-run. So if we changed the value of the <code>x_select</code>, only the first renderText statement is re-calculated but the second one, which doesn’t depend on <code>x_select</code> will not be re-calculated.</p>
+<p>Notice that despite the difference between the two <code>selectInputs</code> (one uses a named list and the other doesn’t), that the values returned are the same. Once again, using a named list changes the apperance of the ui but not the actual values of the widgets.</p>
+<p>Now that we’ve seen that our widgets are working correctly, we can remove the diagnostic lines of code from both the ui and server. You can either comment them out or delete them. Your app should currently look like this:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="shiny-tutorial.html#cb13-1"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb13-2"><a href="shiny-tutorial.html#cb13-2"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb13-3"><a href="shiny-tutorial.html#cb13-3"></a>  <span class="kw">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb13-4"><a href="shiny-tutorial.html#cb13-4"></a>  </span>
+<span id="cb13-5"><a href="shiny-tutorial.html#cb13-5"></a>  <span class="kw">sidebarLayout</span>(</span>
+<span id="cb13-6"><a href="shiny-tutorial.html#cb13-6"></a>    <span class="kw">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
+<span id="cb13-7"><a href="shiny-tutorial.html#cb13-7"></a>                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
+<span id="cb13-8"><a href="shiny-tutorial.html#cb13-8"></a>                             <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb13-9"><a href="shiny-tutorial.html#cb13-9"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb13-10"><a href="shiny-tutorial.html#cb13-10"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb13-11"><a href="shiny-tutorial.html#cb13-11"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb13-12"><a href="shiny-tutorial.html#cb13-12"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb13-13"><a href="shiny-tutorial.html#cb13-13"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb13-14"><a href="shiny-tutorial.html#cb13-14"></a>                             <span class="dt">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb13-15"><a href="shiny-tutorial.html#cb13-15"></a>                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb13-16"><a href="shiny-tutorial.html#cb13-16"></a>                             <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;Sample 1&quot;</span> =<span class="st"> &quot;sample1&quot;</span>, </span>
+<span id="cb13-17"><a href="shiny-tutorial.html#cb13-17"></a>                                            <span class="st">&quot;Sample 2&quot;</span> =<span class="st"> &quot;sample2&quot;</span>, </span>
+<span id="cb13-18"><a href="shiny-tutorial.html#cb13-18"></a>                                            <span class="st">&quot;Sample 3&quot;</span> =<span class="st"> &quot;sample3&quot;</span>,</span>
+<span id="cb13-19"><a href="shiny-tutorial.html#cb13-19"></a>                                            <span class="st">&quot;Sample 4&quot;</span> =<span class="st"> &quot;sample4&quot;</span>,</span>
+<span id="cb13-20"><a href="shiny-tutorial.html#cb13-20"></a>                                            <span class="st">&quot;Sample 5&quot;</span> =<span class="st"> &quot;sample5&quot;</span>,</span>
+<span id="cb13-21"><a href="shiny-tutorial.html#cb13-21"></a>                                            <span class="st">&quot;Sample 6&quot;</span> =<span class="st"> &quot;sample6&quot;</span>),  </span>
+<span id="cb13-22"><a href="shiny-tutorial.html#cb13-22"></a>                             <span class="dt">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb13-23"><a href="shiny-tutorial.html#cb13-23"></a>    ),</span>
+<span id="cb13-24"><a href="shiny-tutorial.html#cb13-24"></a>    <span class="kw">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>,</span>
+<span id="cb13-25"><a href="shiny-tutorial.html#cb13-25"></a>              <span class="kw">plotOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;my_plot&quot;</span>)</span>
+<span id="cb13-26"><a href="shiny-tutorial.html#cb13-26"></a>    )</span>
+<span id="cb13-27"><a href="shiny-tutorial.html#cb13-27"></a>  )</span>
+<span id="cb13-28"><a href="shiny-tutorial.html#cb13-28"></a>)</span>
+<span id="cb13-29"><a href="shiny-tutorial.html#cb13-29"></a></span>
+<span id="cb13-30"><a href="shiny-tutorial.html#cb13-30"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb13-31"><a href="shiny-tutorial.html#cb13-31"></a>  </span>
+<span id="cb13-32"><a href="shiny-tutorial.html#cb13-32"></a>}</span>
+<span id="cb13-33"><a href="shiny-tutorial.html#cb13-33"></a></span>
+<span id="cb13-34"><a href="shiny-tutorial.html#cb13-34"></a><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</span></code></pre></div>
+<p>The final app will be rather simple. It will take one function, <code>renderPlot</code> and send it back to the <code>my_plot</code> output in the UI. To get going, let’s create an empty <code>renderPlot</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="shiny-tutorial.html#cb14-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb14-2"><a href="shiny-tutorial.html#cb14-2"></a>  </span>
+<span id="cb14-3"><a href="shiny-tutorial.html#cb14-3"></a>  output<span class="op">$</span>my_plot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
+<span id="cb14-4"><a href="shiny-tutorial.html#cb14-4"></a>    </span>
+<span id="cb14-5"><a href="shiny-tutorial.html#cb14-5"></a>  })</span>
+<span id="cb14-6"><a href="shiny-tutorial.html#cb14-6"></a>}</span></code></pre></div>
+<p>Now let’s give <code>renderPlot</code> some data to display, the first two columns from the csv <code>shiny_sample_data.csv</code>.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="shiny-tutorial.html#cb15-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb15-2"><a href="shiny-tutorial.html#cb15-2"></a>  </span>
+<span id="cb15-3"><a href="shiny-tutorial.html#cb15-3"></a>  output<span class="op">$</span>my_plot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
+<span id="cb15-4"><a href="shiny-tutorial.html#cb15-4"></a>    </span>
+<span id="cb15-5"><a href="shiny-tutorial.html#cb15-5"></a>    <span class="co">#Read in the sample csv</span></span>
+<span id="cb15-6"><a href="shiny-tutorial.html#cb15-6"></a>    dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/r-more-files/shiny_sample_data.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb15-7"><a href="shiny-tutorial.html#cb15-7"></a>    </span>
+<span id="cb15-8"><a href="shiny-tutorial.html#cb15-8"></a>    <span class="co">#Pull out the first and second columns in dat</span></span>
+<span id="cb15-9"><a href="shiny-tutorial.html#cb15-9"></a>    x_axis &lt;-<span class="st"> </span>dat[, <span class="st">&quot;sample1&quot;</span>]</span>
+<span id="cb15-10"><a href="shiny-tutorial.html#cb15-10"></a>    y_axis &lt;-<span class="st"> </span>dat[, <span class="st">&quot;sample2&quot;</span>]</span>
+<span id="cb15-11"><a href="shiny-tutorial.html#cb15-11"></a>    </span>
+<span id="cb15-12"><a href="shiny-tutorial.html#cb15-12"></a>    <span class="co">#Create a basic dot plot</span></span>
+<span id="cb15-13"><a href="shiny-tutorial.html#cb15-13"></a>    <span class="kw">plot</span>(<span class="dt">x =</span> x_axis, y_axis)</span>
+<span id="cb15-14"><a href="shiny-tutorial.html#cb15-14"></a>  })</span>
+<span id="cb15-15"><a href="shiny-tutorial.html#cb15-15"></a>}</span></code></pre></div>
+<p>The app has a plot now…but it isn’t interactive, if we change the widget values, it has no effect on what is plotted on the figure. That’s because the first two columns were selected directly in the <code>renderPlot</code> function. However, we could change to call the widget values instead using <code>input</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="shiny-tutorial.html#cb16-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb16-2"><a href="shiny-tutorial.html#cb16-2"></a>  </span>
+<span id="cb16-3"><a href="shiny-tutorial.html#cb16-3"></a>  output<span class="op">$</span>my_plot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
+<span id="cb16-4"><a href="shiny-tutorial.html#cb16-4"></a>    </span>
+<span id="cb16-5"><a href="shiny-tutorial.html#cb16-5"></a>    <span class="co">#Read in the sample csv</span></span>
+<span id="cb16-6"><a href="shiny-tutorial.html#cb16-6"></a>    dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/r-more-files/shiny_sample_data.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb16-7"><a href="shiny-tutorial.html#cb16-7"></a>    </span>
+<span id="cb16-8"><a href="shiny-tutorial.html#cb16-8"></a>    <span class="co">#Pull out a column for the x and y axis each</span></span>
+<span id="cb16-9"><a href="shiny-tutorial.html#cb16-9"></a>    x_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>x_select]</span>
+<span id="cb16-10"><a href="shiny-tutorial.html#cb16-10"></a>    y_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>y_select]</span>
+<span id="cb16-11"><a href="shiny-tutorial.html#cb16-11"></a>    </span>
+<span id="cb16-12"><a href="shiny-tutorial.html#cb16-12"></a>    <span class="co">#Create a basic dot plot</span></span>
+<span id="cb16-13"><a href="shiny-tutorial.html#cb16-13"></a>    <span class="kw">plot</span>(<span class="dt">x =</span> x_axis, y_axis)</span>
+<span id="cb16-14"><a href="shiny-tutorial.html#cb16-14"></a>  })</span>
+<span id="cb16-15"><a href="shiny-tutorial.html#cb16-15"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="shiny-tutorial.html#cb17-1"></a><span class="kw">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>)</span>
+<span id="cb17-2"><a href="shiny-tutorial.html#cb17-2"></a></span>
+<span id="cb17-3"><a href="shiny-tutorial.html#cb17-3"></a><span class="co">#Changed up the input and output IDs so that they don&#39;t conflict with the earlier app.  </span></span>
+<span id="cb17-4"><a href="shiny-tutorial.html#cb17-4"></a><span class="kw">sidebarLayout</span>(</span>
+<span id="cb17-5"><a href="shiny-tutorial.html#cb17-5"></a>  <span class="kw">sidebarPanel</span>(<span class="st">&quot;App input control panel&quot;</span>,</span>
+<span id="cb17-6"><a href="shiny-tutorial.html#cb17-6"></a>               <span class="kw">selectInput</span>(<span class="st">&quot;x_select2&quot;</span>, <span class="dt">label =</span> <span class="kw">h3</span>(<span class="st">&quot;Select x-axis&quot;</span>), </span>
+<span id="cb17-7"><a href="shiny-tutorial.html#cb17-7"></a>                           <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb17-8"><a href="shiny-tutorial.html#cb17-8"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb17-9"><a href="shiny-tutorial.html#cb17-9"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb17-10"><a href="shiny-tutorial.html#cb17-10"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb17-11"><a href="shiny-tutorial.html#cb17-11"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb17-12"><a href="shiny-tutorial.html#cb17-12"></a>                                          <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb17-13"><a href="shiny-tutorial.html#cb17-13"></a>                           <span class="dt">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb17-14"><a href="shiny-tutorial.html#cb17-14"></a>               <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;y_select2&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb17-15"><a href="shiny-tutorial.html#cb17-15"></a>                           <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;Sample 1&quot;</span> =<span class="st"> &quot;sample1&quot;</span>, </span>
+<span id="cb17-16"><a href="shiny-tutorial.html#cb17-16"></a>                                          <span class="st">&quot;Sample 2&quot;</span> =<span class="st"> &quot;sample2&quot;</span>, </span>
+<span id="cb17-17"><a href="shiny-tutorial.html#cb17-17"></a>                                          <span class="st">&quot;Sample 3&quot;</span> =<span class="st"> &quot;sample3&quot;</span>,</span>
+<span id="cb17-18"><a href="shiny-tutorial.html#cb17-18"></a>                                          <span class="st">&quot;Sample 4&quot;</span> =<span class="st"> &quot;sample4&quot;</span>,</span>
+<span id="cb17-19"><a href="shiny-tutorial.html#cb17-19"></a>                                          <span class="st">&quot;Sample 5&quot;</span> =<span class="st"> &quot;sample5&quot;</span>,</span>
+<span id="cb17-20"><a href="shiny-tutorial.html#cb17-20"></a>                                          <span class="st">&quot;Sample 6&quot;</span> =<span class="st"> &quot;sample6&quot;</span>),  </span>
+<span id="cb17-21"><a href="shiny-tutorial.html#cb17-21"></a>                           <span class="dt">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb17-22"><a href="shiny-tutorial.html#cb17-22"></a>  ),</span>
+<span id="cb17-23"><a href="shiny-tutorial.html#cb17-23"></a>  <span class="kw">mainPanel</span>(<span class="st">&quot;App output panel&quot;</span>,</span>
+<span id="cb17-24"><a href="shiny-tutorial.html#cb17-24"></a>            <span class="kw">plotOutput</span>(<span class="st">&quot;plot2&quot;</span>, <span class="dt">width =</span> <span class="dv">600</span>, <span class="dt">height =</span> <span class="dv">600</span>)</span>
+<span id="cb17-25"><a href="shiny-tutorial.html#cb17-25"></a>  )</span>
+<span id="cb17-26"><a href="shiny-tutorial.html#cb17-26"></a>)</span>
+<span id="cb17-27"><a href="shiny-tutorial.html#cb17-27"></a></span>
+<span id="cb17-28"><a href="shiny-tutorial.html#cb17-28"></a>output<span class="op">$</span>plot2 &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
+<span id="cb17-29"><a href="shiny-tutorial.html#cb17-29"></a>  dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;r-more-files/shiny_sample_data.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb17-30"><a href="shiny-tutorial.html#cb17-30"></a>  x_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>x_select2]</span>
+<span id="cb17-31"><a href="shiny-tutorial.html#cb17-31"></a>  y_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>y_select2]</span>
+<span id="cb17-32"><a href="shiny-tutorial.html#cb17-32"></a>  </span>
+<span id="cb17-33"><a href="shiny-tutorial.html#cb17-33"></a>  <span class="kw">plot</span>(<span class="dt">x =</span> x_axis, <span class="dt">y =</span> y_axis)</span>
+<span id="cb17-34"><a href="shiny-tutorial.html#cb17-34"></a>})</span></code></pre></div>
+<p>Congratulations! You’ve made your first app! To get it exactly like the example at the start of the lesson, can you figure out how to change the axis titles to the name of the selected sample. One of <code>selectInput</code> widgets also need to be changed to a named list. Other than that, you’re good to go.</p>
+<blockquote>
+<p>Hint:</p>
+<p>plot(x = blah, y = plah, xlab = “Label for the x-axis”, ylab = “Label for the y-axis”)</p>
+</blockquote>
+<p>Now imagine you had an experiment where you had many conditions and you needed to plot each one against each other. Instead of plotting each one individually, with a Shiny app, you could easily visualise the different conditions without having to write code for each one of them and then download them.</p>
+<p>If you want to get a shareable link of your app, so that other people can access it over the web: <code>http://biotraining.erc.monash.edu:3838/your_username/demo/</code>.</p>
+<p>Make sure to change the url to have your biotraining account name in place of <code>your_username</code>.</p>
+<div id="challenge-2-modify-the-app-as-following" class="section level3 unnumbered challenge">
+<h3>Challenge 2: Modify the app as following</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="shiny-tutorial.html#cb18-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="shiny-tutorial.html#cb18-2"></a></span>
+<span id="cb18-3"><a href="shiny-tutorial.html#cb18-3"></a><span class="kw">titlePanel</span>(<span class="st">&quot;My slightly more complicated app&quot;</span>)</span>
+<span id="cb18-4"><a href="shiny-tutorial.html#cb18-4"></a></span>
+<span id="cb18-5"><a href="shiny-tutorial.html#cb18-5"></a><span class="co">#Changed up the input and output IDs so that they don&#39;t conflict with the earlier app.  </span></span>
+<span id="cb18-6"><a href="shiny-tutorial.html#cb18-6"></a><span class="kw">sidebarLayout</span>(</span>
+<span id="cb18-7"><a href="shiny-tutorial.html#cb18-7"></a>  <span class="kw">sidebarPanel</span>(<span class="st">&quot;App input control panel&quot;</span>,</span>
+<span id="cb18-8"><a href="shiny-tutorial.html#cb18-8"></a>               <span class="kw">selectInput</span>(<span class="st">&quot;x_select3&quot;</span>, <span class="dt">label =</span> <span class="kw">h3</span>(<span class="st">&quot;Select x-axis&quot;</span>), </span>
+<span id="cb18-9"><a href="shiny-tutorial.html#cb18-9"></a>                           <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb18-10"><a href="shiny-tutorial.html#cb18-10"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb18-11"><a href="shiny-tutorial.html#cb18-11"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb18-12"><a href="shiny-tutorial.html#cb18-12"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb18-13"><a href="shiny-tutorial.html#cb18-13"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb18-14"><a href="shiny-tutorial.html#cb18-14"></a>                                          <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb18-15"><a href="shiny-tutorial.html#cb18-15"></a>                           <span class="dt">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb18-16"><a href="shiny-tutorial.html#cb18-16"></a>               <span class="kw">selectInput</span>(<span class="st">&quot;y_select3&quot;</span>, <span class="dt">label =</span> <span class="kw">h3</span>(<span class="st">&quot;Select y-axis&quot;</span>), </span>
+<span id="cb18-17"><a href="shiny-tutorial.html#cb18-17"></a>                           <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb18-18"><a href="shiny-tutorial.html#cb18-18"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb18-19"><a href="shiny-tutorial.html#cb18-19"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb18-20"><a href="shiny-tutorial.html#cb18-20"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb18-21"><a href="shiny-tutorial.html#cb18-21"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb18-22"><a href="shiny-tutorial.html#cb18-22"></a>                                          <span class="st">&quot;sample6&quot;</span>),</span>
+<span id="cb18-23"><a href="shiny-tutorial.html#cb18-23"></a>                           <span class="dt">selected =</span> <span class="st">&quot;sample2&quot;</span>),</span>
+<span id="cb18-24"><a href="shiny-tutorial.html#cb18-24"></a>               <span class="kw">sliderInput</span>(<span class="st">&quot;n_rows&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select number of rows to show&quot;</span>, <span class="dt">min =</span> <span class="dv">1</span>, <span class="dt">max =</span> <span class="dv">15</span>, <span class="dt">value =</span> <span class="dv">1</span>)</span>
+<span id="cb18-25"><a href="shiny-tutorial.html#cb18-25"></a>  ),</span>
+<span id="cb18-26"><a href="shiny-tutorial.html#cb18-26"></a>  <span class="kw">mainPanel</span>(<span class="st">&quot;App output panel&quot;</span>,</span>
+<span id="cb18-27"><a href="shiny-tutorial.html#cb18-27"></a>            <span class="kw">plotOutput</span>(<span class="st">&quot;plot3&quot;</span>, <span class="dt">width =</span> <span class="dv">600</span>, <span class="dt">height =</span> <span class="dv">600</span>),</span>
+<span id="cb18-28"><a href="shiny-tutorial.html#cb18-28"></a>            <span class="kw">tableOutput</span>(<span class="st">&quot;table1&quot;</span>)</span>
+<span id="cb18-29"><a href="shiny-tutorial.html#cb18-29"></a>  )</span>
+<span id="cb18-30"><a href="shiny-tutorial.html#cb18-30"></a>)</span>
+<span id="cb18-31"><a href="shiny-tutorial.html#cb18-31"></a></span>
+<span id="cb18-32"><a href="shiny-tutorial.html#cb18-32"></a>output<span class="op">$</span>plot3 &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
+<span id="cb18-33"><a href="shiny-tutorial.html#cb18-33"></a>  dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;r-more-files/shiny_sample_data.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb18-34"><a href="shiny-tutorial.html#cb18-34"></a>  x_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>x_select3]</span>
+<span id="cb18-35"><a href="shiny-tutorial.html#cb18-35"></a>  y_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>y_select3]</span>
+<span id="cb18-36"><a href="shiny-tutorial.html#cb18-36"></a>  </span>
+<span id="cb18-37"><a href="shiny-tutorial.html#cb18-37"></a>  <span class="kw">plot</span>(<span class="dt">x =</span> x_axis, <span class="dt">y =</span> y_axis)</span>
+<span id="cb18-38"><a href="shiny-tutorial.html#cb18-38"></a>})</span>
+<span id="cb18-39"><a href="shiny-tutorial.html#cb18-39"></a></span>
+<span id="cb18-40"><a href="shiny-tutorial.html#cb18-40"></a></span>
+<span id="cb18-41"><a href="shiny-tutorial.html#cb18-41"></a>output<span class="op">$</span>table1 &lt;-<span class="st"> </span><span class="kw">renderTable</span>({</span>
+<span id="cb18-42"><a href="shiny-tutorial.html#cb18-42"></a>  dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;r-more-files/shiny_sample_data.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb18-43"><a href="shiny-tutorial.html#cb18-43"></a>  <span class="kw">head</span>(dat[, <span class="kw">c</span>(input<span class="op">$</span>x_select3, input<span class="op">$</span>y_select3)], input<span class="op">$</span>n_rows)</span>
+<span id="cb18-44"><a href="shiny-tutorial.html#cb18-44"></a>})</span></code></pre></div>
+<blockquote>
+<p>Hint:</p>
+<ol style="list-style-type: decimal">
+<li>The first step is to sort out the ui. Two elements have been added to it, an input widget and the other an output.</li>
+</ol>
+<p>The input widget is a slider. The code for a slider looks something like this:</p>
+<pre><code> sliderInput(&quot;slider1&quot;, label = &quot;Slider&quot;, min = 0, max = 100, value = 50)</code></pre>
+<p>To find out more about how a slider works check the <a href="http://shiny.rstudio.com/gallery/widget-gallery.html">Shiny widget gallery</a></p>
+<p>The new output is a <code>tableOutput</code>. The code for it looks like:</p>
+<pre><code> tableOutput(outputId = &quot;table1&quot;)</code></pre>
+</blockquote>
+<blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>Once you have your new ui, move on the server object. You’ll need to direct the result of a <code>renderTable</code> function to the new output</li>
+</ol>
+<p>An important thing to note is that only one thing is returned from inside a render function (usually the last line inside that function). Therefore a variable, such as <code>dat</code> created inside the <code>renderPlot</code> will not exist outside that <code>renderPlot</code> function. You’ll need to read the csv of data back in again in the <code>renderTable</code> function</p>
+<p>The table that is displayed is a subset of the full csv. It shows only the two currently selected columns. Remember that a dataframe can be subsetted to show only certain columns using <code>x[, c(column_a, column_c, column_z)]</code></p>
+<p>Inside the <code>renderTable</code> call, you’ll need a function that shows you the top of a table. The <code>head</code> function is ideal for this. If you aren’t familiar with how head works, check the help manual for <code>head</code> with <code>?head</code> to see the arguements it takes.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="structure.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/04-shiny-tutorial.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/04-shiny-tutorial.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
