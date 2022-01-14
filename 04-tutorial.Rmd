@@ -399,41 +399,66 @@ server <- function(input, output) {
 **The complete working app code looks like:**
 ```{r, eval = F}
 
-titlePanel("My first app")
 
-#Changed up the input and output IDs so that they don't conflict with the earlier app.  
-sidebarLayout(
-  sidebarPanel("App input control panel",
-               selectInput("x_select2", label = h3("Select x-axis"), 
-                           choices = list("sample1", 
-                                          "sample2", 
-                                          "sample3",
-                                          "sample4",
-                                          "sample5",
-                                          "sample6"), 
-                           selected = "sample1"),
-               selectInput(inputId = "y_select2", label = "Select y-axis", 
-                           choices = list("Sample 1" = "sample1", 
-                                          "Sample 2" = "sample2", 
-                                          "Sample 3" = "sample3",
-                                          "Sample 4" = "sample4",
-                                          "Sample 5" = "sample5",
-                                          "Sample 6" = "sample6"),  
-                           selected = "sample2")
-  ),
-  mainPanel("App output panel",
-            plotOutput("plot2", width = 600, height = 600)
-  )
+library(shiny)
+library(utils)
+
+
+ui <- fluidPage(
+    titlePanel("My first app"),
+    
+    sidebarLayout(
+        sidebarPanel("This is a sidebar panel",
+                     selectInput(inputId = "x_select", label = "Select x-axis", 
+                                 choices = list("sample1", 
+                                                "sample2", 
+                                                "sample3",
+                                                "sample4",
+                                                "sample5",
+                                                "sample6"), 
+                                 selected = "sample1"),
+                     selectInput(inputId = "y_select", label = "Select y-axis", 
+                                 choices = list("Sample 1" = "sample1", 
+                                                "Sample 2" = "sample2", 
+                                                "Sample 3" = "sample3",
+                                                "Sample 4" = "sample4",
+                                                "Sample 5" = "sample5",
+                                                "Sample 6" = "sample6"),  
+                                 selected = "sample2")
+        ),
+        mainPanel("And this is the main panel",
+                  textOutput(outputId = "check_x_select"),
+                  textOutput(outputId = "check_y_select"),
+                  plotOutput(outputId = "my_plot", width = 600, height = 600)
+        )
+    )
 )
 
-output$plot2 <- renderPlot({
-  dat <- read.csv("data-files/shiny_sample_data.csv", row.names = 1)
-  x_axis <- dat[, input$x_select2]
-  y_axis <- dat[, input$y_select2]
-  
-  plot(x = x_axis, y = y_axis)
-})
+server <- function(input, output) {
+    output$check_x_select <- renderText({
+        print(input$x_select)
+    })
+    
+    output$check_y_select <- renderText({
+        print(input$y_select)
+    })
+    
+    output$my_plot <- renderPlot({
+        
+        #Read in the sample csv
+        dat <- read.csv("data-files/shiny_sample_data.csv", row.names = 1)
+        
+        #Pull out a column for the x and y axis each
+        x_axis <- dat[, input$x_select]
+        y_axis <- dat[, input$y_select]
+        
+        
+        #Create a basic dot plot
+        plot(x = x_axis, y_axis)
+    })
+}
 
+shinyApp(ui = ui, server = server)
 ```
 
 Congratulations! You've made your first app! 
@@ -453,14 +478,13 @@ If you want to get a shareable link of your app, so that other people can access
 
 Make sure to change the url to have your biotraining account name in place of `your_username`.
 
-### Challenge 2: Modify the app as following {- .challenge}
+### Challenge 2: Modify the app to add the following {- .challenge}
 
 ```{r, eval = F}
 library(ggplot2)
-
+# 1. Add ui
 titlePanel("My slightly more complicated app")
 
-#Changed up the input and output IDs so that they don't conflict with the earlier app.  
 sidebarLayout(
   sidebarPanel("App input control panel",
                selectInput("x_select3", label = h3("Select x-axis"), 
@@ -471,6 +495,7 @@ sidebarLayout(
                                           "sample5",
                                           "sample6"), 
                            selected = "sample1"),
+               
                selectInput("y_select3", label = h3("Select y-axis"), 
                            choices = list("sample1", 
                                           "sample2", 
@@ -478,15 +503,19 @@ sidebarLayout(
                                           "sample4",
                                           "sample5",
                                           "sample6"),
-                           selected = "sample2"),
-               sliderInput("n_rows", label = "Select number of rows to show", min = 1, max = 15, value = 1)
+                           selected = "sample2")
+               
+               # 2. Add sliderInput              
+              
   ),
   mainPanel("App output panel",
-            plotOutput("plot3", width = 600, height = 600),
-            tableOutput("table1")
+            plotOutput("plot3", width = 600, height = 600)
+            
+            # 3. Add tableOutput
   )
 )
 
+# 4. Add server logic
 output$plot3 <- renderPlot({
   dat <- read.csv("data-files/shiny_sample_data.csv", row.names = 1)
   x_axis <- dat[, input$x_select3]
@@ -495,35 +524,32 @@ output$plot3 <- renderPlot({
   plot(x = x_axis, y = y_axis)
 })
 
+# 5. Redirect output to a variable to be called in mainPanel
 
-output$table1 <- renderTable({
-  dat <- read.csv("data-files/shiny_sample_data.csv", row.names = 1)
-  head(dat[, c(input$x_select3, input$y_select3)], input$n_rows)
-})
 ```
 
+1. The first step is to sort out the ui.
 
-> Hint:
->
-> 1. The first step is to sort out the ui. Two elements have been added to it, an input widget and the other an output.
->
->
-> The input widget is a slider. The code for a slider looks something like this:
->
->      sliderInput("slider1", label = "Slider", min = 0, max = 100, value = 50)
+2. We want to print the number of rows in the data as decided by a slider. Create a slider input widget. 
+
+> Hint: The code for a slider looks something like this:
+>      sliderInput("inputIDyouwant", label = "Slider", min = , max = , value = 50)
 >
 > To find out more about how a slider works check the [Shiny widget gallery](http://shiny.rstudio.com/gallery/widget-gallery.html)
-> 
-> The new output is a `tableOutput`. The code for it looks like:
-> 
->     
+>
+
+3. Create a new output called a `tableOutput` to print the data in tabular format. 
+
+> Hint: The code for it looks like:
 >      tableOutput(outputId = "table1")
 
-> 2. Once you have your new ui, move on the server object. You'll need to direct the result of a `renderTable` function to the new output
-> 
-> An important thing to note is that only one thing is returned from inside a render function (usually the last line inside that function). Therefore a variable, such as `dat` created inside the `renderPlot` will not exist outside that `renderPlot` function. You'll need to read the csv of data back in again in the `renderTable` function
->
+4. Define the server object.
+
+5. You'll need to direct the result of a `renderTable` function to the new output.
+
+> Hint:
 > The table that is displayed is a subset of the full csv. It shows only the two currently selected columns. Remember that a dataframe can be subsetted to show only certain columns using `x[, c(column_a, column_c, column_z)]`
 >
 > Inside the `renderTable` call, you'll need a function that shows you the top of a table. The `head` function is ideal for this. If you aren't familiar with how head works, check the help manual for `head` with `?head` to see the arguements it takes.
 
+An important thing to note is that only one thing is returned from inside a render function (usually the last line inside that function). Therefore a variable, such as `dat` created inside the `renderPlot` **will not exist** outside that `renderPlot` function. You'll need to read the csv of data back in again in the `renderTable` function.
