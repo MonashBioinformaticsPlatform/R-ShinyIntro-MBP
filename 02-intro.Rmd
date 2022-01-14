@@ -2,28 +2,26 @@
 
 ## What is Shiny
 
-Shiny is an R package that makes it incredibly easy to build interactive web applications straight from your R code. It provides an easy way to present R data analysis interactively and over the web. It allows you to create complicated apps without any  prior knowledge of HTML, CSS or JavaScript
+Shiny is an R package that makes it easy to build interactive web applications. It provides an easy way to present R data analysis interactively and over the web. It is magical in  the sense that it allows you to create complicated apps without any prior knowledge of HTML, CSS or JavaScript straight from your R code. Shiny essential wraps your R code and transforms it into a dynamic web app. The powerful features of the shiny programming are the User Interface (UI) and the reactivity which will be discussed in later sections.
 
 To use it, simply open up R Studio and:
 ```{r install_shiny, eval=T, echo = T}
 #install.packages("shiny")
 library(shiny)
 ```
-Shiny essential wraps your R code and transforms it into a reactive, dynamic web app.
+
 
 ## Another R package - What's so special about Shiny?
 
-It's easier than learning HTML, CSS and JavaScript, although you can use those to build your own custom Shiny elements
+* It's easier than learning HTML, CSS and JavaScript, although you can use those to build your own custom Shiny elements
 
-You don't need to port any of your R code into another language in order to build a web app
+* You don't need to port any of your R code into another language in order to build a web app
 
-Incredible flexibility, you can generate dynamic UI elements and create interactive plots
+* Incredible flexibility, you can generate dynamic UI elements and create interactive plots
 
-It adds reproducibilty to your graphs
+* It adds reproducibilty to your graphs
 
-**YOU DON'T NEED TO GENERATE A BILLION PLOTS MANUALLY** 
-
-It can easily be added to a markdown document - like this one!
+* You don't need to generate a billion plots manually. It can easily be added to a markdown document - like this one!
 
 ## Example apps
 
@@ -47,26 +45,35 @@ ui <- fluidPage( #2. defines user interface, an HTML webpage
 )
 server <- function(input, output, session) { #3. specifies app behavior
 }
-shinyApp(ui, server) # 4. starts Shiny application
+app_hello <- shinyApp(ui, server) # 4. starts Shiny application
 ```
 
-Click on `Run App` in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter
+Click on `Run App` in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter.
 
 ![](figs/RunApp.png)
 
 ### Breakdown of the code
 This is a trivial Shiny app that performs 4 tasks:
 
-1. Calls `shiny` package.
+1. Calls the `shiny` package.
 
-2. Defines user interface which in this case is an HTML webpage, for us to interact with. In this user interface, it prints "Hello, world!".
+2. Defines user interface (ui) which in this case is an HTML webpage, for us to interact with. In this user interface, it prints "Hello, world!".
 
 3. Creates a function called server that specifies app behavior. Currently, the function body is empty. It means this function (and the app) doesn't do anything except for printing "Hello, world!" We will later add more controls to this function to control app behavior.
 
-4. Construct and start a Shiny application from UI and server.
+4. Construct a Shiny application from UI and server and stores it in a variable called `app_hello`.
 
+> In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates "this computer" and 5537 is a randomly assigned port number.
 
-In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates "this computer" and 5537 is a randomly assigned port number.
+### Running a Shiny App
+Aside from the `Run App` button and the shortcut, there are many other ways to run a shiny app:
+```{r, eval = F}
+runApp(app_hello)
+runGadget(app_hello)
+runGadget(app_hello, viewer=dialogViewer("App 1"))
+print(app_hello)
+app_hello
+```
 
 ### Activity 2: Now, open the `app_ui.R` inside `ShinyApps` folder and examine what it does.{- .activity}
 First run the app as it is. Then uncomment the lines and run again and observer the changes. Can you explain the function of this app?

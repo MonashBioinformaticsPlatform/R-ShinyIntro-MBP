@@ -34,3 +34,4 @@ building-the-ui-layout-1
 using-widgets-1
 adding-some-outputs-1
 data-processing-on-the-server-side-1
+running-a-shiny-app
