@@ -44,7 +44,7 @@ biocLite("BiocUpgrade")
 ```
 
 ## Download files
-* [tutorial.R](https://monashbioinformaticsplatform.github.io/2016-11-03-r-shiny/tutorial.R)
+* [tutorial.R](https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/data-files)
 
 Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.
 

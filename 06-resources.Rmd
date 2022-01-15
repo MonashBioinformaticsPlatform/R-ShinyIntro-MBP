@@ -1,0 +1,3 @@
+# Further Reading and Examples{#resources}
+
+Let's have a look at a handy example from the [Shiny tutorial](http://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
