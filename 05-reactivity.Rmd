@@ -82,3 +82,4 @@ Now, we run the function
 server_pythagorus()
 ```
 
+## More comple examples of Shiny App:

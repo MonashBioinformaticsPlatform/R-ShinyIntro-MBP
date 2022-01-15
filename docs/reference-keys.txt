@@ -40,3 +40,4 @@ output
 resources
 reactive-expressions-save-recomputation
 challenge-3-modiify-greeting.r-to-print-the-reverse.--challenge
+more-comple-examples-of-shiny-app
