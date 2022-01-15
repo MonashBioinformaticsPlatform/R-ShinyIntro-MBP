@@ -7,6 +7,20 @@
 # different locations in the genome. Create a Shiny app to create these
 # diagrams for them.
 # 
+install.packages("DT")
+
+source("https://bioconductor.org/biocLite.R")
+biocLite(c(
+    "BSgenome.Scerevisiae.UCSC.sacCer3",
+    "TxDb.Scerevisiae.UCSC.sacCer3.sgdGene",
+    "GenomicRanges",
+    "rtracklayer",
+    "Gviz"))
+
+
+# To upgrade an old Bioconductor installation
+source("https://bioconductor.org/biocLite.R")
+biocLite("BiocUpgrade")
 
 library(GenomicRanges)
 library(Gviz)

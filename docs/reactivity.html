@@ -24,7 +24,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-01-15" />
+<meta name="date" content="2022-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -174,6 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity</a><ul>
+<li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse</a></li>
 <li class="chapter" data-level="5.1" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>5.1</b> Reactive expressions save recomputation</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>6</b> Further Reading</a></li>
@@ -198,7 +199,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="reactivity" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Reactivity</h1>
-<p>When you change the input, the output is automatically updated.</p>
+<p>In Section <a href="structure.html#structure">3</a>, we mentioned that the Shiny server logic is based on reactive programming. The server takes input from the UI, runs the code chunks defined within, generates output and sends it to the UI. When you change the input, the server re-runs the code chunks and sends the updated output to the UI.</p>
+<p>Consider the following example. The UI takes a single text input i.e. name of a person. The server concatenates the input string with “Hello” at the start and, “!” at the end and returns this string to the UI.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="reactivity.html#cb1-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
 <span id="cb1-2"><a href="reactivity.html#cb1-2"></a>  <span class="kw">textInput</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;What&#39;s your name?&quot;</span>),</span>
 <span id="cb1-3"><a href="reactivity.html#cb1-3"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;greeting&quot;</span>)</span>
@@ -209,9 +211,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-8"><a href="reactivity.html#cb1-8"></a>    <span class="kw">paste0</span>(<span class="st">&quot;Hello &quot;</span>, input<span class="op">$</span>name, <span class="st">&quot;!&quot;</span>)</span>
 <span id="cb1-9"><a href="reactivity.html#cb1-9"></a>  })</span>
 <span id="cb1-10"><a href="reactivity.html#cb1-10"></a>}</span></code></pre></div>
-<p><img src="figs/Nitika.png" />
-<img src="figs/bat.png" />
-<img src="figs/Aladdin.png" /></p>
+<p><img src="figs/Nitika.png" style="width:50.0%" />
+<img src="figs/bat.png" style="width:50.0%" />
+<img src="figs/Aladdin.png" style="width:50.0%" /></p>
+<div id="challenge-3-modify-greeting.r-to-print-the-reverse" class="section level3 unnumbered challenge">
+<h3>Challenge 3: Modify <code>greeting.R</code> to print the reverse</h3>
+<p>Open <code>ShinyApps/reactive/greeting.R</code> and edit the file to print reverse of the input name. The new app should print the following:</p>
+<ul>
+<li><p>Hello Batman!</p></li>
+<li><p>The reverse of your name is: namtaB</p></li>
+</ul>
+</div>
 <div id="reactive-expressions-save-recomputation" class="section level2">
 <h2><span class="header-section-number">5.1</span> Reactive expressions save recomputation</h2>
 <p>Example of a reactive expression</p>

@@ -50,7 +50,7 @@ app_hello <- shinyApp(ui, server) # 4. starts Shiny application
 
 Click on `Run App` in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter.
 
-![](figs/RunApp.png)
+![](figs/RunApp.png){width=100%}
 
 ### Breakdown of the code
 This is a trivial Shiny app that performs 4 tasks:

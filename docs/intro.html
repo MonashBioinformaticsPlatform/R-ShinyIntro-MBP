@@ -24,7 +24,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-01-14" />
+<meta name="date" content="2022-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,10 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#download-files"><i class="fa fa-check"></i><b>1.1</b> Download files</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.2</b> Overview</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#source-code"><i class="fa fa-check"></i><b>1.3</b> Source code</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#source-code-1"><i class="fa fa-check"></i>Source code</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#source-code"><i class="fa fa-check"></i>Source code</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#authors-and-copyright"><i class="fa fa-check"></i>Authors and copyright</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
@@ -157,12 +155,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
-<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> ui</a></li>
+<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> UI</a></li>
 <li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Widgets and layout</a><ul>
 <li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.3.1</b> Input</a></li>
+<li class="chapter" data-level="3.3.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.3.2</b> Output</a></li>
 <li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>4</b> Shiny tutorial</a><ul>
 <li class="chapter" data-level="4.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>4.1</b> Setting up a shiny app</a></li>
@@ -172,7 +173,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="tutorial.html"><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following"><i class="fa fa-check"></i>Challenge 2: Modify the app to add the following</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity</a></li>
+<li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity</a><ul>
+<li class="chapter" data-level="5.1" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>5.1</b> Reactive expressions save recomputation</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>6</b> Further Reading</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -233,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-6"><a href="intro.html#cb2-6"></a>}</span>
 <span id="cb2-7"><a href="intro.html#cb2-7"></a>app_hello &lt;-<span class="st"> </span><span class="kw">shinyApp</span>(ui, server) <span class="co"># 4. starts Shiny application</span></span></code></pre></div>
 <p>Click on <code>Run App</code> in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter.</p>
-<p><img src="figs/RunApp.png" /></p>
+<p><img src="figs/RunApp.png" style="width:100.0%" /></p>
 </div>
 <div id="breakdown-of-the-code" class="section level3">
 <h3><span class="header-section-number">2.4.1</span> Breakdown of the code</h3>

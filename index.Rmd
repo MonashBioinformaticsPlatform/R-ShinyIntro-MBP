@@ -51,11 +51,11 @@ Download these files. tutorial.R contains all the code in the “tutorial” lin
 ## Overview
 * Introduction to Shiny
 
-* Shiny structure
+* Structure of a Shiny app
 
-* Setup a basic Shiny app
+* Shiny tutorial
 
-* Tutorial: Let's make an app!
+* Reactivity
 
 ## Source code {-}
 

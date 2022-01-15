@@ -1,5 +1,7 @@
 # Reactivity{#reactivity}
-When you change the input, the output is automatically updated.
+In Section \@ref(structure), we mentioned that the Shiny server logic is based on reactive programming. The server takes input from the UI, runs the code chunks defined within, generates output and sends it to the UI. When you change the input, the server re-runs the code chunks and sends the updated output to the UI.
+
+Consider the following example. The UI takes a single text input i.e. name of a person. The server concatenates the input string with "Hello" at the start and, "!" at the end and returns this string to the UI.
 ```{r, eval =F}
 ui <- fluidPage(
   textInput("name", "What's your name?"),
@@ -12,9 +14,16 @@ server <- function(input, output, session) {
   })
 }
 ```
-![](figs/Nitika.png)
-![](figs/bat.png)
-![](figs/Aladdin.png)
+![](figs/Nitika.png){width=50%}
+![](figs/bat.png){width=50%}
+![](figs/Aladdin.png){width=50%}
+
+### Challenge 3: Modify `greeting.R` to print the reverse{- .challenge}
+Open `ShinyApps/reactive/greeting.R` and edit the file to print reverse of the input name. The new app should print the following:
+
+* Hello Batman!
+
+* The reverse of your name is: namtaB
 
 ## Reactive expressions save recomputation
 
