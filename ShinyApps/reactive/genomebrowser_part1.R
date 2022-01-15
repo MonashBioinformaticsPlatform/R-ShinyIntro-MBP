@@ -9,18 +9,14 @@
 # 
 install.packages("DT")
 
-source("https://bioconductor.org/biocLite.R")
-biocLite(c(
+install.packages("BiocManager")
+library(BiocManager)
+BiocManager::install(c(
     "BSgenome.Scerevisiae.UCSC.sacCer3",
     "TxDb.Scerevisiae.UCSC.sacCer3.sgdGene",
     "GenomicRanges",
     "rtracklayer",
     "Gviz"))
-
-
-# To upgrade an old Bioconductor installation
-source("https://bioconductor.org/biocLite.R")
-biocLite("BiocUpgrade")
 
 library(GenomicRanges)
 library(Gviz)
