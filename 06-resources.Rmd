@@ -1,3 +1,9 @@
-# Further Reading and Examples{#resources}
+# Further Reading{#resources}
 
-Let's have a look at a handy example from the [Shiny tutorial](http://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
+[Mastering Shiny by Hadley Wickham](https://mastering-shiny.org/index.html)
+
+[Shiny tutorials by R-Studio](https://shiny.rstudio.com/tutorial/)
+
+[Shiny widgets gallery](https://shiny.rstudio.com/gallery/widget-gallery.html)
+
+[Shiny written tutorials](http://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)

@@ -38,3 +38,4 @@ running-a-shiny-app
 input
 output
 resources
+reactive-expressions-save-recomputation

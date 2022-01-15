@@ -57,15 +57,13 @@ Download these files. tutorial.R contains all the code in the “tutorial” lin
 
 * Tutorial: Let's make an app!
 
-## Source code
-
-### Source code {-}
+## Source code {-}
 
 This book was created in R using the `rmarkdown` and `bookdown` packages!
 
 * [GitHub page](https://nkandhari.github.io/R-ShinyIntro-MBP/)
 
-### Authors and copyright {-}
+## Authors and copyright {-}
 
 This course is developed for the Monash Bioinformatics Platform by Nitika Kandhari, Adele Barugahare and Paul Harrison.
 

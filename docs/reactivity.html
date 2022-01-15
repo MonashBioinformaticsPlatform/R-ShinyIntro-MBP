@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="tutorial.html"/>
-
+<link rel="next" href="resources.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -140,10 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#download-files"><i class="fa fa-check"></i><b>1.1</b> Download files</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.2</b> Overview</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#source-code"><i class="fa fa-check"></i><b>1.3</b> Source code</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#source-code-1"><i class="fa fa-check"></i>Source code</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#source-code"><i class="fa fa-check"></i>Source code</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#authors-and-copyright"><i class="fa fa-check"></i>Authors and copyright</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
@@ -157,12 +155,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
-<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> ui</a></li>
+<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> UI</a></li>
 <li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Widgets and layout</a><ul>
 <li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.3.1</b> Input</a></li>
+<li class="chapter" data-level="3.3.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.3.2</b> Output</a></li>
 <li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>4</b> Shiny tutorial</a><ul>
 <li class="chapter" data-level="4.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>4.1</b> Setting up a shiny app</a></li>
@@ -172,7 +173,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="tutorial.html"><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following"><i class="fa fa-check"></i>Challenge 2: Modify the app to add the following</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity</a></li>
+<li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity</a><ul>
+<li class="chapter" data-level="5.1" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>5.1</b> Reactive expressions save recomputation</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>6</b> Further Reading</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -194,50 +198,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="reactivity" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Reactivity</h1>
-<p>This is an example of reactivity in Shiny Apps.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="reactivity.html#cb1-1"></a><span class="kw">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>)</span>
-<span id="cb1-2"><a href="reactivity.html#cb1-2"></a></span>
-<span id="cb1-3"><a href="reactivity.html#cb1-3"></a><span class="co">#Changed up the input and output IDs so that they don&#39;t conflict with the earlier app.  </span></span>
-<span id="cb1-4"><a href="reactivity.html#cb1-4"></a><span class="kw">sidebarLayout</span>(</span>
-<span id="cb1-5"><a href="reactivity.html#cb1-5"></a>  <span class="kw">sidebarPanel</span>(<span class="st">&quot;App input control panel&quot;</span>,</span>
-<span id="cb1-6"><a href="reactivity.html#cb1-6"></a>               <span class="kw">selectInput</span>(<span class="st">&quot;x_select2&quot;</span>, <span class="dt">label =</span> <span class="kw">h3</span>(<span class="st">&quot;Select x-axis&quot;</span>), </span>
-<span id="cb1-7"><a href="reactivity.html#cb1-7"></a>                           <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb1-8"><a href="reactivity.html#cb1-8"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb1-9"><a href="reactivity.html#cb1-9"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb1-10"><a href="reactivity.html#cb1-10"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb1-11"><a href="reactivity.html#cb1-11"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb1-12"><a href="reactivity.html#cb1-12"></a>                                          <span class="st">&quot;sample6&quot;</span>), </span>
-<span id="cb1-13"><a href="reactivity.html#cb1-13"></a>                           <span class="dt">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
-<span id="cb1-14"><a href="reactivity.html#cb1-14"></a>               <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;y_select2&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
-<span id="cb1-15"><a href="reactivity.html#cb1-15"></a>                           <span class="dt">choices =</span> <span class="kw">list</span>(<span class="st">&quot;Sample 1&quot;</span> =<span class="st"> &quot;sample1&quot;</span>, </span>
-<span id="cb1-16"><a href="reactivity.html#cb1-16"></a>                                          <span class="st">&quot;Sample 2&quot;</span> =<span class="st"> &quot;sample2&quot;</span>, </span>
-<span id="cb1-17"><a href="reactivity.html#cb1-17"></a>                                          <span class="st">&quot;Sample 3&quot;</span> =<span class="st"> &quot;sample3&quot;</span>,</span>
-<span id="cb1-18"><a href="reactivity.html#cb1-18"></a>                                          <span class="st">&quot;Sample 4&quot;</span> =<span class="st"> &quot;sample4&quot;</span>,</span>
-<span id="cb1-19"><a href="reactivity.html#cb1-19"></a>                                          <span class="st">&quot;Sample 5&quot;</span> =<span class="st"> &quot;sample5&quot;</span>,</span>
-<span id="cb1-20"><a href="reactivity.html#cb1-20"></a>                                          <span class="st">&quot;Sample 6&quot;</span> =<span class="st"> &quot;sample6&quot;</span>),  </span>
-<span id="cb1-21"><a href="reactivity.html#cb1-21"></a>                           <span class="dt">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
-<span id="cb1-22"><a href="reactivity.html#cb1-22"></a>  ),</span>
-<span id="cb1-23"><a href="reactivity.html#cb1-23"></a>  <span class="kw">mainPanel</span>(<span class="st">&quot;App output panel&quot;</span>,</span>
-<span id="cb1-24"><a href="reactivity.html#cb1-24"></a>            <span class="kw">plotOutput</span>(<span class="st">&quot;plot2&quot;</span>, <span class="dt">width =</span> <span class="dv">600</span>, <span class="dt">height =</span> <span class="dv">600</span>)</span>
-<span id="cb1-25"><a href="reactivity.html#cb1-25"></a>  )</span>
-<span id="cb1-26"><a href="reactivity.html#cb1-26"></a>)</span>
-<span id="cb1-27"><a href="reactivity.html#cb1-27"></a></span>
-<span id="cb1-28"><a href="reactivity.html#cb1-28"></a>output<span class="op">$</span>plot2 &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
-<span id="cb1-29"><a href="reactivity.html#cb1-29"></a>  dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb1-30"><a href="reactivity.html#cb1-30"></a>  x_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>x_select2]</span>
-<span id="cb1-31"><a href="reactivity.html#cb1-31"></a>  y_axis &lt;-<span class="st"> </span>dat[, input<span class="op">$</span>y_select2]</span>
-<span id="cb1-32"><a href="reactivity.html#cb1-32"></a>  </span>
-<span id="cb1-33"><a href="reactivity.html#cb1-33"></a>  <span class="kw">plot</span>(<span class="dt">x =</span> x_axis, <span class="dt">y =</span> y_axis)</span>
-<span id="cb1-34"><a href="reactivity.html#cb1-34"></a>})</span></code></pre></div>
+<p>When you change the input, the output is automatically updated.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="reactivity.html#cb1-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb1-2"><a href="reactivity.html#cb1-2"></a>  <span class="kw">textInput</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;What&#39;s your name?&quot;</span>),</span>
+<span id="cb1-3"><a href="reactivity.html#cb1-3"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;greeting&quot;</span>)</span>
+<span id="cb1-4"><a href="reactivity.html#cb1-4"></a>)</span>
+<span id="cb1-5"><a href="reactivity.html#cb1-5"></a></span>
+<span id="cb1-6"><a href="reactivity.html#cb1-6"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb1-7"><a href="reactivity.html#cb1-7"></a>  output<span class="op">$</span>greeting &lt;-<span class="st"> </span><span class="kw">renderText</span>({</span>
+<span id="cb1-8"><a href="reactivity.html#cb1-8"></a>    <span class="kw">paste0</span>(<span class="st">&quot;Hello &quot;</span>, input<span class="op">$</span>name, <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb1-9"><a href="reactivity.html#cb1-9"></a>  })</span>
+<span id="cb1-10"><a href="reactivity.html#cb1-10"></a>}</span></code></pre></div>
+<p><img src="figs/Nitika.png" />
+<img src="figs/bat.png" />
+<img src="figs/Aladdin.png" /></p>
+<div id="reactive-expressions-save-recomputation" class="section level2">
+<h2><span class="header-section-number">5.1</span> Reactive expressions save recomputation</h2>
+<p>Example of a reactive expression</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="reactivity.html#cb2-1"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb2-2"><a href="reactivity.html#cb2-2"></a>y &lt;-<span class="st"> </span><span class="kw">reactive</span>(input<span class="op">$</span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="reactivity.html#cb2-3"></a></span>
+<span id="cb2-4"><a href="reactivity.html#cb2-4"></a><span class="co"># or</span></span>
+<span id="cb2-5"><a href="reactivity.html#cb2-5"></a>y &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb2-6"><a href="reactivity.html#cb2-6"></a>    input<span class="op">$</span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb2-7"><a href="reactivity.html#cb2-7"></a>})</span>
+<span id="cb2-8"><a href="reactivity.html#cb2-8"></a></span>
+<span id="cb2-9"><a href="reactivity.html#cb2-9"></a><span class="co"># or</span></span>
+<span id="cb2-10"><a href="reactivity.html#cb2-10"></a>y &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb2-11"><a href="reactivity.html#cb2-11"></a>    <span class="kw">return</span>(input<span class="op">$</span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb2-12"><a href="reactivity.html#cb2-12"></a>})</span></code></pre></div>
+<p>Reactivity explained using Pythagoras calculation: We have used <code>browser()</code> calls to debug the function</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="reactivity.html#cb3-1"></a>ui_pythagorus &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb3-2"><a href="reactivity.html#cb3-2"></a>    <span class="kw">titlePanel</span>(<span class="st">&quot;Hypotenuse app&quot;</span>),</span>
+<span id="cb3-3"><a href="reactivity.html#cb3-3"></a>    <span class="kw">sliderInput</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;Length a&quot;</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">5</span>),</span>
+<span id="cb3-4"><a href="reactivity.html#cb3-4"></a>    <span class="kw">sliderInput</span>(<span class="st">&quot;b&quot;</span>, <span class="st">&quot;Length b&quot;</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">5</span>),</span>
+<span id="cb3-5"><a href="reactivity.html#cb3-5"></a>    <span class="kw">textOutput</span>(<span class="st">&quot;result&quot;</span>))</span>
+<span id="cb3-6"><a href="reactivity.html#cb3-6"></a></span>
+<span id="cb3-7"><a href="reactivity.html#cb3-7"></a>server_pythagorus &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, server) {</span>
+<span id="cb3-8"><a href="reactivity.html#cb3-8"></a>    a2 &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb3-9"><a href="reactivity.html#cb3-9"></a>        <span class="kw">cat</span>(<span class="st">&quot;Compute a squared.</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-10"><a href="reactivity.html#cb3-10"></a></span>
+<span id="cb3-11"><a href="reactivity.html#cb3-11"></a>        input<span class="op">$</span>a <span class="op">**</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb3-12"><a href="reactivity.html#cb3-12"></a>    })</span>
+<span id="cb3-13"><a href="reactivity.html#cb3-13"></a>    <span class="kw">browser</span>()</span>
+<span id="cb3-14"><a href="reactivity.html#cb3-14"></a></span>
+<span id="cb3-15"><a href="reactivity.html#cb3-15"></a>    b2 &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb3-16"><a href="reactivity.html#cb3-16"></a>        <span class="kw">cat</span>(<span class="st">&quot;Compute b squared.</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-17"><a href="reactivity.html#cb3-17"></a></span>
+<span id="cb3-18"><a href="reactivity.html#cb3-18"></a>        input<span class="op">$</span>b <span class="op">**</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb3-19"><a href="reactivity.html#cb3-19"></a>    })</span>
+<span id="cb3-20"><a href="reactivity.html#cb3-20"></a>    <span class="kw">browser</span>()</span>
+<span id="cb3-21"><a href="reactivity.html#cb3-21"></a></span>
+<span id="cb3-22"><a href="reactivity.html#cb3-22"></a>    output<span class="op">$</span>result &lt;-<span class="st"> </span><span class="kw">renderText</span>({</span>
+<span id="cb3-23"><a href="reactivity.html#cb3-23"></a>        <span class="kw">cat</span>(<span class="st">&quot;Compute hypotenuse.</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-24"><a href="reactivity.html#cb3-24"></a>        h &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">a2</span>() <span class="op">+</span><span class="st"> </span><span class="kw">b2</span>())</span>
+<span id="cb3-25"><a href="reactivity.html#cb3-25"></a>        <span class="kw">cat</span>(<span class="st">&quot;Done computing hypotenuse.</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-26"><a href="reactivity.html#cb3-26"></a></span>
+<span id="cb3-27"><a href="reactivity.html#cb3-27"></a>        <span class="kw">paste0</span>(<span class="st">&quot;The hypotenuse is &quot;</span>, h)</span>
+<span id="cb3-28"><a href="reactivity.html#cb3-28"></a>    })</span>
+<span id="cb3-29"><a href="reactivity.html#cb3-29"></a>    <span class="kw">browser</span>()</span>
+<span id="cb3-30"><a href="reactivity.html#cb3-30"></a>}</span></code></pre></div>
+<p>Now, we run the function</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="reactivity.html#cb4-1"></a><span class="kw">server_pythagorus</span>()</span></code></pre></div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="tutorial.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="tutorial.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

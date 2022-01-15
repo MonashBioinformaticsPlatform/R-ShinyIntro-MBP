@@ -1,41 +1,24 @@
-# Reactivity{#reactivity}
-When you change the input, the output is automatically updated.
-```{r, eval =F}
-ui <- fluidPage(
-  textInput("name", "What's your name?"),
-  textOutput("greeting")
-)
+## ========================================
+## Reactive expressions save re-computation
+## ========================================
 
-server <- function(input, output, session) {
-  output$greeting <- renderText({
-    paste0("Hello ", input$name, "!")
-  })
-}
-```
-![](figs/Nitika.png)
-![](figs/bat.png)
-![](figs/Aladdin.png)
-
-## Reactive expressions save recomputation
-
-Example of a reactive expression
-```{r, echo = T, eval =F}
-library(shiny)
+# Example of a reactive expression
 y <- reactive(input$x + 1)
+y
 
-# or
+#or
 y <- reactive({
     input$x + 1
 })
+y
 
-# or
+#or
 y <- reactive({
     return(input$x + 1)
 })
-```
+y
 
-Reactivity explained using Pythagoras calculation: We have used `browser()` calls to debug the function
-```{r, eval = F}
+# Pythagoras example
 ui_pythagorus <- fluidPage(
     titlePanel("Hypotenuse app"),
     sliderInput("a", "Length a", 0, 10, 5),
@@ -45,31 +28,28 @@ ui_pythagorus <- fluidPage(
 server_pythagorus <- function(input, output, server) {
     a2 <- reactive({
         cat("Compute a squared.\n")
-
+        
         input$a ** 2
     })
     browser()
-
+    
     b2 <- reactive({
         cat("Compute b squared.\n")
-
+        
         input$b ** 2
     })
     browser()
-
+    
     output$result <- renderText({
         cat("Compute hypotenuse.\n")
         h <- sqrt(a2() + b2())
         cat("Done computing hypotenuse.\n")
-
         paste0("The hypotenuse is ", h)
     })
     browser()
 }
-```
 
-Now, we run the function
-```{r, eval = F}
+# shinyApp(ui_pythagorus, server_pythagorus)
 server_pythagorus()
-```
 
+          
