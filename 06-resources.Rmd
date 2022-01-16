@@ -7,3 +7,5 @@
 [Shiny widgets gallery](https://shiny.rstudio.com/gallery/widget-gallery.html)
 
 [Shiny written tutorials](http://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
+
+[Shiny dashboards](https://rstudio.github.io/shinydashboard/index.html)
