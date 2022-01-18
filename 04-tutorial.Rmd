@@ -463,7 +463,7 @@ shinyApp(ui = ui, server = server)
 
 Congratulations! You've made your first app! 
 
-### Activity 4: Modily x- and y-axes labes{- .activity}
+### Activity 4: Modily x- and y-axes labels{- .activity}
 Can you figure out how to change the axis titles to the name of the selected sample. One of `selectInput` widgets also need to be changed to a named list. Other than that, you're good to go.
 
 > Hint:
