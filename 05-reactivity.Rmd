@@ -83,3 +83,7 @@ server_pythagorus()
 ```
 
 ## More complex examples of Shiny App:
+
+* Modules in shiny? Multiple widgets doing very similar things, also when variable names get too our of hand
+
+* [Rstudio Shiny Gallery](https://shiny.rstudio.com/gallery/#user-showcase)
