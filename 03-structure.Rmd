@@ -26,7 +26,10 @@ shinyApp(ui, server) # runs the app
 ```
 
 ## UI 
-This is the front-end of the shiny app that allows you to capture (input) and display (output) a variety of data types. The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. Here, we'll look at examples of shinyWidgets that insert input conntrols.
+
+This is the front-end of the shiny app that allows you to capture (input) and display (output) a variety of data types. Fundamentally the UI is an HTML document with shiny functions returning chunks of HTML code. 
+
+The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. Here, we'll look at examples of shinyWidgets that insert input controls.
 
 ```{r widget1, echo = T}
 library(shiny)
@@ -35,7 +38,7 @@ sliderInput("slider1",
             min = 0, max = 100, value = 50)
 ```
 
-```{r, echo= T, eval = F}
+```{r, echo= T, eval = T}
 renderPrint({paste("The number selected by the slider is:", input$slider1)})
 ```
 
@@ -55,9 +58,57 @@ fluidPage(
 
 
 ```
+The [shiny gallery](https://shiny.rstudio.com/gallery/#demos) has a section for application layouts. This is a useful of resource for ideas on how to structure the appearance of your app.
 
-## Widgets and layout
+To see what widgets are available, look at the [Shiny widget gallery.](http://shiny.rstudio.com/gallery/widget-gallery.html) or consult the [Shiny cheatsheet](http://shiny.rstudio.com/images/shiny-cheatsheet.pdf).
+
+## Layout
+
+The complexity of your application may have an impact on the complexity of your layout. For instance, an application that contains only one or two widgets and one or two outputs may only need one page to fit all these elements. If however there are lot of controls and results to display it might be easier to organize these under tabs or a navbar.
+
+A layout with three panels: a title panel, a sidebar panel and a main panel.
+```{r,eval=FALSE}
+ui <- fluidPage( # fluidPage - this function creates a display that auto adjusts to the browser window
+  # further elements set to define the appearance will be placed within fluidPage
+  titlePanel("this is a title panel"),
+  
+  sidebarLayout( # this function creates a layout with two panels, one panel takes about a third of the screen width, the other panel takes about two thirds of the screen width.
+    # the position of the sidebar can be moved by providing the `position = "right" argument to the sidebarLayout function
+    sidebarPanel("this is the sidebar panel"),
+    mainPanel("this is the main panel")
+  )
+)
+```
+
+Building a UI involves nesting a lot of components inside each other. From this example here we can see that `sidebarPanel` and `mainPanel` are nested within `sidebarLayout`. `sidebarLayout` itself is also nested within `fluidPage`. as more components are added to the app, e.g widgets and outputs, they too will be nested within the panel functions to control their location on the layout.
+
+The above layout is probably the most common layout used with shiny apps. It's good for a app with only a few number of components. You may want to add navbar and tab sets if you have a large number of components.
+
+
+```{r}
+ui <- fluidPage( 
+  titlePanel("this is a title panel"),
+  
+  sidebarLayout( 
+    sidebarPanel("this is the sidebar panel"),
+    mainPanel( 
+      tabsetPanel( # this function takes an argument of `position = "left"` (arguments can be "left", "right", "below". default is above)
+        # this argument directs where th1e tabs are positioned
+        tabPanel("plot results"),
+        tabPanel("table results"),
+        tabPanel("fun gifs")
+      )
+    )
+  )
+)
+```
+
+For more information about the application layout (including nav bars and lists), we recommend this [resource](https://shiny.rstudio.com/articles/layout-guide.html). For more information about tab sets specifically, we recommend this [article](https://shiny.rstudio.com/articles/tabsets.html).
+
+## Widgets
+
 There is a wide variety of available widgets but all of them share a common basic framework. All widget input functions have the same first argument i.e. `inputID`. This is an identifier that connects the UI with the server. If `inputID = select`, you can access the input in the server as `input$select`. We'll discuss more about the server in the next section.
+
 
 * The `inputID` is like a variable in R and must follow the naming convention. It must be a string that may contain only letters, numbers, and underscores.
 
@@ -179,3 +230,6 @@ shinyApp(ui, server)
 ```
 
 
+### Session
+
+Typically, we don't alter the session object as its default behavior is adequate for most needs. The session object is an environment that can be used to access information and functionality relating to the session. For more information, [check the documentation here](https://shiny.rstudio.com/reference/shiny/latest/session.html)
