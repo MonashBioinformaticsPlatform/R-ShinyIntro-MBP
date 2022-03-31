@@ -27,7 +27,7 @@ shinyApp(ui, server) # runs the app
 
 ## UI 
 
-This is the front-end of the shiny app that allows you to capture (input) and display (output) a variety of data types. Fundamentally the UI is an HTML document with shiny functions returning chunks of HTML code. 
+This is the front-end of the shiny app that allows you to capture (input) and display (output) a variety of data types. Fundamentally the UI is an HTML document with shiny functions returning chunks of HTML code. Fortunately, we don't have to write the HTML code directly ourselves, Shiny has R functions that do that instead.
 
 The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. Here, we'll look at examples of shinyWidgets that insert input controls.
 
@@ -58,9 +58,11 @@ fluidPage(
 
 
 ```
+
 The [shiny gallery](https://shiny.rstudio.com/gallery/#demos) has a section for application layouts. This is a useful of resource for ideas on how to structure the appearance of your app.
 
 To see what widgets are available, look at the [Shiny widget gallery.](http://shiny.rstudio.com/gallery/widget-gallery.html) or consult the [Shiny cheatsheet](http://shiny.rstudio.com/images/shiny-cheatsheet.pdf).
+
 ## Layout
 
 The complexity of your application may have an impact on the complexity of your layout. For instance, an application that contains only one or two widgets and one or two outputs may only need one page to fit all these elements. If however there are lot of controls and results to display it might be easier to organize these under tabs or a navbar.
@@ -141,6 +143,7 @@ shinyUI(navbarPage("Navbar",
 )
 
 ```
+The `choices` augment takes a list. This list can either be unnamed or named. In the case of a named list, such as the one above for the `checkboxGroupInput` widget, the names will be displayed on the UI (e.g "Choice 1") while the value (e.g 1) will be passed to the server side to be use1d for further computations. For an unnamed list, the value will both be displayed on the UI and passed to the server side.
 
 ### Activity 3: Now, open the `widgets.R` inside `ShinyApps` folder, and try running it.{- .activity}
 There are a variety of widgets available in Shiny Apps. Have a go at them!!
@@ -169,7 +172,8 @@ shinyApp(ui, server)
 ```
 
 ### Input
-This is a list-like object that contains input data from the UI. The input data can be accessed as `input$inputId`, where `inputId` is defined in the UI. For example, if we refer back to the check-box example in shiny widgets, we specified the `inputId` as `checkGroup`. We can access the value of the input using `input$checkGroup`. It will contain the value `1` as we specified this in the `selected` argument. This value will be updated everytime a user selects a different check-box.
+This is a list-like object that contains all input data from the UI. The input data can be accessed as `input$inputId`, where `inputId` is defined in the UI for any given widget. For example, if we refer back to the check-box example in shiny widgets, we specified the `inputId` as `checkGroup`. We can access the value of that specific input using `input$checkGroup`. It will contain the value `1` as we specified this in the `selected` argument. This value will be updated everytime a user selects a different check-box.
+
 
 ```{r, eval = F}
 ui <-  fluidPage(
@@ -184,7 +188,9 @@ ui <-  fluidPage(
 ```
 
 ### Output
-This is also a list-like object named according to the `outputId` created in the UI. In the following example, the `outputId` is defined as `greeting` inside the UI. Inside the server function, the output is stored in the `outputId` using `output$greeting` (think of it as a storing a value inside a variable). The value of the `greeting` is `Hello, World!`
+This is also a list-like object named according to the `outputId` arguments created in the UI. In the following example, the `outputId` for the `textOutput` is defined as `greeting` inside the UI. Inside the server function, the output is stored in the `outputId` using `output$greeting` (think of it as a storing a value inside a variable). Alternatively, think of it as a way to direct the results of a computation on the server side to a specific `outputID`. 
+
+The value of the `greeting` is `Hello, World!` 
 
 ```{r, eval = F}
 ui <- fluidPage(
