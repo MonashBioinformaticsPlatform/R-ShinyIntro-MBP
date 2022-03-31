@@ -509,11 +509,9 @@ output$plot3 <- renderPlot({
 
 5. You'll need to direct the result of a `renderTable` function to the new output.
 
-6. For an ever further challenge, create a reactive function and pass the reactive variable to the two `render` functions. Read the csv file only once in the application
-
 > Hint:
 > The table that is displayed is a subset of the full csv. It shows only the two currently selected columns. Remember that a dataframe can be subsetted to show only certain columns using `x[, c(column_a, column_c, column_z)]`
 >
 > Inside the `renderTable` call, you'll need a function that shows you the top of a table. The `head` function is ideal for this. If you aren't familiar with how head works, check the help manual for `head` with `?head` to see the arguements it takes.
 
-An important thing to note is that only one thing is returned from inside a render function (usually the last line inside that function). Therefore a variable, such as `dat` created inside the `renderPlot` **will not exist** outside that `renderPlot` function. You'll need to read the csv of data back in again in the `renderTable` function.
+An important thing to note is that only one thing is returned from inside a render function (usually the last line inside that function). Therefore a variable, such as `dat` created inside the `renderPlot` **will not exist** outside that `renderPlot` function. You'll need to read the csv of data back in again in the `renderTable` function. For an ever further challenge, create a reactive function and pass the reactive variable to the two `render` functions. Read the csv file only once in the application

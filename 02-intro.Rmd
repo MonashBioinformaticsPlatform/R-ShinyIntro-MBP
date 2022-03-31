@@ -62,7 +62,7 @@ This is a trivial Shiny app that performs 4 tasks:
 3. Creates a function called server that specifies app behavior. Currently, the function body is empty. It means this function (and the app) doesn't do anything except for printing "Hello, world!" We will later add more controls to this function to control app behavior.
 
 4. Construct a Shiny application from UI and server and stores it in a variable called `app_hello`.
-
+12
 > In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates "this computer" and 5537 is a randomly assigned port number.
 
 ### Running a Shiny App
