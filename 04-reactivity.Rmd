@@ -123,7 +123,7 @@ shinyApp(ui, server)
 ```
 
 Here an example with a `reactive` function:
-*
+
 ```{r, eval =FALSE}
 library(shiny)
 data("airquality")
