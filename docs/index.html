@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to R Shiny</title>
+  <title>Test</title>
   <meta name="description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to R Shiny" />
+  <meta property="og:title" content="Test" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   <meta name="github-repo" content="nkandhari/R-shiny-MBP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to R Shiny" />
+  <meta name="twitter:title" content="Test" />
   
   <meta name="twitter:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-01-16" />
+<meta name="date" content="2022-03-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,24 +49,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,46 +136,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Intro to R Shiny</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#download-files"><i class="fa fa-check"></i><b>1.1</b> Download files</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.2</b> Overview</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#source-code"><i class="fa fa-check"></i>Source code</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#authors-and-copyright"><i class="fa fa-check"></i>Authors and copyright</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#download-files"><i class="fa fa-check"></i><b>1.1</b> Download files<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.2</b> Overview<span></span></a></li>
+<li><a href="index.html#source-code">Source code<span></span></a></li>
+<li><a href="index.html#authors-and-copyright">Authors and copyright<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App</a><ul>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world"><i class="fa fa-check"></i>Activity 1: Creating a ShinyApp that prints “Hello, World!”</a></li>
-<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#breakdown-of-the-code"><i class="fa fa-check"></i><b>2.4.1</b> Breakdown of the code</a></li>
-<li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#running-a-shiny-app"><i class="fa fa-check"></i><b>2.4.2</b> Running a Shiny App</a></li>
-<li><a href="intro.html#activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does.">Activity 2: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does.</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a><ul>
-<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> UI</a></li>
-<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Widgets and layout</a><ul>
-<li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.3.1</b> Input</a></li>
-<li class="chapter" data-level="3.3.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.3.2</b> Output</a></li>
-<li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App<span></span></a>
+<ul>
+<li><a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world">Activity 1: Creating a ShinyApp that prints “Hello, World!”<span></span></a></li>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#breakdown-of-the-code"><i class="fa fa-check"></i><b>2.4.1</b> Breakdown of the code<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#running-a-shiny-app"><i class="fa fa-check"></i><b>2.4.2</b> Running a Shiny App<span></span></a></li>
+<li><a href="intro.html#activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does.">Activity 2: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does.<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>4</b> Shiny tutorial</a><ul>
-<li class="chapter" data-level="4.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>4.1</b> Setting up a shiny app</a></li>
-<li class="chapter" data-level="4.2" data-path="tutorial.html"><a href="tutorial.html#building-the-ui-layout"><i class="fa fa-check"></i><b>4.2</b> Building the UI layout</a></li>
-<li class="chapter" data-level="4.3" data-path="tutorial.html"><a href="tutorial.html#data-processing-on-the-server-side"><i class="fa fa-check"></i><b>4.3</b> Data processing on the server side</a><ul>
-<li class="chapter" data-level="" data-path="tutorial.html"><a href="tutorial.html#activity-4-modily-x--and-y-axes-labes"><i class="fa fa-check"></i>Activity 4: Modily x- and y-axes labes</a></li>
-<li class="chapter" data-level="" data-path="tutorial.html"><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following"><i class="fa fa-check"></i>Challenge 2: Modify the app to add the following</a></li>
+<li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> UI<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Widgets and layout<span></span></a>
+<ul>
+<li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server<span></span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.3.1</b> Input<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.3.2</b> Output<span></span></a></li>
+<li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity</a><ul>
-<li class="chapter" data-level="5.1" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>5.1</b> Reactive expressions save recomputation</a></li>
+<li class="chapter" data-level="4" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>4</b> Shiny tutorial<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>4.1</b> Setting up a shiny app<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="tutorial.html"><a href="tutorial.html#building-the-ui-layout"><i class="fa fa-check"></i><b>4.2</b> Building the UI layout<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="tutorial.html"><a href="tutorial.html#data-processing-on-the-server-side"><i class="fa fa-check"></i><b>4.3</b> Data processing on the server side<span></span></a>
+<ul>
+<li><a href="tutorial.html#activity-4-modily-x--and-y-axes-labels">Activity 4: Modily x- and y-axes labels<span></span></a></li>
+<li><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following">Challenge 2: Modify the app to add the following<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>6</b> Further Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity<span></span></a>
+<ul>
+<li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse<span></span></a></li>
+<li class="chapter" data-level="5.1" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>5.1</b> Reactive expressions save recomputation<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="reactivity.html"><a href="reactivity.html#more-complex-examples-of-shiny-app"><i class="fa fa-check"></i><b>5.2</b> More complex examples of Shiny App:<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dashboards.html"><a href="dashboards.html"><i class="fa fa-check"></i><b>6</b> Shiny Dashboards<span></span></a></li>
+<li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="resources.html"><a href="resources.html#shiny-dashboard"><i class="fa fa-check"></i><b>7.1</b> Shiny dashboard<span></span></a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -188,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to R Shiny</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Test</a>
           </h1>
         </div>
 
@@ -197,39 +211,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Introduction to R Shiny</h1>
+<h1 class="title">Test</h1>
 <p class="author"><em>Nitika K., Adele B., Paul F. H.</em></p>
-<p class="date"><em>2022-01-16</em></p>
+<p class="date"><em>2022-03-28</em></p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
+<div id="prerequisites" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Prerequisites<a href="index.html#prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Before the tutorial please install R and RStudio,</p>
 <p><a href="https://cran.rstudio.com/">Download R</a></p>
 <p><a href="https://www.rstudio.com/products/rstudio/download/">Download RStudio</a></p>
 <p>Then install packages from CRAN and Bioconductor with the following R code:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span>
-<span id="cb2-2"><a href="index.html#cb2-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
-<span id="cb2-3"><a href="index.html#cb2-3"></a></span>
-<span id="cb2-4"><a href="index.html#cb2-4"></a><span class="kw">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
-<span id="cb2-5"><a href="index.html#cb2-5"></a><span class="kw">biocLite</span>(<span class="kw">c</span>(</span>
-<span id="cb2-6"><a href="index.html#cb2-6"></a>    <span class="st">&quot;BSgenome.Scerevisiae.UCSC.sacCer3&quot;</span>,</span>
-<span id="cb2-7"><a href="index.html#cb2-7"></a>    <span class="st">&quot;TxDb.Scerevisiae.UCSC.sacCer3.sgdGene&quot;</span>,</span>
-<span id="cb2-8"><a href="index.html#cb2-8"></a>    <span class="st">&quot;GenomicRanges&quot;</span>,</span>
-<span id="cb2-9"><a href="index.html#cb2-9"></a>    <span class="st">&quot;rtracklayer&quot;</span>,</span>
-<span id="cb2-10"><a href="index.html#cb2-10"></a>    <span class="st">&quot;Gviz&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span>
+<span id="cb2-2"><a href="index.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
+<span id="cb2-3"><a href="index.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="index.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
+<span id="cb2-5"><a href="index.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">biocLite</span>(<span class="fu">c</span>(</span>
+<span id="cb2-6"><a href="index.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;BSgenome.Scerevisiae.UCSC.sacCer3&quot;</span>,</span>
+<span id="cb2-7"><a href="index.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;TxDb.Scerevisiae.UCSC.sacCer3.sgdGene&quot;</span>,</span>
+<span id="cb2-8"><a href="index.html#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;GenomicRanges&quot;</span>,</span>
+<span id="cb2-9"><a href="index.html#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;rtracklayer&quot;</span>,</span>
+<span id="cb2-10"><a href="index.html#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Gviz&quot;</span>))</span></code></pre></div>
 <p>Make sure you are running R 3.3 and Bioconductor 3.3, or higher.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1"></a><span class="co"># To upgrade an old Bioconductor installation</span></span>
-<span id="cb3-2"><a href="index.html#cb3-2"></a><span class="kw">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
-<span id="cb3-3"><a href="index.html#cb3-3"></a><span class="kw">biocLite</span>(<span class="st">&quot;BiocUpgrade&quot;</span>)</span></code></pre></div>
-<div id="download-files" class="section level2">
-<h2><span class="header-section-number">1.1</span> Download files</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To upgrade an old Bioconductor installation</span></span>
+<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
+<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">biocLite</span>(<span class="st">&quot;BiocUpgrade&quot;</span>)</span></code></pre></div>
+<div id="download-files" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Download files<a href="index.html#download-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><a href="https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/data-files">tutorial.R</a></li>
 </ul>
 <p>Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.</p>
 </div>
-<div id="overview" class="section level2">
-<h2><span class="header-section-number">1.2</span> Overview</h2>
+<div id="overview" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Overview<a href="index.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Introduction to Shiny</p></li>
 <li><p>Structure of a Shiny app</p></li>
@@ -237,17 +251,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Reactivity</p></li>
 </ul>
 </div>
-<div id="source-code" class="section level2 unnumbered">
-<h2>Source code</h2>
+<div id="source-code" class="section level2 unnumbered hasAnchor">
+<h2>Source code<a href="index.html#source-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This book was created in R using the <code>rmarkdown</code> and <code>bookdown</code> packages!</p>
 <ul>
 <li><a href="https://nkandhari.github.io/R-ShinyIntro-MBP/">GitHub page</a></li>
 </ul>
 </div>
-<div id="authors-and-copyright" class="section level2 unnumbered">
-<h2>Authors and copyright</h2>
+<div id="authors-and-copyright" class="section level2 unnumbered hasAnchor">
+<h2>Authors and copyright<a href="index.html#authors-and-copyright" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This course is developed for the Monash Bioinformatics Platform by Nitika Kandhari, Adele Barugahare and Paul Harrison.</p>
-<p><img src="figs/CC-BY.png" width="44" /></p>
+<p><img src="figs/CC-BY.png" /><!-- --></p>
 <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY-4: Creative Commons Attribution 4.0 International License</a>. The attribution is “Monash Bioinformatics Platform” if copying or modifying these notes.</p>
 
 </div>

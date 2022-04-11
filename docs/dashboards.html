@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Further Reading | Introduction to R Shiny</title>
+  <title>Chapter 6 Shiny Dashboards | Introduction to R Shiny</title>
   <meta name="description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Further Reading | Introduction to R Shiny" />
+  <meta property="og:title" content="Chapter 6 Shiny Dashboards | Introduction to R Shiny" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="nkandhari/R-shiny-MBP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Further Reading | Introduction to R Shiny" />
+  <meta name="twitter:title" content="Chapter 6 Shiny Dashboards | Introduction to R Shiny" />
   
   <meta name="twitter:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-01-19" />
+<meta name="date" content="2022-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="dashboards.html"/>
-
+<link rel="prev" href="reactivity.html"/>
+<link rel="next" href="resources.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -115,7 +179,9 @@
 <li class="chapter" data-level="5.2" data-path="reactivity.html"><a href="reactivity.html#more-complex-examples-of-shiny-app"><i class="fa fa-check"></i><b>5.2</b> More complex examples of Shiny App:</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="dashboards.html"><a href="dashboards.html"><i class="fa fa-check"></i><b>6</b> Shiny Dashboards</a></li>
-<li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading</a></li>
+<li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading</a><ul>
+<li class="chapter" data-level="7.1" data-path="resources.html"><a href="resources.html#shiny-dashboard"><i class="fa fa-check"></i><b>7.1</b> Shiny dashboard</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -135,13 +201,12 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="resources" class="section level1">
-<h1><span class="header-section-number">Chapter 7</span> Further Reading</h1>
-<p><a href="https://mastering-shiny.org/index.html">Mastering Shiny by Hadley Wickham</a></p>
-<p><a href="https://shiny.rstudio.com/tutorial/">Shiny tutorials by R-Studio</a></p>
-<p><a href="https://shiny.rstudio.com/gallery/widget-gallery.html">Shiny widgets gallery</a></p>
-<p><a href="http://shiny.rstudio.com/tutorial/written-tutorial/lesson1/">Shiny written tutorials</a></p>
-<p><a href="https://rstudio.github.io/shinydashboard/index.html">Shiny dashboards</a></p>
+<div id="dashboards" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Shiny Dashboards</h1>
+<p>Shiny dashboards are a combination of R flexdashboards and R Shiny. To use shiny dashboards, you will first need to install felxdashboard package</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="dashboards.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;flexdashboard&quot;</span>)</span>
+<span id="cb1-2"><a href="dashboards.html#cb1-2"></a><span class="kw">library</span>(flexdashboard)</span></code></pre></div>
+<p>The YAML header for shiny dashbaords looks something like the following:</p>
 
 </div>
             </section>
@@ -149,8 +214,8 @@
           </div>
         </div>
       </div>
-<a href="dashboards.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="reactivity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -181,7 +246,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/07-resources.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/06-dashboards.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -189,7 +254,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/07-resources.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/06-dashboards.Rmd",
 "text": null
 },
 "download": null,
