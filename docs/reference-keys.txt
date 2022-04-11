@@ -16,7 +16,6 @@ widgets
 server
 input
 output
-session
 reactivity
 overview-of-reactivity
 reactive-expressions-save-recomputation

@@ -23,7 +23,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-03-31" />
+<meta name="date" content="2022-04-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -183,7 +183,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.4.1</b> Input<span></span></a></li>
 <li class="chapter" data-level="3.4.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.4.2</b> Output<span></span></a></li>
 <li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:<span></span></a></li>
-<li class="chapter" data-level="3.4.3" data-path="structure.html"><a href="structure.html#session"><i class="fa fa-check"></i><b>3.4.3</b> Session<span></span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>4</b> Reactivity<span></span></a>
@@ -265,7 +264,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <input class="js-range-slider" id="slider1" data-skin="shiny" data-min="0" data-max="100" data-from="50" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
 </div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="structure.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">renderPrint</span>({<span class="fu">paste</span>(<span class="st">&quot;The number selected by the slider is:&quot;</span>, input<span class="sc">$</span>slider1)})</span></code></pre></div>
-<p><pre class="shiny-text-output noplaceholder" id="out977f5b013a8d5ace"></pre></p>
+<p><pre class="shiny-text-output noplaceholder" id="out8f4e32fe171b8ac0"></pre></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="structure.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fluidPage</span>(</span>
 <span id="cb10-2"><a href="structure.html#cb10-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb10-3"><a href="structure.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Copy the chunk below to make a group of checkboxes</span></span>
@@ -365,19 +364,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="navbar-header">
 <span class="navbar-brand">Navbar</span>
 </div>
-<ul class="nav navbar-nav" data-tabsetid="9926">
+<ul class="nav navbar-nav" data-tabsetid="2238">
 <li class="active">
-<a href="structure.html#tab-9926-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
+<a href="structure.html#tab-2238-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
 </li>
 <li>
-<a href="structure.html#tab-9926-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
+<a href="structure.html#tab-2238-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
 </li>
 </ul>
 </div>
 </nav>
 <div class="container-fluid">
-<div class="tab-content" data-tabsetid="9926">
-<div class="tab-pane active" data-value="Widgets!" id="tab-9926-1">
+<div class="tab-content" data-tabsetid="2238">
+<div class="tab-pane active" data-value="Widgets!" id="tab-2238-1">
 <div class="form-group shiny-input-container">
 <label class="control-label" id="select-label" for="select">
 <h3>Select box</h3>
@@ -389,16 +388,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script type="application/json" data-for="select" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="outd8289f92b9aa377d"></pre>
+<pre class="shiny-text-output noplaceholder" id="out4dd0acf9e45b3d9a"></pre>
 <div class="form-group shiny-input-container">
 <label class="control-label" id="text-label" for="text">
 <h3>Text input</h3>
 </label>
 <input id="text" type="text" class="form-control" value="Enter text..."/>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out9bdad2a8486b351d"></pre>
+<pre class="shiny-text-output noplaceholder" id="out2aac3a0867fc3980"></pre>
 </div>
-<div class="tab-pane" data-value="More widgets!" id="tab-9926-2">
+<div class="tab-pane" data-value="More widgets!" id="tab-2238-2">
 <div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
 <label class="control-label" id="checkGroup-label" for="checkGroup">
 <h3>Checkbox group</h3>
@@ -424,7 +423,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="outc7be949e045deb40"></pre>
+<pre class="shiny-text-output noplaceholder" id="outc22710781eb0e90d"></pre>
 </div>
 </div>
 </div>
@@ -509,10 +508,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-9"><a href="structure.html#cb16-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb16-10"><a href="structure.html#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-11"><a href="structure.html#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code></pre></div>
-</div>
-<div id="session" class="section level3 hasAnchor" number="3.4.3">
-<h3><span class="header-section-number">3.4.3</span> Session<a href="structure.html#session" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Typically, we don’t alter the session object as its default behavior is adequate for most needs. The session object is an environment that can be used to access information and functionality relating to the session. For more information, <a href="https://shiny.rstudio.com/reference/shiny/latest/session.html">check the documentation here</a></p>
 
 </div>
 </div>

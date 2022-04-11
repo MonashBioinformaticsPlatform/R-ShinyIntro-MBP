@@ -240,7 +240,3 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
-
-### Session
-
-Typically, we don't alter the session object as its default behavior is adequate for most needs. The session object is an environment that can be used to access information and functionality relating to the session. For more information, [check the documentation here](https://shiny.rstudio.com/reference/shiny/latest/session.html)
