@@ -95,7 +95,7 @@ Therefore for a more efficient solution, the calculation could performed in the 
 
 Here is an example without a `reactive` function, somewhat contrived:
 
-```{r}
+```{r, eval = FALSE}
 library(shiny)
 data("airquality")
 
@@ -123,8 +123,8 @@ shinyApp(ui, server)
 ```
 
 Here an example with a `reactive` function:
-
-```{r}
+*
+```{r, eval =FALSE}
 library(shiny)
 data("airquality")
 
