@@ -26,8 +26,9 @@ Open `ShinyApps/reactive/greeting.R` and edit the file to print reverse of the i
 * The reverse of your name is: namtaB
 
 ## Reactive expressions save recomputation
+Reactive expressions allow us to control which parts of the shiny app to re-compute and update, thus, prevents unnecessary computation. These expressions use the input value from a widget and return an output value and are updated automatically when the input widget changes.
 
-Example of a reactive expression
+Here are three ways of defining reactive expressions for the same computation. In these
 ```{r, echo = T, eval =F}
 library(shiny)
 y <- reactive(input$x + 1)
@@ -43,7 +44,9 @@ y <- reactive({
 })
 ```
 
-Reactivity explained using Pythagoras calculation: We have used `browser()` calls to debug the function
+Reactive expressions use cache memory i.e. saves its result the first time you run it. When loaded again, it returns the output value from the last computation.
+
+Here's another example of reactivity explained using Pythagoras calculation. We have used `browser()` calls to understand the function. It creates a pause in the execution of the current expression inside a function and allows access to the R interpreter.
 ```{r, eval = F}
 ui_pythagorus <- fluidPage(
     titlePanel("Hypotenuse app"),
@@ -57,14 +60,14 @@ server_pythagorus <- function(input, output, server) {
 
         input$a ** 2
     })
-    browser()
+    browser() # browser 1
 
     b2 <- reactive({
         cat("Compute b squared.\n")
 
         input$b ** 2
     })
-    browser()
+    browser() # browser 2
 
     output$result <- renderText({
         cat("Compute hypotenuse.\n")
@@ -73,7 +76,7 @@ server_pythagorus <- function(input, output, server) {
 
         paste0("The hypotenuse is ", h)
     })
-    browser()
+    browser() # browser 3
 }
 ```
 
@@ -83,3 +86,7 @@ server_pythagorus()
 ```
 
 ## More complex examples of Shiny App:
+
+* Modules in shiny? Multiple widgets doing very similar things, also when variable names get too our of hand
+
+* [Rstudio Shiny Gallery](https://shiny.rstudio.com/gallery/#user-showcase)

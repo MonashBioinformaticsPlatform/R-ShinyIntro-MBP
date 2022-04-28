@@ -46,6 +46,8 @@ biocLite("BiocUpgrade")
 ## Download files
 * [tutorial.R](https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/data-files)
 
+* [ShinyApps.zip](https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/ShinyApps.zip) # to be created 
+
 Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.
 
 ## Overview

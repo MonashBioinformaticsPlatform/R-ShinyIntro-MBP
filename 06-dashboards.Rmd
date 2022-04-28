@@ -1,0 +1,13 @@
+# Shiny Dashboards{#dashboards}
+Shiny dashboards are a combination of R flexdashboards and R Shiny. To use shiny dashboards, you will first need to install felxdashboard package
+
+```{r, eval = F}
+install.packages("flexdashboard")
+library(flexdashboard)
+```
+
+The YAML header for shiny dashbaords looks something like the following:
+
+
+
+
