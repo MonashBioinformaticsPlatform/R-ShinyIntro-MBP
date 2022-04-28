@@ -23,7 +23,9 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-03-28" />
+
+<meta name="date" content="2022-04-11" />
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +54,18 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="shared/strftime/strftime-min.js"></script>
+<link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.4.1/accessibility/js/bootstrap-accessibility.min.js"></script>
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="shared/selectize/js/selectize.min.js"></script>
+<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
+
 
 
 <style type="text/css">
@@ -154,43 +168,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#breakdown-of-the-code"><i class="fa fa-check"></i><b>2.4.1</b> Breakdown of the code<span></span></a></li>
 <li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#running-a-shiny-app"><i class="fa fa-check"></i><b>2.4.2</b> Running a Shiny App<span></span></a></li>
 <li><a href="intro.html#activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does.">Activity 2: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does.<span></span></a></li>
+
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App<span></span></a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> UI<span></span></a></li>
-<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#widgets-and-layout"><i class="fa fa-check"></i><b>3.2</b> Widgets and layout<span></span></a>
+<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#layout"><i class="fa fa-check"></i><b>3.2</b> Layout<span></span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="structure.html"><a href="structure.html#challenge-0---.activity."><i class="fa fa-check"></i><b>3.2.1</b> Challenge 0 {- .activity}.<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#widgets"><i class="fa fa-check"></i><b>3.3</b> Widgets<span></span></a>
 <ul>
 <li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.3</b> Server<span></span></a>
+<li class="chapter" data-level="3.4" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.4</b> Server<span></span></a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.3.1</b> Input<span></span></a></li>
-<li class="chapter" data-level="3.3.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.3.2</b> Output<span></span></a></li>
+<li class="chapter" data-level="3.4.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.4.1</b> Input<span></span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.4.2</b> Output<span></span></a></li>
 <li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>4</b> Shiny tutorial<span></span></a>
+<li class="chapter" data-level="4" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>4</b> Reactivity<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>4.1</b> Setting up a shiny app<span></span></a></li>
-<li class="chapter" data-level="4.2" data-path="tutorial.html"><a href="tutorial.html#building-the-ui-layout"><i class="fa fa-check"></i><b>4.2</b> Building the UI layout<span></span></a></li>
-<li class="chapter" data-level="4.3" data-path="tutorial.html"><a href="tutorial.html#data-processing-on-the-server-side"><i class="fa fa-check"></i><b>4.3</b> Data processing on the server side<span></span></a>
+<li class="chapter" data-level="4.1" data-path="reactivity.html"><a href="reactivity.html#overview-of-reactivity"><i class="fa fa-check"></i><b>4.1</b> Overview of Reactivity<span></span></a>
+<ul>
+<li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>4.2</b> Reactive expressions save recomputation<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>5</b> Shiny tutorial<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>5.1</b> Setting up a shiny app<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="tutorial.html"><a href="tutorial.html#building-the-ui-layout"><i class="fa fa-check"></i><b>5.2</b> Building the UI layout<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="tutorial.html"><a href="tutorial.html#data-processing-on-the-server-side"><i class="fa fa-check"></i><b>5.3</b> Data processing on the server side<span></span></a>
 <ul>
 <li><a href="tutorial.html#activity-4-modily-x--and-y-axes-labels">Activity 4: Modily x- and y-axes labels<span></span></a></li>
 <li><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following">Challenge 2: Modify the app to add the following<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>5</b> Reactivity<span></span></a>
-<ul>
-<li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse<span></span></a></li>
-<li class="chapter" data-level="5.1" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>5.1</b> Reactive expressions save recomputation<span></span></a></li>
-<li class="chapter" data-level="5.2" data-path="reactivity.html"><a href="reactivity.html#more-complex-examples-of-shiny-app"><i class="fa fa-check"></i><b>5.2</b> More complex examples of Shiny App:<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="dashboards.html"><a href="dashboards.html"><i class="fa fa-check"></i><b>6</b> Shiny Dashboards<span></span></a></li>
-<li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading<span></span></a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="resources.html"><a href="resources.html#shiny-dashboard"><i class="fa fa-check"></i><b>7.1</b> Shiny dashboard<span></span></a></li>
-</ul></li>
+<li class="chapter" data-level="6" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>6</b> Further Reading<span></span></a></li>
+
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -213,7 +231,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Test</h1>
 <p class="author"><em>Nitika K., Adele B., Paul F. H.</em></p>
-<p class="date"><em>2022-03-28</em></p>
+
+<p class="date"><em>2022-04-11</em></p>
+
 </div>
 <div id="prerequisites" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Prerequisites<a href="index.html#prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h1>

@@ -1,0 +1,42 @@
+## Layout
+
+The complexity of your application may have an impact on the complexity of your layout. For instance, an application that contains only one or two widgets and one or two outputs may only need one page to fit all these elements. If however there are lot of controls and results to display it might be easier to organize these under tabs or a navbar.
+
+A layout with three panels: a title panel, a sidebar panel and a main panel.
+```{r,eval=FALSE}
+ui <- fluidPage( # fluidPage - this function creates a display that auto adjusts to the browser window
+  # further elements set to define the appearance will be placed within fluidPage
+  titlePanel("this is a title panel"),
+  
+  sidebarLayout( # this function creates a layout with two panels, one panel takes about a third of the screen width, the other panel takes about two thirds of the screen width.
+    # the position of the sidebar can be moved by providing the `position = "right" argument to the sidebarLayout function
+    sidebarPanel("this is the sidebar panel"),
+    mainPanel("this is the main panel")
+  )
+)
+```
+
+Building a UI involves nesting a lot of components inside each other. From this example here we can see that `sidebarPanel` and `mainPanel` are nested within `sidebarLayout`. `sidebarLayout` itself is also nested within `fluidPage`. as more components are added to the app, e.g widgets and outputs, they too will be nested within the panel functions to control their location on the layout.
+
+The above layout is probably the most common layout used with shiny apps. It's good for a app with only a few number of components. You may want to add navbar and tab sets if you have a large number of components.
+
+
+```{r}
+ui <- fluidPage( 
+  titlePanel("this is a title panel"),
+  
+  sidebarLayout( 
+    sidebarPanel("this is the sidebar panel"),
+    mainPanel( 
+      tabsetPanel( # this function takes an argument of `position = "left"` (arguments can be "left", "right", "below". default is above)
+        # this argument directs where th1e tabs are positioned
+        tabPanel("plot results"),
+        tabPanel("table results"),
+        tabPanel("fun gifs")
+      )
+    )
+  )
+)
+```
+
+For more information about the application layout (including nav bars and lists), we recommend this [resource](https://shiny.rstudio.com/articles/layout-guide.html). For more information about tab sets specifically, we recommend this [article](https://shiny.rstudio.com/articles/tabsets.html).

@@ -5,9 +5,9 @@ This workshop material is prepared by the [Monash Bioinformatics Platform](https
 | 10:00am | Welcome overview, Introduction, Structure of a Shiny app |
 |---------|----------------------------------------------------------|
 | 11:20am | Break                                                    |
-| 11.30am | Structure of a Shiny app, Shiny tutorial                 |
+| 11.30am | Structure of a Shiny app, Reactivity                     |
 | 1.15pm  | Break                                                    |
-| 1.25pm  | Reactivity, Shiny dashboards-an overview                 |
+| 1.25pm  | Shiny tutorial, Shiny dashboards-an overview             |
 | 2.15pm  | End Workshop                                             |
 
 ### Source code
