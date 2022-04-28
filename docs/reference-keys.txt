@@ -27,3 +27,12 @@ adding-some-outputs
 data-processing-on-the-server-side
 resources
 
+reactive-expressions-save-recomputation-1
+more-complex-examples-of-shiny-app
+setting-up-a-shiny-app-1
+building-the-ui-layout-1
+using-widgets-1
+adding-some-outputs-1
+data-processing-on-the-server-side-1
+dashboards
+shiny-dashboard
