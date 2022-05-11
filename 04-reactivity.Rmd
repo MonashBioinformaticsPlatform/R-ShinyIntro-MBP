@@ -4,21 +4,21 @@
 
 In Section \@ref(structure), we mentioned that the Shiny server logic is based on reactive programming. The server takes input from the UI, runs the code chunks defined within, generates output and sends it to the UI. When you change the input, the server re-runs the code chunks and sends the updated output to the UI.
 
-Consider the following example. The UI takes a single text input i.e. name of a person. The server concatenates the input string with "Hello" at the start and, "!" at the end and returns this string to the UI.
+Consider the following example. The UI takes a single text input i.e. name of a person. The server concatenates the input string with "Hello" at the start and, "!" at the end, followed by another string "Have a nice day!", and returns the concatenated string to the UI and prints as output.
 ```{r, eval =F}
 ui <- fluidPage(
-  textInput("name", "What's your name?"),
-  textOutput("greeting")
+    textInput("name", "What's your name?"),
+    textOutput("greeting")
 )
 
 server <- function(input, output, session) {
-  output$greeting <- renderText({
-    paste0("Hello ", input$name, "!")
-  })
+    output$greeting <- renderText({
+        paste0("Hello ", input$name, "!", "\n", "Have a nice day!")
+    })
 }
 ```
 ![](figs/Nitika.png){width=50%}
-![](figs/bat.png){width=50%}
+![](figs/Batman.png){width=50%}
 ![](figs/Aladdin.png){width=50%}
 
 ### Challenge 3: Modify `greeting.R` to print the reverse{- .challenge}
@@ -30,21 +30,63 @@ Open `ShinyApps/reactive/greeting.R` and edit the file to print reverse of the i
 
 ## Reactive expressions save recomputation
 
+### R expressiovs vs Reactive expressions
+
+In this example, we assign a value of `5` to the variable `a`. Using R expressions, we add `10` to `a`, which prints the result as `15`. Then, we update the value of `a` to `10`. Even though, the new value of `a` is now `10`, nothing happens! This is because, we haven't called the expression `a + 10`. In order to see the updated output of our expression, we need to explicitly re-run the expression. This is how the R expressions work.
+```{r, echo = T, eval = T}
+a <- 5
+a + 10
+a <- 10
+a
+```
+
+The input of a reactive expression is called a reactive input. When we change the reactive input value `input$a`, the expression itself changes and re-executes itself, if necessary.
+
 Example of a reactive expression
 ```{r, echo = T, eval =F}
 library(shiny)
-y <- reactive(input$x + 1)
+y <- reactive(input$a + 1)
+```
 
+You can write the same expression in different ways:
+```{r, eval =F}
 # or
 y <- reactive({
-    input$x + 1
+    input$a + 1
 })
 
 # or
 y <- reactive({
-    return(input$x + 1)
+    return(input$a + 1)
 })
 ```
+
+### Workings of reactive expressions
+
+```{r, eval =F}
+input <- reactiveValues(a=1)
+
+expr1 <- reactive({
+    input$a + 1
+})
+
+
+expr2 <- reactive({ 
+    input$a * 10 })
+
+
+expr3 <- reactive({
+    (input$a + 3)*4})
+```
+
+You execute the reactive expressions just as you would a function. `isolate()` helps us view the values of the reactive expression in the R console. 
+```{r, eval =F}
+
+isolate(expr1())
+isolate(expr2())
+isolate(expr3())
+```
+
 
 Reactivity explained using Pythagoras calculation: We have used `browser()` calls to debug the function
 ```{r, eval = F}
