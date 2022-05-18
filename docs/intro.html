@@ -23,7 +23,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-04-28" />
+<meta name="date" content="2022-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -180,7 +180,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>4.2</b> Reactive expressions save recomputation<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressiovs-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressiovs vs Reactive expressions<span></span></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="reactivity.html"><a href="reactivity.html#workings-of-reactive-expressions"><i class="fa fa-check"></i><b>4.2.1</b> Workings of reactive expressions<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="reactivity.html"><a href="reactivity.html#accessing-reactivity"><i class="fa fa-check"></i><b>4.3</b> Accessing Reactivity<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>5</b> Shiny tutorial<span></span></a>
 <ul>
@@ -266,10 +270,11 @@ Run the script so the objects are loaded into the R environment.</p>
 <li><p>Calls the <code>shiny</code> package.</p></li>
 <li><p>Defines user interface (ui) which in this case is an HTML webpage, for us to interact with. In this user interface, it prints “Hello, world!”.</p></li>
 <li><p>Creates a function called server that specifies app behavior. Currently, the function body is empty. It means this function (and the app) doesn’t do anything except for printing “Hello, world!” We will later add more controls to this function to control app behavior.</p></li>
-<li><p>Construct a Shiny application from UI and server and stores it in a variable called <code>app_hello</code>.
-12
-&gt; In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates “this computer” and 5537 is a randomly assigned port number.</p></li>
+<li><p>Construct a Shiny application from UI and server and stores it in a variable called <code>app_hello</code>.</p></li>
 </ol>
+<blockquote>
+<p>In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates “this computer” and 5537 is a randomly assigned port number.</p>
+</blockquote>
 </div>
 <div id="running-a-shiny-app" class="section level3 hasAnchor" number="2.4.2">
 <h3><span class="header-section-number">2.4.2</span> Running a Shiny App<a href="intro.html#running-a-shiny-app" class="anchor-section" aria-label="Anchor link to header"></a></h3>

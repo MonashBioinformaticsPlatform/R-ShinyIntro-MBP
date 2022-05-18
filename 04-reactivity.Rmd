@@ -28,19 +28,45 @@ Open `ShinyApps/reactive/greeting.R` and edit the file to print reverse of the i
 
 * The reverse of your name is: namtaB
 
-## Reactive expressions save recomputation
 
-### R expressiovs vs Reactive expressions
+## R expressiovs vs Reactive expressions
 
-In this example, we assign a value of `5` to the variable `a`. Using R expressions, we add `10` to `a`, which prints the result as `15`. Then, we update the value of `a` to `10`. Even though, the new value of `a` is now `10`, nothing happens! This is because, we haven't called the expression `a + 10`. In order to see the updated output of our expression, we need to explicitly re-run the expression. This is how the R expressions work.
+Most R code typically deals with static data. What makes Shiny apps magical is the fact that they are interactive which is made possible due to  reactivity. There are two important aspects to reactivity:
+
+1. Reactive expressions produce the latest computation
+
+2. Reactive expressions save re-computation.
+
+Conside the following example. We assign a value of `5` to the variable `a`. Using R expressions, we add `10` to `a`, which prints the result as `15`. Then, we update the value of `a` to `10`. Even though, the new value of `a` is now `10`, nothing happens! This is because, we haven't called the expression `a + 10`. In order to see the updated output of our expression, we need to explicitly re-run the expression. This is how the R expressions work.
+
 ```{r, echo = T, eval = T}
 a <- 5
-a + 10
-a <- 10
-a
+(sum <- a + 10)
 ```
 
-The input of a reactive expression is called a reactive input. When we change the reactive input value `input$a`, the expression itself changes and re-executes itself, if necessary.
+```{r}
+a <- 10
+sum
+```
+
+However, this problem could be solved by using a function. Here we create a function to add `10` to a number. 
+```{r}
+add10 <- function(num){
+    result <- num + 10
+    return(result)
+}
+add10(a)
+```
+Using a function gives us the latest compute with the latest input value. However, it doesn't save computation. The function will perform the computation even if the input value remains unchanged. That's just how functions work.
+
+```{r}
+add10(num=10)
+```
+
+When working with trivial examples or data sets, computation isn't an issue. But with increasing complexity, computation can be really expensive. We can save re-computation and get the latest computation with the magic of Reactive programming. Now, let's take a look at some reactive expressions.
+
+
+The input of a reactive expression is called a reactive input. When we change the reactive input value `input$a`, the expression itself changes and re-executes itself, only if necessary.
 
 Example of a reactive expression
 ```{r, echo = T, eval =F}
@@ -63,30 +89,32 @@ y <- reactive({
 
 ### Workings of reactive expressions
 
+In the following example, we have a reactive input `input$a`, where `a =1`. We create a reactive expression, `expr1` which is just a function.
 ```{r, eval =F}
 input <- reactiveValues(a=1)
 
 expr1 <- reactive({
-    input$a + 1
-})
-
-
-expr2 <- reactive({ 
-    input$a * 10 })
-
-
-expr3 <- reactive({
     (input$a + 3)*4})
 ```
 
-You execute the reactive expressions just as you would a function. `isolate()` helps us view the values of the reactive expression in the R console. 
+`isolate()` helps us view the values of the reactive expression in the R console. 
 ```{r, eval =F}
 
 isolate(expr1())
-isolate(expr2())
-isolate(expr3())
 ```
 
+Now, we change the value of our reactive input and update the expression. Remember, we're not computing anything, we're just updating an expression.
+```{r, eval =F}
+input <- reactiveValues(a=5)
+
+expr1 <- reactive({
+    (input$a + 3)*4})
+```
+
+
+```{r, eval =F}
+isolate(expr1())
+```
 
 Reactivity explained using Pythagoras calculation: We have used `browser()` calls to debug the function
 ```{r, eval = F}
@@ -126,6 +154,8 @@ Now, we run the function
 ```{r, eval = F}
 server_pythagorus()
 ```
+
+## Accessing Reactivity
 
 There are two types of functions that we can use to access reactivity. We can use `render` functions or the `reactive` function. In most simple examples of Shiny applications, we are able to directly connect/link an input widget and an output object with a `renderX` function (e.g `renderTable`, `renderText`, `renderPlot`). These `renderX` functions are activated/re-calculated whenever the value of `input$someInputId` provided to that `renderX` function is updated/changed.
 

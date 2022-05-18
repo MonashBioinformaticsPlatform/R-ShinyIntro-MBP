@@ -38,3 +38,4 @@ dashboards
 shiny-dashboard
 r-expressiovs-vs-reactive-expressions
 workings-of-reactive-expressions
+accessing-reactivity
