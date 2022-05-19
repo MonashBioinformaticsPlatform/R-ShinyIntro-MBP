@@ -39,3 +39,5 @@ shiny-dashboard
 r-expressiovs-vs-reactive-expressions
 workings-of-reactive-expressions
 accessing-reactivity
+nextsteps
+going-fancy-with-shiny-dashboards
