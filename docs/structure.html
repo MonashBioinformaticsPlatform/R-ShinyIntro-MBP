@@ -23,7 +23,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-04-28" />
+<meta name="date" content="2022-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,9 +52,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
-<script src="shared/strftime/strftime-min.js"></script>
-<link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
 <link href="libs/bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
@@ -191,7 +188,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>4.2</b> Reactive expressions save recomputation<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressiovs-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressiovs vs Reactive expressions<span></span></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="reactivity.html"><a href="reactivity.html#workings-of-reactive-expressions"><i class="fa fa-check"></i><b>4.2.1</b> Workings of reactive expressions<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="reactivity.html"><a href="reactivity.html#accessing-reactivity"><i class="fa fa-check"></i><b>4.3</b> Accessing Reactivity<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>5</b> Shiny tutorial<span></span></a>
 <ul>
@@ -203,7 +204,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following">Challenge 2: Modify the app to add the following<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="dashboards.html"><a href="dashboards.html"><i class="fa fa-check"></i><b>6</b> Shiny Dashboards<span></span></a></li>
+<li class="chapter" data-level="6" data-path="nextsteps.html"><a href="nextsteps.html"><i class="fa fa-check"></i><b>6</b> Next steps<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="nextsteps.html"><a href="nextsteps.html#going-fancy-with-shiny-dashboards"><i class="fa fa-check"></i><b>6.1</b> Going fancy with Shiny Dashboards<span></span></a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -252,32 +256,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ui" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> UI<a href="structure.html#ui" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This is the front-end of the shiny app that allows you to capture (input) and display (output) a variety of data types. Fundamentally the UI is an HTML document with shiny functions returning chunks of HTML code. Fortunately, we don’t have to write the HTML code directly ourselves, Shiny has R functions that do that instead.</p>
-<p>The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. Here, we’ll look at examples of shinyWidgets that insert input controls.</p>
+<p>The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. In this section, we’ll look at examples of shinyWidgets that insert input controls.</p>
+<p>The first example is a slider. Open the <code>app_slider.R</code> inside <code>ShinyApps</code> folder to understand how the slider widget works.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="structure.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb2-2"><a href="structure.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;slider1&quot;</span>,</span>
-<span id="cb2-3"><a href="structure.html#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="fu">h4</span>(<span class="st">&quot;This code will make a slider </span><span class="sc">\n</span><span class="st">&quot;</span>),</span>
-<span id="cb2-4"><a href="structure.html#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>, <span class="at">value =</span> <span class="dv">50</span>)</span></code></pre></div>
-<div class="form-group shiny-input-container">
-<label class="control-label" id="slider1-label" for="slider1">
-<h4>This code will make a slider 
-</h4>
-</label>
-<input class="js-range-slider" id="slider1" data-skin="shiny" data-min="0" data-max="100" data-from="50" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
-</div>
+<span id="cb2-2"><a href="structure.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;slider1&quot;</span>, <span class="st">&quot;Decimal&quot;</span>,</span>
+<span id="cb2-3"><a href="structure.html#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">max =</span> <span class="dv">1</span>,</span>
+<span id="cb2-4"><a href="structure.html#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">value =</span> <span class="fl">0.8</span>, <span class="at">step =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<p><img src="figs/slider.png" style="width:80.0%" /></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="structure.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">renderPrint</span>({<span class="fu">paste</span>(<span class="st">&quot;The number selected by the slider is:&quot;</span>, input<span class="sc">$</span>slider1)})</span></code></pre></div>
-<p><pre class="shiny-text-output noplaceholder" id="out2fa8f90462b4dfb9"></pre></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="structure.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fluidPage</span>(</span>
-<span id="cb4-2"><a href="structure.html#cb4-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-3"><a href="structure.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Copy the chunk below to make a group of checkboxes</span></span>
-<span id="cb4-4"><a href="structure.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">checkboxGroupInput</span>(<span class="st">&quot;checkGroup&quot;</span>, <span class="at">label =</span> <span class="fu">h3</span>(<span class="st">&quot;Checkbox group&quot;</span>), </span>
-<span id="cb4-5"><a href="structure.html#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Choice 1&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;Choice 2&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Choice 3&quot;</span> <span class="ot">=</span> <span class="dv">3</span>),</span>
-<span id="cb4-6"><a href="structure.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">selected =</span> <span class="dv">1</span>),</span>
-<span id="cb4-7"><a href="structure.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<p><img src="figs/slider_out.png" style="width:100.0%" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="structure.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb4-2"><a href="structure.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fluidPage</span>(</span>
+<span id="cb4-3"><a href="structure.html#cb4-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-4"><a href="structure.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Copy the chunk below to make a group of checkboxes</span></span>
+<span id="cb4-5"><a href="structure.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">checkboxGroupInput</span>(<span class="st">&quot;checkGroup&quot;</span>, <span class="at">label =</span> <span class="fu">h3</span>(<span class="st">&quot;Checkbox group&quot;</span>), </span>
+<span id="cb4-6"><a href="structure.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Choice 1&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;Choice 2&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Choice 3&quot;</span> <span class="ot">=</span> <span class="dv">3</span>),</span>
+<span id="cb4-7"><a href="structure.html#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">selected =</span> <span class="dv">2</span>),</span>
 <span id="cb4-8"><a href="structure.html#cb4-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-9"><a href="structure.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hr</span>(),</span>
-<span id="cb4-10"><a href="structure.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(<span class="fu">column</span>(<span class="dv">3</span>, <span class="fu">verbatimTextOutput</span>(<span class="st">&quot;value&quot;</span>)))</span>
-<span id="cb4-11"><a href="structure.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-12"><a href="structure.html#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb4-9"><a href="structure.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-10"><a href="structure.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hr</span>(),</span>
+<span id="cb4-11"><a href="structure.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(<span class="fu">column</span>(<span class="dv">3</span>, <span class="fu">verbatimTextOutput</span>(<span class="st">&quot;value&quot;</span>)))</span>
+<span id="cb4-12"><a href="structure.html#cb4-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-13"><a href="structure.html#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <div class="container-fluid">
 <div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
 <label class="control-label" id="checkGroup-label" for="checkGroup">
@@ -286,13 +286,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="shiny-options-group">
 <div class="checkbox">
 <label>
-<input type="checkbox" name="checkGroup" value="1" checked="checked"/>
+<input type="checkbox" name="checkGroup" value="1"/>
 <span>Choice 1</span>
 </label>
 </div>
 <div class="checkbox">
 <label>
-<input type="checkbox" name="checkGroup" value="2"/>
+<input type="checkbox" name="checkGroup" value="2" checked="checked"/>
 <span>Choice 2</span>
 </label>
 </div>
@@ -365,19 +365,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="navbar-header">
 <span class="navbar-brand">Navbar</span>
 </div>
-<ul class="nav navbar-nav" data-tabsetid="7616">
+<ul class="nav navbar-nav" data-tabsetid="8734">
 <li class="active">
-<a href="structure.html#tab-7616-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
+<a href="structure.html#tab-8734-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
 </li>
 <li>
-<a href="structure.html#tab-7616-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
+<a href="structure.html#tab-8734-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
 </li>
 </ul>
 </div>
 </nav>
 <div class="container-fluid">
-<div class="tab-content" data-tabsetid="7616">
-<div class="tab-pane active" data-value="Widgets!" id="tab-7616-1">
+<div class="tab-content" data-tabsetid="8734">
+<div class="tab-pane active" data-value="Widgets!" id="tab-8734-1">
 <div class="form-group shiny-input-container">
 <label class="control-label" id="select-label" for="select">
 <h3>Select box</h3>
@@ -389,16 +389,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script type="application/json" data-for="select" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out14ad481cea22447e"></pre>
+<pre class="shiny-text-output noplaceholder" id="out8f3b95925dd911d4"></pre>
 <div class="form-group shiny-input-container">
 <label class="control-label" id="text-label" for="text">
 <h3>Text input</h3>
 </label>
 <input id="text" type="text" class="form-control" value="Enter text..."/>
 </div>
-<pre class="shiny-text-output noplaceholder" id="outc35fb6242aff4c4f"></pre>
+<pre class="shiny-text-output noplaceholder" id="oute6cd2178ea58a4ed"></pre>
 </div>
-<div class="tab-pane" data-value="More widgets!" id="tab-7616-2">
+<div class="tab-pane" data-value="More widgets!" id="tab-8734-2">
 <div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
 <label class="control-label" id="checkGroup-label" for="checkGroup">
 <h3>Checkbox group</h3>
@@ -424,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="outb57533f1cc0a8862"></pre>
+<pre class="shiny-text-output noplaceholder" id="outbe48c0e56ffa76e4"></pre>
 </div>
 </div>
 </div>

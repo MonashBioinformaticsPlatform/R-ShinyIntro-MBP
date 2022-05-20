@@ -23,7 +23,7 @@ library(shiny)
 
 * Allows end user interaction on complex datasets with collaborators who may not know how to code in R
 
-* You don't need to generate a billion plots manually. It can easily be added to a markdown document - like this one!
+* You don't need to generate a billion plots manually. It can easily be added to a markdown document.
 
 ## Example apps
 
