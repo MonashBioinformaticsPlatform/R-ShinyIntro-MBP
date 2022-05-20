@@ -23,7 +23,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-04-28" />
+<meta name="date" content="2022-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -180,7 +180,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>4.2</b> Reactive expressions save recomputation<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressiovs-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressiovs vs Reactive expressions<span></span></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="reactivity.html"><a href="reactivity.html#workings-of-reactive-expressions"><i class="fa fa-check"></i><b>4.2.1</b> Workings of reactive expressions<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="reactivity.html"><a href="reactivity.html#accessing-reactivity"><i class="fa fa-check"></i><b>4.3</b> Accessing Reactivity<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>5</b> Shiny tutorial<span></span></a>
 <ul>
@@ -192,7 +196,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following">Challenge 2: Modify the app to add the following<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="dashboards.html"><a href="dashboards.html"><i class="fa fa-check"></i><b>6</b> Shiny Dashboards<span></span></a></li>
+<li class="chapter" data-level="6" data-path="nextsteps.html"><a href="nextsteps.html"><i class="fa fa-check"></i><b>6</b> Next steps<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="nextsteps.html"><a href="nextsteps.html#going-fancy-with-shiny-dashboards"><i class="fa fa-check"></i><b>6.1</b> Going fancy with Shiny Dashboards<span></span></a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -216,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Introduction to R Shiny</h1>
 <p class="author"><em>Nitika K., Adele B., Paul F. H.</em></p>
-<p class="date"><em>2022-04-28</em></p>
+<p class="date"><em>2022-05-19</em></p>
 </div>
 <div id="prerequisites" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Prerequisites<a href="index.html#prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -226,18 +233,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Then install packages from CRAN and Bioconductor with the following R code:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span>
 <span id="cb2-2"><a href="index.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
-<span id="cb2-3"><a href="index.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="index.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
-<span id="cb2-5"><a href="index.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">biocLite</span>(<span class="fu">c</span>(</span>
-<span id="cb2-6"><a href="index.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;BSgenome.Scerevisiae.UCSC.sacCer3&quot;</span>,</span>
-<span id="cb2-7"><a href="index.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;TxDb.Scerevisiae.UCSC.sacCer3.sgdGene&quot;</span>,</span>
-<span id="cb2-8"><a href="index.html#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;GenomicRanges&quot;</span>,</span>
-<span id="cb2-9"><a href="index.html#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;rtracklayer&quot;</span>,</span>
-<span id="cb2-10"><a href="index.html#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Gviz&quot;</span>))</span></code></pre></div>
-<p>Make sure you are running R 3.3 and Bioconductor 3.3, or higher.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To upgrade an old Bioconductor installation</span></span>
-<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)</span>
-<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">biocLite</span>(<span class="st">&quot;BiocUpgrade&quot;</span>)</span></code></pre></div>
+<span id="cb2-3"><a href="index.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;shinydashboard&quot;</span>)</span>
+<span id="cb2-4"><a href="index.html#cb2-4" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;Biostrings&quot;</span>)</span></code></pre></div>
+<!-- Make sure you are running R 3.3 and Bioconductor 3.3, or higher. -->
+<!-- ```{r bioc, eval=FALSE} -->
+<!-- # To upgrade an old Bioconductor installation -->
+<!-- source("https://bioconductor.org/biocLite.R") -->
+<!-- biocLite("BiocUpgrade") -->
+<!-- ``` -->
 <div id="download-files" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Download files<a href="index.html#download-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
@@ -251,8 +254,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>Introduction to Shiny</p></li>
 <li><p>Structure of a Shiny app</p></li>
-<li><p>Shiny tutorial</p></li>
 <li><p>Reactivity</p></li>
+<li><p>Shiny tutorial</p></li>
+<li><p>Next steps</p></li>
 </ul>
 </div>
 <div id="source-code" class="section level2 unnumbered hasAnchor">

@@ -23,7 +23,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-05-19" />
+<meta name="date" content="2022-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -224,9 +224,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 6</span> Next steps<a href="nextsteps.html#nextsteps" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="going-fancy-with-shiny-dashboards" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Going fancy with Shiny Dashboards<a href="nextsteps.html#going-fancy-with-shiny-dashboards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="nextsteps.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;shinydashboard&quot;</span>)</span>
-<span id="cb1-2"><a href="nextsteps.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinyashboard)</span></code></pre></div>
-<p>The YAML header for shiny dashbaords looks something like the following:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="nextsteps.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinyashboard)</span></code></pre></div>
+<p>This is the skeleton code for creating Shiny dashboards. There are three components to a Shiny dashboard:</p>
+<ol style="list-style-type: decimal">
+<li><p>Header</p></li>
+<li><p>Sidebar</p></li>
+<li><p>Body</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="nextsteps.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb2-2"><a href="nextsteps.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
+<span id="cb2-3"><a href="nextsteps.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="nextsteps.html#cb2-4" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">dashboardPage</span>(</span>
+<span id="cb2-5"><a href="nextsteps.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(),</span>
+<span id="cb2-6"><a href="nextsteps.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(),</span>
+<span id="cb2-7"><a href="nextsteps.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>()</span>
+<span id="cb2-8"><a href="nextsteps.html#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="nextsteps.html#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="nextsteps.html#cb2-10" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) { }</span>
+<span id="cb2-11"><a href="nextsteps.html#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="nextsteps.html#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code></pre></div>
+<p><img src="figs/shiny-dash.png" style="width:100.0%" /></p>
 
 </div>
 </div>
@@ -267,7 +284,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/06-dashboards.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/06-nextsteps.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -275,7 +292,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/06-dashboards.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/06-nextsteps.Rmd",
 "text": null
 },
 "download": null,

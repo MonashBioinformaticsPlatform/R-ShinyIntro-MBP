@@ -25,23 +25,18 @@ Then install packages from CRAN and Bioconductor with the following R code:
 ```{r packages, eval=FALSE}
 install.packages("shiny")
 install.packages("DT")
+install.packages("shinydashboard")
+BiocManager::install("Biostrings")
 
-source("https://bioconductor.org/biocLite.R")
-biocLite(c(
-    "BSgenome.Scerevisiae.UCSC.sacCer3",
-    "TxDb.Scerevisiae.UCSC.sacCer3.sgdGene",
-    "GenomicRanges",
-    "rtracklayer",
-    "Gviz"))
 ```
 
-Make sure you are running R 3.3 and Bioconductor 3.3, or higher.
+<!-- Make sure you are running R 3.3 and Bioconductor 3.3, or higher. -->
 
-```{r bioc, eval=FALSE}
-# To upgrade an old Bioconductor installation
-source("https://bioconductor.org/biocLite.R")
-biocLite("BiocUpgrade")
-```
+<!-- ```{r bioc, eval=FALSE} -->
+<!-- # To upgrade an old Bioconductor installation -->
+<!-- source("https://bioconductor.org/biocLite.R") -->
+<!-- biocLite("BiocUpgrade") -->
+<!-- ``` -->
 
 ## Download files
 * [tutorial.R](https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/data-files)
@@ -55,9 +50,11 @@ Download these files. tutorial.R contains all the code in the “tutorial” lin
 
 * Structure of a Shiny app
 
+* Reactivity
+
 * Shiny tutorial
 
-* Reactivity
+* Next steps
 
 ## Source code {-}
 
