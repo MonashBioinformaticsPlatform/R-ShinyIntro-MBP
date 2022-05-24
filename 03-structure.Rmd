@@ -29,26 +29,34 @@ shinyApp(ui, server) # runs the app
 
 This is the front-end of the shiny app that allows you to capture (input) and display (output) a variety of data types. Fundamentally the UI is an HTML document with shiny functions returning chunks of HTML code. Fortunately, we don't have to write the HTML code directly ourselves, Shiny has R functions that do that instead.
 
-The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. Here, we'll look at examples of shinyWidgets that insert input controls.
+The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. In this section, we'll look at examples of shinyWidgets that insert input controls.
 
-```{r widget1, echo = T}
+The first example is a slider. Open the `app_slider.R` inside `ShinyApps` folder to understand how the slider widget works.
+
+```{r widget1, echo = T, eval = F}
 library(shiny)
-sliderInput("slider1",
-            label = h4("This code will make a slider \n"),
-            min = 0, max = 100, value = 50)
+sliderInput("slider1", "Decimal",
+            min = -1, max = 1,
+            value = 0.8, step = 0.2)
 ```
 
-```{r, echo= T, eval = T}
+![](figs/slider.png){width=80%}
+
+```{r, echo= T, eval = F}
 renderPrint({paste("The number selected by the slider is:", input$slider1)})
 ```
 
+![](figs/slider_out.png){width=100%}
+
+
 ```{r}
+library(shiny)
 fluidPage(
     
   # Copy the chunk below to make a group of checkboxes
   checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
     choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
-    selected = 1),
+    selected = 2),
   
   
   hr(),

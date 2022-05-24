@@ -23,7 +23,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-04-11" />
+<meta name="date" content="2022-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,17 +52,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
-<script src="shared/strftime/strftime-min.js"></script>
-<link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-<link href="libs/bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.4.1/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.4.1/accessibility/js/bootstrap-accessibility.min.js"></script>
-<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="shared/selectize/js/selectize.min.js"></script>
-<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
 
 
 <style type="text/css">
@@ -191,7 +180,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>4.2</b> Reactive expressions save recomputation<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressiovs-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressiovs vs Reactive expressions<span></span></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="reactivity.html"><a href="reactivity.html#workings-of-reactive-expressions"><i class="fa fa-check"></i><b>4.2.1</b> Workings of reactive expressions<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="reactivity.html"><a href="reactivity.html#accessing-reactivity"><i class="fa fa-check"></i><b>4.3</b> Accessing Reactivity<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>5</b> Shiny tutorial<span></span></a>
 <ul>
@@ -203,7 +196,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following">Challenge 2: Modify the app to add the following<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>6</b> Further Reading<span></span></a></li>
+<li class="chapter" data-level="6" data-path="dashboards.html"><a href="dashboards.html"><i class="fa fa-check"></i><b>6</b> Shiny Dashboards<span></span></a></li>
+<li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -227,10 +221,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 2</span> Introduction<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="what-is-shiny" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> What is Shiny<a href="intro.html#what-is-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Shiny is an R package that makes it easy to build interactive web applications. It provides an easy way to present R data analysis interactively and over the web. It is magical in the sense that it allows you to create complicated apps without any prior knowledge of HTML, CSS or JavaScript straight from your R code. Shiny essential wraps your R code and transforms it into a dynamic web app. The powerful features of the shiny programming are the User Interface (UI) and the reactivity which will be discussed in later sections.</p>
+<p>Shiny is an R package that makes it easy to build interactive web applications. It provides an easy way to present R data analysis interactively and over the web. It is magical in the sense that it allows you to create complicated apps without any prior knowledge of HTML, CSS or JavaScript straight from your R code. Shiny essentially wraps your R code and transforms it into a dynamic web app. The powerful features of shiny are the interactions with the User Interface (UI) and the reactivity of the app on the data, which will be discussed in later sections.</p>
 <p>To use it, simply open up R Studio and:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="intro.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;shiny&quot;)</span></span>
-<span id="cb4-2"><a href="intro.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;shiny&quot;)  ## if shiny has not been installed in your R instance, uncomment this and run this</span></span>
+<span id="cb1-2"><a href="intro.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span></code></pre></div>
 </div>
 <div id="another-r-package---whats-so-special-about-shiny" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Another R package - What’s so special about Shiny?<a href="intro.html#another-r-package---whats-so-special-about-shiny" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -239,12 +233,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>You don’t need to port any of your R code into another language in order to build a web app</p></li>
 <li><p>Incredible flexibility, you can generate dynamic UI elements and create interactive plots</p></li>
 <li><p>It adds reproducibilty to your graphs</p></li>
+<li><p>Allows end user interaction on complex datasets with collaborators who may not know how to code in R</p></li>
 <li><p>You don’t need to generate a billion plots manually. It can easily be added to a markdown document - like this one!</p></li>
 </ul>
 </div>
 <div id="example-apps" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Example apps<a href="intro.html#example-apps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here are some apps made by Monash bioinformaticians:</p>
+<p>Here are some apps made by the team within the Monash Bioinformatics Platform:</p>
 <ul>
 <li><p><a href="http://bioapps.erc.monash.edu.ezproxy.lib.monash.edu.au/TCP/">Stuart’s TCP app that went into his Nature paper:</a> Stuart K. Archer, Nikolay E. Shirokikh, Traude H. Beilharz, &amp; Thomas Preiss. (2016). Dynamics of ribosome scanning and recycling revealed by translation complex profiling. Nature, 2016.</p></li>
 <li><p><a href="http://rnasystems.erc.monash.edu:3838/pfh/2015/demo-varistran/">Paul’s Varistran app</a></p></li>
@@ -255,15 +250,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.4</span> Create your first Shiny App<a href="intro.html#create-your-first-shiny-app" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="activity-1-creating-a-shinyapp-that-prints-hello-world" class="section level3 unnumbered activity hasAnchor">
 <h3>Activity 1: Creating a ShinyApp that prints “Hello, World!”<a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Create a new .R file, paste the following code inside, save it as app.R.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="intro.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny) <span class="co">#1. calls the library `shiny`</span></span>
-<span id="cb5-2"><a href="intro.html#cb5-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>( <span class="co">#2. defines user interface, an HTML webpage</span></span>
-<span id="cb5-3"><a href="intro.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Hello, world!&quot;</span> <span class="co"># prints Hello, world! on webpage</span></span>
-<span id="cb5-4"><a href="intro.html#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-5"><a href="intro.html#cb5-5" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) { <span class="co">#3. specifies app behavior</span></span>
-<span id="cb5-6"><a href="intro.html#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-7"><a href="intro.html#cb5-7" aria-hidden="true" tabindex="-1"></a>app_hello <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(ui, server) <span class="co"># 4. starts Shiny application</span></span></code></pre></div>
-<p>Click on <code>Run App</code> in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter.</p>
+<p>Create a new project within RStudio called <code>app_hello</code>. Then:
+Create a new .R file, paste the following code inside, save it as app.R inside the folder <code>app_hello</code>. (RStudio recognises this is a shiny app, because of the filename <code>app.R</code> and the format of the script within, a Run App button appears upon saving)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny) <span class="co">#1. calls the library `shiny`</span></span>
+<span id="cb2-2"><a href="intro.html#cb2-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>( <span class="co">#2. defines user interface, an HTML webpage</span></span>
+<span id="cb2-3"><a href="intro.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Hello, world!&quot;</span> <span class="co"># prints Hello, world! on webpage</span></span>
+<span id="cb2-4"><a href="intro.html#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-5"><a href="intro.html#cb2-5" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) { <span class="co">#3. specifies app behavior</span></span>
+<span id="cb2-6"><a href="intro.html#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-7"><a href="intro.html#cb2-7" aria-hidden="true" tabindex="-1"></a>app_hello <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(ui, server) <span class="co"># 4. starts Shiny application</span></span></code></pre></div>
+<p>Click on <code>Run App</code> in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter.
+Run the script so the objects are loaded into the R environment.</p>
 <p><img src="figs/RunApp.png" style="width:100.0%" /></p>
 </div>
 <div id="breakdown-of-the-code" class="section level3 hasAnchor" number="2.4.1">
@@ -273,19 +270,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Calls the <code>shiny</code> package.</p></li>
 <li><p>Defines user interface (ui) which in this case is an HTML webpage, for us to interact with. In this user interface, it prints “Hello, world!”.</p></li>
 <li><p>Creates a function called server that specifies app behavior. Currently, the function body is empty. It means this function (and the app) doesn’t do anything except for printing “Hello, world!” We will later add more controls to this function to control app behavior.</p></li>
-<li><p>Construct a Shiny application from UI and server and stores it in a variable called <code>app_hello</code>.
-12
-&gt; In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates “this computer” and 5537 is a randomly assigned port number.</p></li>
+<li><p>Construct a Shiny application from UI and server and stores it in a variable called <code>app_hello</code>.</p></li>
 </ol>
+<blockquote>
+<p>In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates “this computer” and 5537 is a randomly assigned port number.</p>
+</blockquote>
 </div>
 <div id="running-a-shiny-app" class="section level3 hasAnchor" number="2.4.2">
 <h3><span class="header-section-number">2.4.2</span> Running a Shiny App<a href="intro.html#running-a-shiny-app" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Aside from the <code>Run App</code> button and the shortcut, there are many other ways to run a shiny app:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="intro.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runApp</span>(app_hello)</span>
-<span id="cb6-2"><a href="intro.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runGadget</span>(app_hello)</span>
-<span id="cb6-3"><a href="intro.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">runGadget</span>(app_hello, <span class="at">viewer=</span><span class="fu">dialogViewer</span>(<span class="st">&quot;App 1&quot;</span>))</span>
-<span id="cb6-4"><a href="intro.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(app_hello)</span>
-<span id="cb6-5"><a href="intro.html#cb6-5" aria-hidden="true" tabindex="-1"></a>app_hello</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runApp</span>(app_hello)</span>
+<span id="cb3-2"><a href="intro.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runGadget</span>(app_hello)  </span>
+<span id="cb3-3"><a href="intro.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">runGadget</span>(app_hello, <span class="at">viewer=</span><span class="fu">dialogViewer</span>(<span class="st">&quot;App 1&quot;</span>))</span>
+<span id="cb3-4"><a href="intro.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(app_hello)</span>
+<span id="cb3-5"><a href="intro.html#cb3-5" aria-hidden="true" tabindex="-1"></a>app_hello</span></code></pre></div>
 </div>
 <div id="activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does." class="section level3 unnumbered activity hasAnchor">
 <h3>Activity 2: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does.<a href="intro.html#activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does." class="anchor-section" aria-label="Anchor link to header"></a></h3>

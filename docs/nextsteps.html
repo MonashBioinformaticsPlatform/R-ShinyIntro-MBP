@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to R Shiny</title>
+  <title>Chapter 6 Next steps | Introduction to R Shiny</title>
   <meta name="description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to R Shiny" />
+  <meta property="og:title" content="Chapter 6 Next steps | Introduction to R Shiny" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   <meta name="github-repo" content="nkandhari/R-shiny-MBP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to R Shiny" />
+  <meta name="twitter:title" content="Chapter 6 Next steps | Introduction to R Shiny" />
   
   <meta name="twitter:description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
   
@@ -23,15 +23,15 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-05-19" />
+<meta name="date" content="2022-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro.html"/>
+<link rel="prev" href="tutorial.html"/>
+<link rel="next" href="resources.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -220,57 +220,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introduction to R Shiny</h1>
-<p class="author"><em>Nitika K., Adele B., Paul F. H.</em></p>
-<p class="date"><em>2022-05-19</em></p>
-</div>
-<div id="prerequisites" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites<a href="index.html#prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Before the tutorial please install R and RStudio,</p>
-<p><a href="https://cran.rstudio.com/">Download R</a></p>
-<p><a href="https://www.rstudio.com/products/rstudio/download/">Download RStudio</a></p>
-<p>Then install packages from CRAN and Bioconductor with the following R code:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span>
-<span id="cb2-2"><a href="index.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
-<span id="cb2-3"><a href="index.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;shinydashboard&quot;</span>)</span>
-<span id="cb2-4"><a href="index.html#cb2-4" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;Biostrings&quot;</span>)</span></code></pre></div>
-<!-- Make sure you are running R 3.3 and Bioconductor 3.3, or higher. -->
-<!-- ```{r bioc, eval=FALSE} -->
-<!-- # To upgrade an old Bioconductor installation -->
-<!-- source("https://bioconductor.org/biocLite.R") -->
-<!-- biocLite("BiocUpgrade") -->
-<!-- ``` -->
-<div id="download-files" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Download files<a href="index.html#download-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><p><a href="https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/data-files">tutorial.R</a></p></li>
-<li><p><a href="https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/ShinyApps.zip">ShinyApps.zip</a> # to be created</p></li>
-</ul>
-<p>Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.</p>
-</div>
-<div id="overview" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Overview<a href="index.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><p>Introduction to Shiny</p></li>
-<li><p>Structure of a Shiny app</p></li>
-<li><p>Reactivity</p></li>
-<li><p>Shiny tutorial</p></li>
-<li><p>Next steps</p></li>
-</ul>
-</div>
-<div id="source-code" class="section level2 unnumbered hasAnchor">
-<h2>Source code<a href="index.html#source-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This book was created in R using the <code>rmarkdown</code> and <code>bookdown</code> packages!</p>
-<ul>
-<li><a href="https://nkandhari.github.io/R-ShinyIntro-MBP/">GitHub page</a></li>
-</ul>
-</div>
-<div id="authors-and-copyright" class="section level2 unnumbered hasAnchor">
-<h2>Authors and copyright<a href="index.html#authors-and-copyright" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This course is developed for the Monash Bioinformatics Platform by Nitika Kandhari, Adele Barugahare and Paul Harrison.</p>
-<p><img src="figs/CC-BY.png" width="44" /></p>
-<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY-4: Creative Commons Attribution 4.0 International License</a>. The attribution is “Monash Bioinformatics Platform” if copying or modifying these notes.</p>
+<div id="nextsteps" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Next steps<a href="nextsteps.html#nextsteps" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="going-fancy-with-shiny-dashboards" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Going fancy with Shiny Dashboards<a href="nextsteps.html#going-fancy-with-shiny-dashboards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="nextsteps.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinyashboard)</span></code></pre></div>
+<p>This is the skeleton code for creating Shiny dashboards. There are three components to a Shiny dashboard:</p>
+<ol style="list-style-type: decimal">
+<li><p>Header</p></li>
+<li><p>Sidebar</p></li>
+<li><p>Body</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="nextsteps.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb2-2"><a href="nextsteps.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
+<span id="cb2-3"><a href="nextsteps.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="nextsteps.html#cb2-4" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">dashboardPage</span>(</span>
+<span id="cb2-5"><a href="nextsteps.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(),</span>
+<span id="cb2-6"><a href="nextsteps.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(),</span>
+<span id="cb2-7"><a href="nextsteps.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>()</span>
+<span id="cb2-8"><a href="nextsteps.html#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="nextsteps.html#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="nextsteps.html#cb2-10" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) { }</span>
+<span id="cb2-11"><a href="nextsteps.html#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="nextsteps.html#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code></pre></div>
+<p><img src="figs/shiny-dash.png" style="width:100.0%" /></p>
 
 </div>
 </div>
@@ -279,8 +252,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tutorial.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -311,7 +284,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/index.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/edit/master/06-nextsteps.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -319,7 +292,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/index.Rmd",
+"link": "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/06-nextsteps.Rmd",
 "text": null
 },
 "download": null,

@@ -2,11 +2,11 @@
 
 ## What is Shiny
 
-Shiny is an R package that makes it easy to build interactive web applications. It provides an easy way to present R data analysis interactively and over the web. It is magical in  the sense that it allows you to create complicated apps without any prior knowledge of HTML, CSS or JavaScript straight from your R code. Shiny essential wraps your R code and transforms it into a dynamic web app. The powerful features of the shiny programming are the User Interface (UI) and the reactivity which will be discussed in later sections.
+Shiny is an R package that makes it easy to build interactive web applications. It provides an easy way to present R data analysis interactively and over the web. It is magical in  the sense that it allows you to create complicated apps without any prior knowledge of HTML, CSS or JavaScript straight from your R code. Shiny essentially wraps your R code and transforms it into a dynamic web app. The powerful features of shiny are the interactions with the User Interface (UI) and the reactivity of the app on the data, which will be discussed in later sections.
 
 To use it, simply open up R Studio and:
 ```{r install_shiny, eval=T, echo = T}
-#install.packages("shiny")
+# install.packages("shiny")  ## if shiny has not been installed in your R instance, uncomment this and run this
 library(shiny)
 ```
 
@@ -21,11 +21,13 @@ library(shiny)
 
 * It adds reproducibilty to your graphs
 
-* You don't need to generate a billion plots manually. It can easily be added to a markdown document - like this one!
+* Allows end user interaction on complex datasets with collaborators who may not know how to code in R
+
+* You don't need to generate a billion plots manually. It can easily be added to a markdown document.
 
 ## Example apps
 
-Here are some apps made by Monash bioinformaticians:
+Here are some apps made by the team within the Monash Bioinformatics Platform:
 
 * [Stuart's TCP app that went into his Nature paper: ](http://bioapps.erc.monash.edu.ezproxy.lib.monash.edu.au/TCP/) Stuart K. Archer, Nikolay E. Shirokikh, Traude H. Beilharz, & Thomas Preiss. (2016). Dynamics of ribosome scanning and recycling revealed by translation complex profiling. Nature, 2016.
 
@@ -36,7 +38,8 @@ Here are some apps made by Monash bioinformaticians:
 ## Create your first Shiny App
 
 ### Activity 1: Creating a ShinyApp that prints "Hello, World!" {- .activity}
-Create a new .R file, paste the following code inside, save it as app.R.
+Create a new project within RStudio called `app_hello`. Then:
+Create a new .R file, paste the following code inside, save it as app.R inside the folder `app_hello`. (RStudio recognises this is a shiny app, because of the filename `app.R` and the format of the script within, a Run App button appears upon saving)
 
 ```{r, eval = F, echo = T}
 library(shiny) #1. calls the library `shiny`
@@ -48,7 +51,8 @@ server <- function(input, output, session) { #3. specifies app behavior
 app_hello <- shinyApp(ui, server) # 4. starts Shiny application
 ```
 
-Click on `Run App` in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter.
+Click on `Run App` in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter. 
+Run the script so the objects are loaded into the R environment.
 
 ![](figs/RunApp.png){width=100%}
 
@@ -62,14 +66,14 @@ This is a trivial Shiny app that performs 4 tasks:
 3. Creates a function called server that specifies app behavior. Currently, the function body is empty. It means this function (and the app) doesn't do anything except for printing "Hello, world!" We will later add more controls to this function to control app behavior.
 
 4. Construct a Shiny application from UI and server and stores it in a variable called `app_hello`.
-12
+
 > In the R console, there is some text displayed in red which indicates the URL of your app. Your app can be found at 127.0.0.1, indicates "this computer" and 5537 is a randomly assigned port number.
 
 ### Running a Shiny App
 Aside from the `Run App` button and the shortcut, there are many other ways to run a shiny app:
 ```{r, eval = F}
 runApp(app_hello)
-runGadget(app_hello)
+runGadget(app_hello)  
 runGadget(app_hello, viewer=dialogViewer("App 1"))
 print(app_hello)
 app_hello

@@ -1,3 +1,5 @@
+# Taken from Shiny widget gallery: http://shiny.rstudio.com/gallery/widget-gallery.html
+
 library(shiny)
 
 # Define UI ----
