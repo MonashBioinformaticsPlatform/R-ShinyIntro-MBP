@@ -31,14 +31,14 @@ server_pythagorus <- function(input, output, server) {
         
         input$a ** 2
     })
-    browser()
+    #browser()
     
     b2 <- reactive({
         cat("Compute b squared.\n")
         
         input$b ** 2
     })
-    browser()
+    #browser()
     
     output$result <- renderText({
         cat("Compute hypotenuse.\n")
@@ -46,10 +46,8 @@ server_pythagorus <- function(input, output, server) {
         cat("Done computing hypotenuse.\n")
         paste0("The hypotenuse is ", h)
     })
-    browser()
+    #browser()
 }
 
 # shinyApp(ui_pythagorus, server_pythagorus)
 server_pythagorus()
-
-          

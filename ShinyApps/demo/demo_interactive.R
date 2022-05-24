@@ -1,8 +1,8 @@
-
+library(here)
 library(shiny)
 library(utils)
 
-
+#here::here("ShinyApps/demo/")
 ui <- fluidPage(
     titlePanel("My first app"),
     
