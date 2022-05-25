@@ -1,6 +1,6 @@
 # Structure of a Shiny App{#structure}
 
-A basic Shiny app consists of two objects:
+A shiny app looks quite different from a typical R script. A basic Shiny app consists of two objects:
 
 * UI object - contains the code for the UI (user interface) elements i.e the visible part of the app; takes input and displays output.
 
@@ -90,12 +90,22 @@ ui <- fluidPage( # fluidPage - this function creates a display that auto adjusts
 )
 ```
 
-Building a UI involves nesting a lot of components inside each other and this can be overwhelming to look at when you are getting started. It's quite easy to lose track of where your closing brackets should be and quite easy to have a misplaced comma that prevents your app from running. We can't emphasis this enough - getting the nesting right can prevent a lot of problems with your shiny app not running. As you become more experienced with writing Shiny, you'll get used to examining your UI element code with an eagle eye to make sure you haven't misplaced a comma or bracket. 
+This is where Shiny starts to get a little tricky, a lot of ui code will be end up being nested in more code. So far, we have the `sidebarPanel` widget nested inside `siderbarLayout` **which is nested in** `fluidPage`. So we've stuck a function inside a function inside a function. Phew, that's a lot to keep track of! We could easily place widgets inside the `sidebarPanel` function - they'd be nested even futher! Many common problems that'll prevent a shiny app from running simply come from just putting a comma or a bracket in the wrong place. 
 
-From the example above, we can see that `sidebarPanel` and `mainPanel` are nested within `sidebarLayout`. `sidebarLayout` itself is also nested within `fluidPage`. As more components are added to the app, e.g widgets and outputs, they too will be nested within the panel functions to control their location on the layout.
+>We cannot emphasis this point enough - **keeping track of opening and closing brackets and your commas is a good skill to cultivate when building Shiny apps!** One quick way to check on your brackets is to move the cursor next to a bracket - in RStudio - that will highlight the other bracket paired with if (if one exists, that is!).
+>
+>![](https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/full_brackets.png?raw=true)
+>
+>*Fig 1. The cursor is placed next the opening bracket for `mainPanel` and the closing bracket is highlighted.*
+>
+>
+>![](https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/missing_bracket.png?raw=true)
+>
+>*Fig 2. Here, though the cursor is in the same place but the original closing bracket to `mainPanel` is missing. The next closing bracket is used by `mainPanel` instead, which now means `sidebarLayout` does not have a closing bracket. The app would not work in this situation.*
+
+The degree to which functions are nested in each other to build the UI can be overwhelming to look at when you are getting started. As you become more experienced with writing Shiny, you'll get used to examining your UI element code with an eagle eye to make sure you haven't misplaced a comma or bracket. 
 
 The above layout is probably the most common layout used with shiny apps. It's good for an app with only a few number of components. You may want to add a navbar and tab sets if you have a large number of components.
-
 
 ```{r}
 ui <- fluidPage( 
