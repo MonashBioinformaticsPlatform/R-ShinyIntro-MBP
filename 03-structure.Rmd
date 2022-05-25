@@ -25,13 +25,14 @@ server <- function(input, output, session) {
 shinyApp(ui, server) # runs the app
 ```
 
+
 ## UI 
 
 This is the front-end of the shiny app that allows you to capture (input) and display (output) a variety of data types. Fundamentally the UI is an HTML document with shiny functions returning chunks of HTML code. Fortunately, we don't have to write the HTML code directly ourselves, Shiny has R functions that do that instead.
 
-The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. In this section, we'll look at examples of shinyWidgets that insert input controls.
+The UI object controls the layout and appearance of the app. The UI makes use of widgets to interact with data. In this section, we'll look at examples of layouts and shinyWidgets that insert input controls.
 
-The first example is a slider. Open the `app_slider.R` inside `ShinyApps` folder to understand how the slider widget works.
+Here's an example of a widget: a basic slider. Open the `app_slider.R` inside `ShinyApps` folder to understand how the slider widget works.
 
 ```{r widget1, echo = T, eval = F}
 library(shiny)
@@ -89,9 +90,11 @@ ui <- fluidPage( # fluidPage - this function creates a display that auto adjusts
 )
 ```
 
-Building a UI involves nesting a lot of components inside each other. From this example here we can see that `sidebarPanel` and `mainPanel` are nested within `sidebarLayout`. `sidebarLayout` itself is also nested within `fluidPage`. As more components are added to the app, e.g widgets and outputs, they too will be nested within the panel functions to control their location on the layout.
+Building a UI involves nesting a lot of components inside each other and this can be overwhelming to look at when you are getting started. It's quite easy to lose track of where your closing brackets should be and quite easy to have a misplaced comma that prevents your app from running. We can't emphasis this enough - getting the nesting right can prevent a lot of problems with your shiny app not running. As you become more experienced with writing Shiny, you'll get used to examining your UI element code with an eagle eye to make sure you haven't misplaced a comma or bracket. 
 
-The above layout is probably the most common layout used with shiny apps. It's good for an app with only a few number of components. You may want to add navbar and tab sets if you have a large number of components.
+From the example above, we can see that `sidebarPanel` and `mainPanel` are nested within `sidebarLayout`. `sidebarLayout` itself is also nested within `fluidPage`. As more components are added to the app, e.g widgets and outputs, they too will be nested within the panel functions to control their location on the layout.
+
+The above layout is probably the most common layout used with shiny apps. It's good for an app with only a few number of components. You may want to add a navbar and tab sets if you have a large number of components.
 
 
 ```{r}
@@ -122,10 +125,11 @@ Does the `tabsetPanel` need to be nested in the `sidebarLayout`?
 
 ## Widgets
 
-There is a wide variety of available pre-built widgets but all of them share a common basic framework. All widget input functions have the same first argument i.e. `inputID`. This is an identifier that connects the UI with the server. If for example `inputID = select`, you can access the input in the server as `input$select`. We'll discuss more about the server in the next section.
+Widgets are UI elements that allow the user to input and change the values that are used to by the application to perform a calculation and return a result.
 
+There is a wide variety of available pre-built widgets but all of them share a common basic framework. All widget input functions have the same first argument i.e. `inputId`. This is an identifier that connects the UI with the server. If for example `inputId = select`, you can access the input in the server as `input$select`. We'll discuss more about the server in the next section.
 
-* The `inputID` is like a variable in R and must follow the naming convention. It must be a string that may contain only letters, numbers, and underscores.
+* The `inputId` is like a variable in R and must follow the naming convention. It must be a string that may contain only letters, numbers, and underscores.
 
 * Like a variable, the `inputID` has to be unique so it can be accessed inside the server.
 
@@ -151,20 +155,66 @@ shinyUI(navbarPage("Navbar",
 )
 
 ```
-The `choices` augment takes a list. This list can either be unnamed or named. In the case of a named list, such as the one above for the `checkboxGroupInput` widget, the names will be displayed on the UI (e.g "Choice 1") while the value (e.g 1) will be passed to the server side to be use1d for further computations. For an unnamed list, the value will both be displayed on the UI and passed to the server side.
+
+We can examine the code that generates the `selectInput` with the title 'Select box':
+
+```{r, eval = FALSE}
+selectInput(inputId = "choice_select", label = "Select box",
+            choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
+            selected = 1)
+```
+
+The `inputId` is `choice_select`, so if we want to use the values generated by this widget on the server side, we'd access it with `input$choice_select`. You can name the `inputId` however you like so long as you don't use the same id for another input widget but it's generally useful to name it something related to whatever that input is doing. The `label` arguement is the text to be displayed above the widget in the UI. The `choices` argument takes a list. This list can either be unnamed or named. In the case of a named list, such as the one above, the names will be displayed on the UI (e.g "Choice 1") while the value (e.g 1) will be passed to the server side to be use1d for further computations. For an unnamed list, the value will both be displayed on the UI and passed to the server side. The `selected` arguement tells Shiny which of the list values it should display by default when the app loads - in this case, it will start with the value in the choices list that matches the value of `1`, which is `Choice 1`.
+
+To learn more about the arguments that a widget takes, the [Widget Gallery](https://shiny.rstudio.com/gallery/widget-gallery.html) is usually a good starting point.
 
 ### Activity 3: Now, open the `widgets.R` inside `ShinyApps` folder, and try running it.{- .activity}
 There are a variety of widgets available in Shiny Apps. Have a go at them!!
 
 Please Note: For now, keep the `Server Logic` and `Run the App` as it is. We'll explain these in next sections.
 
+## Output
+
+The UI also contains elements for displaying output results. The list of this are not as expansive as the widgets and can be [found here (under UI outputs)](https://shiny.rstudio.com/reference/shiny/1.7.0/). The type of result you want displayed in your application determines the type of UI element that you need.
+
+For example, if your application is going to return a text result, then you probably want a `textOutput` element:
+
+```{r}
+ui <- fluidPage( 
+  sidebarLayout(
+    sidebarPanel(), # Put your input widgets on this panel
+    mainPanel(
+      textOutput(outputId = "text_result")
+    )
+  )
+)
+```
+
+Similar to the `inputId` for widgets, the `outputId` for each output element needs to uniquely named. 
+
+The main output elements commonly used are `textOutput`, `plotOutput` and `tableOutput` and they are used respectively for displaying text, plots and tables as their names suggests. 
+
+```{r}
+ui <- fluidPage( 
+  sidebarLayout(
+    sidebarPanel(), # Put your input widgets on this panel
+    mainPanel(
+      textOutput(outputId = "text_result"),
+      plotOutput(outputId = "plot_result", width = "400px", height = "100%" )
+    )
+  )
+)
+```
+
+While the output functions do take a few arguments, generally the most you need to do is give them an `outputId`. If you are looking at the `plot_result` function and wondering where the code to generate the plot belongs, then it's time to move on to the server function.  
+
 ## Server
 
-The server object contains the code for building the app. It contains the code for data processing, analysis and plotting. It takes input from the UI, runs (and re-runs) code chunks defined within, generates output and sends it to the UI.
+The server function is the back-end of the application. It contains the code for data processing, analysis and plotting. It takes input from the UI, runs (and re-runs) code chunks defined within, generates a result and sends it to the UI output elements.
 
 The server logic follows reactive programming, which defines a graph of dependencies. The idea is that when the input changes, all related outputs are updated. This makes the Shiny App interactive. 
 
-In the Shiny skeleton code, server is defined as a function with three arguments- input, output and session. These arguments are created by Shiny when the session starts and cannot be changed.
+In the Shiny skeleton code, server is defined as a function with three arguments- input, output and session. These arguments are created by Shiny when the application starts and cannot be changed.
 ```{r, eval = F}
 library(shiny)
 
@@ -179,8 +229,85 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+Whereas the UI object contained functions for defining the interface of the application, the server function defines the logic of what to do with those inputs and outputs. It typically contains reactive variables (we'll cover those next chapter) and `renderX` functions that direct the result of a calculation to an output ui element. For each of the different types of output elements (`textOutput`, `plotOutput`, `tableOutput`), there is a corresponding render function i.e (`renderText`, `renderPlot`, `renderTable`).
+
+The `render` function sets up a special "reactive context" that automatically tracks the input values the output has used. It also converts the output of your R code into HTML to be display on a web page.
+
+The structure in the server function typically looks like this:
+
+```{r}
+server <- function(input, output, session) {
+  
+  # We assign the result of a render function to an output element
+  output$plot_result <- renderPlot({ 
+    ## Code to do a calculation that generates a plot result
+    ## This where your 'regular' R code is placed
+    ## to access values from widgets, use the syntax input$widget_id
+    
+    ## The function below will subset the airquality dataset into 2 columns
+    ## It grabs column 4 (Temp) and either columns 1-3 
+    ## depending on the choice from the selectInput called choice_select
+    df <- airquality[, c(4, as.numeric(input$choice_select))]
+    
+    ## This function now plots the two columns
+    ## We can change the data being plotted on the y-axis
+    ## Whenever we change the value selected by the 
+    ## selectInput widget
+    plot(x = df[, 1], y = df[, 2])
+  })
+}
+```
+
+For each output element that we create in the UI, if we want it to display a result, we then need a corresponding `renderX` function in the server side that directs a results to be displayed e.g:
+
+```{r}
+server <- function(input, output, session) {
+  
+  output$text_result <- renderText({
+    ## the print function here is optional
+    ## including it means that it will print the results to the console while the app is running
+    ## which is a useful way to debug what you app is doing 
+    print(paste("The selected column index is:", input$choice_select))
+  })
+
+  output$plot_result <- renderPlot({
+    
+    plot(x = airquality[, 4], y = airquality[, as.numeric(input$choice_select)])
+  
+  })
+}
+```
+
+Let's put togther all that we've learnt about widgets, ui output and the server to create a minimal application that will let you select the values plotted on the y-axis from the `airquality` dataset against the temperature column. (If you want to examine the airquality data-frame, use `head(airquality)` to look at the top rows.)
+
+```{r}
+library(shiny)
+ui <- fluidPage(
+    selectInput(inputId = "choice_select", label = "Select box",
+            choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
+            selected = 1),
+    mainPanel(
+        plotOutput(outputId = "plot_result")
+    )
+)
+server <- function(input, output, session) {
+  
+  output$plot_result <- renderPlot({
+    
+    plot(x = airquality[, 4], y = airquality[, as.numeric(input$choice_select)])
+  
+  })
+}
+shinyApp(ui, server)
+
+```
+
+
+
+
 ### Input
-This is a list-like object that contains all input data from the UI. The input data can be accessed as `input$inputId`, where `inputId` is defined in the UI for any given widget. For example, if we refer back to the check-box example in shiny widgets, we specified the `inputId` as `checkGroup`. We can access the value of that specific input using `input$checkGroup`. It will contain the value `1` as we specified this in the `selected` argument. This value will be updated everytime a user selects a different check-box.
+
+This is a list-like object that contains all input data from the UI. The input data can be accessed as `input$inputId`, where `inputId` is defined in the UI for any given widget. For example, if we refer back the check-box below, we specified the `inputId` as `checkGroup`. We can access the value of that specific input using `input$checkGroup`. It will contain the value `1` as we specified this in the `selected` argument. This value will be updated everytime a user selects a different check-box.
 
 
 ```{r, eval = F}
@@ -210,7 +337,6 @@ server <- function(input, output, session) {
 }
 ```
 
-The `render` function sets up a special "reactive context" that automatically tracks the input values the output has used. It also converts the output of your R code into HTML to be display on a web page.
 
 ### Challenge 1: Rewrite your `ui` to create a Shiny app that contains following:{- .challenge}
 

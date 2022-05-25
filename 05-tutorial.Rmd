@@ -423,8 +423,6 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-Congratulations! You've made your first app! 
-
 ### Activity 4: Modily x- and y-axes labels{- .activity}
 Can you figure out how to change the axis titles to the name of the selected sample. One of `selectInput` widgets also need to be changed to a named list. Other than that, you're good to go.
 
@@ -492,7 +490,7 @@ output$plot3 <- renderPlot({
 
 1. The first step is to sort out the ui.
 
-2. We want to print the number of rows in the data as decided by a slider. Create a slider input widget. 
+2. We want to print the number of rows in the selected data-set as decided by a slider. Create a slider input widget. 
 
 > Hint: The code for a slider looks something like this:
 >      sliderInput("inputIDyouwant", label = "Slider", min = , max = , value = 50)
