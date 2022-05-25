@@ -290,7 +290,7 @@ server <- function(input, output, session) {
 
 Let's put togther all that we've learnt about widgets, ui output and the server to create a minimal application that will let you select the values plotted on the y-axis from the `airquality` dataset against the temperature column. (If you want to examine the airquality data-frame, use `head(airquality)` to look at the top rows.)
 
-```{r}
+```{r, eval=FALSE}
 library(shiny)
 ui <- fluidPage(
     selectInput(inputId = "choice_select", label = "Select box",
