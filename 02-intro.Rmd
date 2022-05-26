@@ -27,13 +27,17 @@ library(shiny)
 
 ## Example apps
 
-Here are some apps made by the team within the Monash Bioinformatics Platform:
+Here are some apps made by the team within the Monash Bioinformatics Platform for analysing bioinformatics data:
 
-* [Stuart's TCP app that went into his Nature paper: ](http://bioapps.erc.monash.edu.ezproxy.lib.monash.edu.au/TCP/) Stuart K. Archer, Nikolay E. Shirokikh, Traude H. Beilharz, & Thomas Preiss. (2016). Dynamics of ribosome scanning and recycling revealed by translation complex profiling. Nature, 2016.
+* [Stuart's TCP app that accompanied his Nature paper: ](http://bioapps.erc.monash.edu/TCP/) Stuart K. Archer, Nikolay E. Shirokikh, Traude H. Beilharz, & Thomas Preiss. (2016). Dynamics of ribosome scanning and recycling revealed by translation complex profiling. Nature, 2016.
 
-* [Paul's Varistran app](http://rnasystems.erc.monash.edu:3838/pfh/2015/demo-varistran/)
+* [Paul's Varistran app](http://rnasystems.erc.monash.edu:3838/pfh/2015/demo-varistran/) - performs a variance stabilising transformation and generates diagnostic plots for RNA-seq data
 
-* [Varistran github page](https://github.com/MonashBioinformaticsPlatform/varistran)
+* [LFQ-Analyst](https://bioinformatics.erc.monash.edu/apps/LFQ-Analyst/) - an interactive tool to analyze and visualize proteomics data
+
+* [Toy Interactive Enrichment Calculator](https://bioinformatics3.erc.monash.edu/rsconnect/content/241/)
+
+And always, the [Shiny Gallery](https://shiny.rstudio.com/gallery/) is a fantastic resource for findng example apps
 
 ## Create your first Shiny App
 
