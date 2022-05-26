@@ -10,7 +10,7 @@ A shiny app looks quite different from a typical R script. A basic Shiny app con
 
 <p>&nbsp;</p>
 
-The skeleton of every Shiny app looks like:
+The skeleton of a Shiny app looks like:
 ```{r, echo = T, eval = F}
 library(shiny)
 
@@ -25,6 +25,7 @@ server <- function(input, output, session) {
 shinyApp(ui, server) # runs the app
 ```
 
+Originally shiny apps were written across two files, one called `ui.R` and the other `server.R` - with the code for the ui seperate in the UI file and the code for the server function contained in its own file. You may encounter this structure if you examine the code for an old applications. It is still possible to write shiny applications this way but we will not be covering it in this course. We will be teaching you how to write apps in 1 file. 
 
 ## UI 
 
