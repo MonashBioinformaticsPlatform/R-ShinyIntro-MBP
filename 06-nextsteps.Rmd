@@ -79,7 +79,8 @@ ui <- fluidPage(
     sidebarPanel(
         numericInput(inputId = "filter", label = "Number of days to filter out", value = 1, 
             min = 0, max = 150),
-        uiOutput("select_out")
+        uiOutput("select_out") # We have an output element in the UI, this where the
+        # the widget will be placed 
     ),
     mainPanel(
         textOutput(outputId = "text_out")
@@ -100,12 +101,17 @@ server <- function(input, output, session) {
     d_list <- c(filtered_df$day_into)
     d_list <- as.list(d_list)
 
+    # we've used a selectInput widget here
+    # we can use any input widget here
     selectInput(
         inputId = "day_select", label = "Select filtered day", choices = d_list,
         selected = "Day1"
     )
   })
 
+  # even though that the widget was created
+  # on the server side we still access it with
+  # input$inputId
   output$text_out <- renderText({
       print(input$day_select)
   })
