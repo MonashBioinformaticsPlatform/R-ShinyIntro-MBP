@@ -39,3 +39,4 @@ workings-of-reactive-expressions
 accessing-reactivity
 nextsteps
 going-fancy-with-shiny-dashboards
+workings-of-reactive-expressions-advanced-optional-r-script

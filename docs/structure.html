@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world">Activity 1: Creating a ShinyApp that prints “Hello, World!”<span></span></a></li>
 <li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#breakdown-of-the-code"><i class="fa fa-check"></i><b>2.4.1</b> Breakdown of the code<span></span></a></li>
 <li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#running-a-shiny-app"><i class="fa fa-check"></i><b>2.4.2</b> Running a Shiny App<span></span></a></li>
-<li><a href="intro.html#activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does.">Activity 2: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does.<span></span></a></li>
+<li><a href="intro.html#challenge-1-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does-breakout.">Challenge 1: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does (Breakout).<span></span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App<span></span></a>
@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> UI<span></span></a></li>
 <li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#layout"><i class="fa fa-check"></i><b>3.2</b> Layout<span></span></a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="structure.html"><a href="structure.html#challenge-0---.activity."><i class="fa fa-check"></i><b>3.2.1</b> Challenge 0 {- .activity}.<span></span></a></li>
+<li><a href="structure.html#activity-2-does-the-tabsetpanel-need-to-be-nested-in-the-sidebarlayout">Activity 2: Does the <code>tabsetPanel</code> need to be nested in the <code>sidebarLayout</code>?<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#widgets"><i class="fa fa-check"></i><b>3.3</b> Widgets<span></span></a>
 <ul>
@@ -179,7 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.4.1</b> Input<span></span></a></li>
 <li class="chapter" data-level="3.4.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.4.2</b> Output<span></span></a></li>
-<li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:<span></span></a></li>
+<li><a href="structure.html#challenge-2-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 2: Rewrite your <code>ui</code> to create a Shiny app that contains following:<span></span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>4</b> Reactivity<span></span></a>
@@ -190,7 +190,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressiovs-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressiovs vs Reactive expressions<span></span></a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="reactivity.html"><a href="reactivity.html#workings-of-reactive-expressions"><i class="fa fa-check"></i><b>4.2.1</b> Workings of reactive expressions<span></span></a></li>
+<li class="chapter" data-level="4.2.1" data-path="reactivity.html"><a href="reactivity.html#workings-of-reactive-expressions-advanced-optional-r-script"><i class="fa fa-check"></i><b>4.2.1</b> Workings of reactive expressions —&gt; Advanced [optional]–&gt; R script<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="reactivity.html"><a href="reactivity.html#accessing-reactivity"><i class="fa fa-check"></i><b>4.3</b> Accessing Reactivity<span></span></a></li>
 </ul></li>
@@ -262,9 +262,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-2"><a href="structure.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;slider1&quot;</span>, <span class="st">&quot;Decimal&quot;</span>,</span>
 <span id="cb2-3"><a href="structure.html#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">max =</span> <span class="dv">1</span>,</span>
 <span id="cb2-4"><a href="structure.html#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">value =</span> <span class="fl">0.8</span>, <span class="at">step =</span> <span class="fl">0.2</span>)</span></code></pre></div>
-<p><img src="figs/slider.png" style="width:80.0%" /></p>
+<p><img src="figs/slider.png" style="width:50.0%" /></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="structure.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">renderPrint</span>({<span class="fu">paste</span>(<span class="st">&quot;The number selected by the slider is:&quot;</span>, input<span class="sc">$</span>slider1)})</span></code></pre></div>
-<p><img src="figs/slider_out.png" style="width:100.0%" /></p>
+<p><img src="figs/slider_out.png" style="width:60.0%" /></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="structure.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb4-2"><a href="structure.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fluidPage</span>(</span>
 <span id="cb4-3"><a href="structure.html#cb4-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -347,9 +347,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-15"><a href="structure.html#cb6-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>For more information about the application layout (including nav bars and lists), we recommend this <a href="https://shiny.rstudio.com/articles/layout-guide.html">resource</a>. For more information about tab sets specifically, we recommend this <a href="https://shiny.rstudio.com/articles/tabsets.html">article</a>.</p>
 <p>Another thing to note that a lot of the functions that build the UI are essentially wrapping HTML code within R functions. This means that the UI can also be customized by directly writing HTML code or by using <a href="https://shiny.rstudio.com/articles/tag-glossary.html">wrapper tag functions</a>. This is beyond the scope of this course but we thought it was worth mentioning.</p>
-<div id="challenge-0---.activity." class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Challenge 0 {- .activity}.<a href="structure.html#challenge-0---.activity." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Does the <code>tabsetPanel</code> need to be nested in the <code>sidebarLayout</code>?</p>
+<div id="activity-2-does-the-tabsetpanel-need-to-be-nested-in-the-sidebarlayout" class="section level3 unnumbered activity hasAnchor">
+<h3>Activity 2: Does the <code>tabsetPanel</code> need to be nested in the <code>sidebarLayout</code>?<a href="structure.html#activity-2-does-the-tabsetpanel-need-to-be-nested-in-the-sidebarlayout" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
 <div id="widgets" class="section level2 hasAnchor" number="3.3">
@@ -365,19 +364,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="navbar-header">
 <span class="navbar-brand">Navbar</span>
 </div>
-<ul class="nav navbar-nav" data-tabsetid="9253">
+<ul class="nav navbar-nav" data-tabsetid="8403">
 <li class="active">
-<a href="structure.html#tab-9253-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
+<a href="structure.html#tab-8403-1" data-toggle="tab" data-bs-toggle="tab" data-value="Widgets!">Widgets!</a>
 </li>
 <li>
-<a href="structure.html#tab-9253-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
+<a href="structure.html#tab-8403-2" data-toggle="tab" data-bs-toggle="tab" data-value="More widgets!">More widgets!</a>
 </li>
 </ul>
 </div>
 </nav>
 <div class="container-fluid">
-<div class="tab-content" data-tabsetid="9253">
-<div class="tab-pane active" data-value="Widgets!" id="tab-9253-1">
+<div class="tab-content" data-tabsetid="8403">
+<div class="tab-pane active" data-value="Widgets!" id="tab-8403-1">
 <div class="form-group shiny-input-container">
 <label class="control-label" id="select-label" for="select">
 <h3>Select box</h3>
@@ -389,16 +388,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script type="application/json" data-for="select" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out1974457f4ddf149e"></pre>
+<pre class="shiny-text-output noplaceholder" id="outee26983143e66264"></pre>
 <div class="form-group shiny-input-container">
 <label class="control-label" id="text-label" for="text">
 <h3>Text input</h3>
 </label>
 <input id="text" type="text" class="form-control" value="Enter text..."/>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out8fa964b943e2b3bf"></pre>
+<pre class="shiny-text-output noplaceholder" id="outcb0104a503ce0cb9"></pre>
 </div>
-<div class="tab-pane" data-value="More widgets!" id="tab-9253-2">
+<div class="tab-pane" data-value="More widgets!" id="tab-8403-2">
 <div id="checkGroup" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="checkGroup-label">
 <label class="control-label" id="checkGroup-label" for="checkGroup">
 <h3>Checkbox group</h3>
@@ -424,7 +423,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<pre class="shiny-text-output noplaceholder" id="out024efe8222efdbe0"></pre>
+<pre class="shiny-text-output noplaceholder" id="out15ffb4e9b2be0117"></pre>
 </div>
 </div>
 </div>
@@ -477,10 +476,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-7"><a href="structure.html#cb9-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>The <code>render</code> function sets up a special “reactive context” that automatically tracks the input values the output has used. It also converts the output of your R code into HTML to be display on a web page.</p>
 </div>
-<div id="challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following" class="section level3 unnumbered challenge hasAnchor">
-<h3>Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:<a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="challenge-2-rewrite-your-ui-to-create-a-shiny-app-that-contains-following" class="section level3 unnumbered challenge hasAnchor">
+<h3>Challenge 2: Rewrite your <code>ui</code> to create a Shiny app that contains following:<a href="structure.html#challenge-2-rewrite-your-ui-to-create-a-shiny-app-that-contains-following" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li><p>Title that says “Challenge 1”</p></li>
+<li><p>Title that says “Challenge 2”</p></li>
 <li><p>Select <code>airquality</code> from the default datasets in R (Hint: Refer to <code>app_ui.R</code>).</p></li>
 <li><p>Create three widgets:</p>
 <ul>

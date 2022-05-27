@@ -37,6 +37,8 @@ Here are some apps made by the team within the Monash Bioinformatics Platform fo
 
 * [Toy Interactive Enrichment Calculator](https://bioinformatics3.erc.monash.edu/rsconnect/content/241/)
 
+* [R Studio's CRAN logs app: ](https://gallery.shinyapps.io/087-crandash/) Displays 1-week delayed streaming data from the RStudio CRAN mirror logs.
+
 And always, the [Shiny Gallery](https://shiny.rstudio.com/gallery/) is a fantastic resource for findng example apps
 
 ## Create your first Shiny App
@@ -55,7 +57,7 @@ server <- function(input, output, session) { #3. specifies app behavior
 app_hello <- shinyApp(ui, server) # 4. starts Shiny application
 ```
 
-Click on `Run App` in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter. 
+Click on `Run App` in the top right corner (see fig below). Or you can also use the keyboard shortcut: Cmd/Ctrl + Shift + Enter.
 Run the script so the objects are loaded into the R environment.
 
 ![](figs/RunApp.png){width=100%}
@@ -83,5 +85,5 @@ print(app_hello)
 app_hello
 ```
 
-### Activity 2: Now, open the `app_ui.R` inside `ShinyApps` folder and examine what it does.{- .activity}
+### Challenge 1: Now, open the `app_ui.R` inside `ShinyApps` folder and examine what it does (Breakout).{- .challenge}
 First run the app as it is. Then uncomment the lines and run again and observer the changes. Can you explain the function of this app?
