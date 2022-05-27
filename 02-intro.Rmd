@@ -29,11 +29,12 @@ library(shiny)
 
 Here are some apps made by the team within the Monash Bioinformatics Platform:
 
-* [Stuart's TCP app that went into his Nature paper: ](http://bioapps.erc.monash.edu.ezproxy.lib.monash.edu.au/TCP/) Stuart K. Archer, Nikolay E. Shirokikh, Traude H. Beilharz, & Thomas Preiss. (2016). Dynamics of ribosome scanning and recycling revealed by translation complex profiling. Nature, 2016.
+* [Anup and Sarah's Enrichment app: ](https://bioinformatics3.erc.monash.edu/rsconnect/content/241/) Calculates enrichment score for differential gene list.
 
-* [Paul's Varistran app](http://rnasystems.erc.monash.edu:3838/pfh/2015/demo-varistran/)
+* [Paul's Varistran app](http://rnasystems.erc.monash.edu:3838/pfh/2015/demo-varistran/) Varistran is an R package that provides a Variance Stabilizing Transformation appropriate for RNA-Seq data, and generates a variety of diagnostic plots based on such transformation.
 
-* [Varistran github page](https://github.com/MonashBioinformaticsPlatform/varistran)
+* [R Studio's CRAN logs app: ](https://gallery.shinyapps.io/087-crandash/) Displays 1-week delayed streaming data from the RStudio CRAN mirror logs.
+
 
 ## Create your first Shiny App
 
@@ -79,5 +80,5 @@ print(app_hello)
 app_hello
 ```
 
-### Activity 2: Now, open the `app_ui.R` inside `ShinyApps` folder and examine what it does.{- .activity}
+### Challenge 1: Now, open the `app_ui.R` inside `ShinyApps` folder and examine what it does (Breakout).{- .challenge}
 First run the app as it is. Then uncomment the lines and run again and observer the changes. Can you explain the function of this app?

@@ -1,4 +1,6 @@
+# Uppercase/ Lowercase strings 
 library(Biostrings)
+library(shiny)
 ui <- fluidPage(
     textInput("name", "What's your name?"),
     textOutput("reverse")

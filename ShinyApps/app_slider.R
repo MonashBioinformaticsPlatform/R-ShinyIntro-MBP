@@ -6,7 +6,7 @@ ui <- fluidPage(
             value = 0.8, step = 0.2),
     
     fluidRow(
-        column(4, verbatimTextOutput("value"))
+        verbatimTextOutput("value")
     )
 )
 

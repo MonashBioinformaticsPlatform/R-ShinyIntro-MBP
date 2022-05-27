@@ -40,13 +40,13 @@ sliderInput("slider1", "Decimal",
             value = 0.8, step = 0.2)
 ```
 
-![](figs/slider.png){width=80%}
+![](figs/slider.png){width=50%}
 
 ```{r, echo= T, eval = F}
 renderPrint({paste("The number selected by the slider is:", input$slider1)})
 ```
 
-![](figs/slider_out.png){width=100%}
+![](figs/slider_out.png){width=60%}
 
 
 ```{r}
@@ -116,9 +116,8 @@ For more information about the application layout (including nav bars and lists)
 
 Another thing to note that a lot of the functions that build the UI are essentially wrapping HTML code within R functions. This means that the UI can also be customized by directly writing HTML code or by using [wrapper tag functions](https://shiny.rstudio.com/articles/tag-glossary.html). This is beyond the scope of this course but we thought it was worth mentioning.
 
-### Challenge 0 {- .activity}.
+### Activity 2: Does the `tabsetPanel` need to be nested in the `sidebarLayout`? {- .activity}
 
-Does the `tabsetPanel` need to be nested in the `sidebarLayout`? 
 
 ## Widgets
 
@@ -212,9 +211,9 @@ server <- function(input, output, session) {
 
 The `render` function sets up a special "reactive context" that automatically tracks the input values the output has used. It also converts the output of your R code into HTML to be display on a web page.
 
-### Challenge 1: Rewrite your `ui` to create a Shiny app that contains following:{- .challenge}
+### Challenge 2: Rewrite your `ui` to create a Shiny app that contains following:{- .challenge}
 
-1. Title that says "Challenge 1"
+1. Title that says "Challenge 2"
 
 2. Select `airquality` from the default datasets in R (Hint: Refer to `app_ui.R`).
 

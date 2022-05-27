@@ -87,7 +87,7 @@ y <- reactive({
 })
 ```
 
-### Workings of reactive expressions
+### Workings of reactive expressions ---> Advanced [optional]--> R script
 
 In the following example, we have a reactive input `input$a`, where `a =1`. We create a reactive expression, `expr1` which is just a function.
 ```{r, eval =F}
