@@ -10,53 +10,12 @@ head(dat, 10)
 
 ## Setting up a shiny app
 
-Create one blank R script (Click `File` > `New File` > `R Script`). Save it inside the `demo` folder with the name `app.R`. 
-
-Now we're going to create a blank app. In app.R, type:
-
-```{r, eval = FALSE}
-
-library(shiny)
-
-ui <- fluidPage(
-  
-)
-
-server <- function(input, output) {
-  
-}
-
-shinyApp(ui = ui, server = server)
-
-```
+Create one blank R script (Click `File` > `New File` > `R Script`). Save it inside the `demo` folder with the name `app.R`. We've now seen how to create a blank app with the ui and the server. We should be able to make out the layout of the app now. The top of the window is where the title panel is located and beneath it are two panels, laid out with the sidebar to the left and the larger main panel to the right. 
 
 
+## Using widgets
 
-## Building the UI layout
-
-The ui object controls the appearance of the app. There are a number of layouts and widgets that an app can have. For this tutorial, we will use a title panel with a sidebar layout underneath. This is a common layout for Shiny apps. The sidebar layout will give the app two panels, a sidebar and a main panel. To look up more layouts, check the [Shiny gallery.](http://shiny.rstudio.com/gallery/)
-
-Update the ui object to:
-```{r, eval = FALSE}
-
-ui <- fluidPage(
-  titlePanel("My first app"),
-  
-  sidebarLayout(
-    sidebarPanel("This is a sidebar panel"),
-    mainPanel("And this is the main panel")
-  )
-)
-
-```
-Then run app.
-
-You should be able to make out the layout of the app now. The top of the window is where the title panel is located and beneath it are two panels, laid out with the sidebar to the left and the larger main panel to the right. 
-
-
-#### Using widgets
-
-We are going to add two widgets to the ui. These will control which samples gets plotted to the x and y axis of the plot and will be located in the sidebar panel. We will use `selectInput` to create these widgets but these could easily be swapped out for other widgets such radiobuttons. To see what widgets are available, look at the [Shiny widget gallery](http://shiny.rstudio.com/gallery/widget-gallery.html) or consult the [Shiny cheatsheet](http://shiny.rstudio.com/images/shiny-cheatsheet.pdf).
+We are going to add two widgets to the ui. These will control which samples gets plotted to the x and y axis of the plot and will be located in the sidebar panel. We will use `selectInput` to create these widgets but these could easily be swapped out for other widgets such radio-buttons. To see what widgets are available, look at the [Shiny widget gallery](http://shiny.rstudio.com/gallery/widget-gallery.html) or consult the [Shiny cheatsheet](http://shiny.rstudio.com/images/shiny-cheatsheet.pdf).
 
 To start off with, let's add just one widget to the sidebar. 
 ```{r, eval = FALSE}
@@ -81,21 +40,7 @@ ui <- fluidPage(
 
 ```
 
-This is where Shiny starts to get a little tricky, a lot of ui code will be end up being nested in more code. So far, we have the `selectInput` widget nested inside `sidebarPanel` nested inside `siderbarLayout` **which is nested in** `fluidPage`. So we've stuck a function inside a function inside a function inside a function. Phew, that's a lot to keep track of! Many common problems that'll prevent a shiny app from running simply come from just putting a comma or a bracket in the wrong place. 
-
->We cannot emphasis this point enough - **keeping track of opening and closing brackets and your commas is a good skill to cultivate when building Shiny apps!** One quick way to check on your brackets is to move the cursor next to a bracket - in RStudio - that will highlight the other bracket paired with if (if one exists, that is!).
->
->![](https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/full_brackets.png?raw=true)
->
->*Fig 1. The cursor is placed next the opening bracket for `mainPanel` and the closing bracket is highlighted.*
->
->
->![](https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/missing_bracket.png?raw=true)
->
->*Fig 2. Here, though the cursor is in the same place but the original closing bracket to `mainPanel` is missing. The next closing bracket is used by `mainPanel` instead, which now means `sidebarLayout` does not have a closing bracket. The app would not work in this situation.*
-
-
-Moving back to our ui, let's break down the `selectInput` function. `inputId` is the name of widget, in this case `x_select` is the name that'll be used in the server object to access the current value of the widget. The `labels` argument takes a string that will be used to label above the widget. 
+Let's break down the `selectInput` function. `inputId` is the name of widget, in this case `x_select` is the name that'll be used in the server object to access the current value of the widget. The `labels` argument takes a string that will be used to label above the widget. 
 
 `choices` takes a list of values and can be a bit confusing to understand. For simplicity's sake, we have given an unnamed list, which will directly display the values themselves. `"sample1"` happens to be a column name in the data the app will be using, so this widget can be used to select which column gets plotted. However, if the names of the choices needs to be different from the values, a named list can be used. 
 
@@ -438,7 +383,7 @@ If you want to get a shareable link of your app, so that other people can access
 
 Make sure to change the url to have your biotraining account name in place of `your_username`.
 
-### Challenge 2: Modify the app to add the following {- .challenge}
+### Challenge 4: Modify the app to add the following (breakout). {- .challenge}
 
 ```{r, eval = F}
 library(ggplot2)

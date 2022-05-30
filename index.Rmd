@@ -23,25 +23,32 @@ Before the tutorial please install R and RStudio,
 Then install packages from CRAN and Bioconductor with the following R code:
 
 ```{r packages, eval=FALSE}
+install.packages("tidyverse")
 install.packages("shiny")
 install.packages("DT")
 install.packages("shinydashboard")
+install.packages("BiocManager")
 BiocManager::install("Biostrings")
-
 ```
-
-<!-- Make sure you are running R 3.3 and Bioconductor 3.3, or higher. -->
-
-<!-- ```{r bioc, eval=FALSE} -->
-<!-- # To upgrade an old Bioconductor installation -->
-<!-- source("https://bioconductor.org/biocLite.R") -->
-<!-- biocLite("BiocUpgrade") -->
-<!-- ``` -->
 
 ## Download files
 * [tutorial.R](https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/data-files)
 
 * [ShinyApps.zip](https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/ShinyApps.zip) # to be created 
+
+```{r, eval = F}
+
+url <- "https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/ShinyApps"
+destfile <- "/Users/nkan0009/BioinformaticsPlatform-MBP"
+download.file(url, destfile)
+
+# OR convert .Rmd to single.R and include Shiny folder, zip it and upload in git
+# Download data
+download.file(
+  "https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/r-shiny-files.zip",
+  destfile="r-shiny-files.zip")
+unzip("r-shiny-files.zip")
+```
 
 Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.
 
@@ -60,7 +67,7 @@ Download these files. tutorial.R contains all the code in the “tutorial” lin
 
 This book was created in R using the `rmarkdown` and `bookdown` packages!
 
-* [GitHub page](https://nkandhari.github.io/R-ShinyIntro-MBP/)
+* [GitHub page](https://github.com/nkandhari/R-ShinyIntro-MBP)
 
 ## Authors and copyright {-}
 

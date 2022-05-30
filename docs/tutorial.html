@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Shiny tutorial | Introduction to R Shiny</title>
   <meta name="description" content="This is the course mateial for the workshop- Introduction R Shiny offered by Monash Bioinformatics Platform." />
-  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Shiny tutorial | Introduction to R Shiny" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Nitika K., Adele B., Paul F. H." />
 
 
-<meta name="date" content="2022-04-28" />
+<meta name="date" content="2022-05-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="reactivity.html"/>
-<link rel="next" href="dashboards.html"/>
+<link rel="next" href="nextsteps.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -136,64 +136,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Intro to R Shiny</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites<span></span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#download-files"><i class="fa fa-check"></i><b>1.1</b> Download files<span></span></a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.2</b> Overview<span></span></a></li>
-<li><a href="index.html#source-code">Source code<span></span></a></li>
-<li><a href="index.html#authors-and-copyright">Authors and copyright<span></span></a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#download-files"><i class="fa fa-check"></i><b>1.1</b> Download files</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.2</b> Overview</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#source-code"><i class="fa fa-check"></i>Source code</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#authors-and-copyright"><i class="fa fa-check"></i>Authors and copyright</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction<span></span></a>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny<span></span></a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?<span></span></a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps<span></span></a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App<span></span></a>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-is-shiny"><i class="fa fa-check"></i><b>2.1</b> What is Shiny</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#another-r-package---whats-so-special-about-shiny"><i class="fa fa-check"></i><b>2.2</b> Another R package - What’s so special about Shiny?</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#example-apps"><i class="fa fa-check"></i><b>2.3</b> Example apps</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#create-your-first-shiny-app"><i class="fa fa-check"></i><b>2.4</b> Create your first Shiny App</a>
 <ul>
-<li><a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world">Activity 1: Creating a ShinyApp that prints “Hello, World!”<span></span></a></li>
-<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#breakdown-of-the-code"><i class="fa fa-check"></i><b>2.4.1</b> Breakdown of the code<span></span></a></li>
-<li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#running-a-shiny-app"><i class="fa fa-check"></i><b>2.4.2</b> Running a Shiny App<span></span></a></li>
-<li><a href="intro.html#activity-2-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does.">Activity 2: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does.<span></span></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App<span></span></a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> UI<span></span></a></li>
-<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#layout"><i class="fa fa-check"></i><b>3.2</b> Layout<span></span></a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="structure.html"><a href="structure.html#challenge-0---.activity."><i class="fa fa-check"></i><b>3.2.1</b> Challenge 0 {- .activity}.<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#widgets"><i class="fa fa-check"></i><b>3.3</b> Widgets<span></span></a>
-<ul>
-<li><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it.">Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.4</b> Server<span></span></a>
-<ul>
-<li class="chapter" data-level="3.4.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.4.1</b> Input<span></span></a></li>
-<li class="chapter" data-level="3.4.2" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.4.2</b> Output<span></span></a></li>
-<li><a href="structure.html#challenge-1-rewrite-your-ui-to-create-a-shiny-app-that-contains-following">Challenge 1: Rewrite your <code>ui</code> to create a Shiny app that contains following:<span></span></a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world"><i class="fa fa-check"></i>Activity 1: Creating a ShinyApp that prints “Hello, World!”</a></li>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#breakdown-of-the-code"><i class="fa fa-check"></i><b>2.4.1</b> Breakdown of the code</a></li>
+<li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#running-a-shiny-app"><i class="fa fa-check"></i><b>2.4.2</b> Running a Shiny App</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#challenge-1-now-open-the-app_ui.r-inside-shinyapps-folder-and-examine-what-it-does-breakout."><i class="fa fa-check"></i>Challenge 1: Now, open the <code>app_ui.R</code> inside <code>ShinyApps</code> folder and examine what it does (Breakout).</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>4</b> Reactivity<span></span></a>
+<li class="chapter" data-level="3" data-path="structure.html"><a href="structure.html"><i class="fa fa-check"></i><b>3</b> Structure of a Shiny App</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="reactivity.html"><a href="reactivity.html#overview-of-reactivity"><i class="fa fa-check"></i><b>4.1</b> Overview of Reactivity<span></span></a>
+<li class="chapter" data-level="3.1" data-path="structure.html"><a href="structure.html#ui"><i class="fa fa-check"></i><b>3.1</b> UI</a></li>
+<li class="chapter" data-level="3.2" data-path="structure.html"><a href="structure.html#layout"><i class="fa fa-check"></i><b>3.2</b> Layout</a>
 <ul>
-<li><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-reverse">Challenge 3: Modify <code>greeting.R</code> to print the reverse<span></span></a></li>
+<li class="chapter" data-level="" data-path="structure.html"><a href="structure.html#activity-2-does-the-tabsetpanel-need-to-be-nested-in-the-sidebarlayout"><i class="fa fa-check"></i>Activity 2: Does the <code>tabsetPanel</code> need to be nested in the <code>sidebarLayout</code>?</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#reactive-expressions-save-recomputation"><i class="fa fa-check"></i><b>4.2</b> Reactive expressions save recomputation<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>5</b> Shiny tutorial<span></span></a>
+<li class="chapter" data-level="3.3" data-path="structure.html"><a href="structure.html#widgets"><i class="fa fa-check"></i><b>3.3</b> Widgets</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>5.1</b> Setting up a shiny app<span></span></a></li>
-<li class="chapter" data-level="5.2" data-path="tutorial.html"><a href="tutorial.html#building-the-ui-layout"><i class="fa fa-check"></i><b>5.2</b> Building the UI layout<span></span></a></li>
-<li class="chapter" data-level="5.3" data-path="tutorial.html"><a href="tutorial.html#data-processing-on-the-server-side"><i class="fa fa-check"></i><b>5.3</b> Data processing on the server side<span></span></a>
+<li class="chapter" data-level="" data-path="structure.html"><a href="structure.html#activity-3-now-open-the-widgets.r-inside-shinyapps-folder-and-try-running-it."><i class="fa fa-check"></i>Activity 3: Now, open the <code>widgets.R</code> inside <code>ShinyApps</code> folder, and try running it.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="structure.html"><a href="structure.html#output"><i class="fa fa-check"></i><b>3.4</b> Output</a></li>
+<li class="chapter" data-level="3.5" data-path="structure.html"><a href="structure.html#server"><i class="fa fa-check"></i><b>3.5</b> Server</a>
 <ul>
-<li><a href="tutorial.html#activity-4-modily-x--and-y-axes-labels">Activity 4: Modily x- and y-axes labels<span></span></a></li>
-<li><a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following">Challenge 2: Modify the app to add the following<span></span></a></li>
+<li class="chapter" data-level="3.5.1" data-path="structure.html"><a href="structure.html#input"><i class="fa fa-check"></i><b>3.5.1</b> Input</a></li>
+<li class="chapter" data-level="3.5.2" data-path="structure.html"><a href="structure.html#output-1"><i class="fa fa-check"></i><b>3.5.2</b> Output</a></li>
+<li class="chapter" data-level="" data-path="structure.html"><a href="structure.html#challenge-2-rewrite-your-ui-to-create-a-shiny-app-that-contains-following-breakout."><i class="fa fa-check"></i>Challenge 2: Rewrite your <code>ui</code> to create a Shiny app that contains following (Breakout).</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="dashboards.html"><a href="dashboards.html"><i class="fa fa-check"></i><b>6</b> Shiny Dashboards<span></span></a></li>
-<li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading<span></span></a></li>
+<li class="chapter" data-level="4" data-path="reactivity.html"><a href="reactivity.html"><i class="fa fa-check"></i><b>4</b> Reactivity</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="reactivity.html"><a href="reactivity.html#overview-of-reactivity"><i class="fa fa-check"></i><b>4.1</b> Overview of Reactivity</a>
+<ul>
+<li class="chapter" data-level="" data-path="reactivity.html"><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-uppercase-letters-breakout"><i class="fa fa-check"></i>Challenge 3: Modify <code>greeting.R</code> to print the uppercase letters (breakout)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressiovs-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressiovs vs Reactive expressions</a>
+<ul>
+<li class="chapter" data-level="" data-path="reactivity.html"><a href="reactivity.html#advanced-workings-of-reactive-expressions"><i class="fa fa-check"></i>Advanced: Workings of reactive expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="reactivity.html"><a href="reactivity.html#accessing-reactivity"><i class="fa fa-check"></i><b>4.3</b> Accessing Reactivity</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tutorial.html"><a href="tutorial.html"><i class="fa fa-check"></i><b>5</b> Shiny tutorial</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tutorial.html"><a href="tutorial.html#setting-up-a-shiny-app"><i class="fa fa-check"></i><b>5.1</b> Setting up a shiny app</a></li>
+<li class="chapter" data-level="5.2" data-path="tutorial.html"><a href="tutorial.html#using-widgets"><i class="fa fa-check"></i><b>5.2</b> Using widgets</a></li>
+<li class="chapter" data-level="5.3" data-path="tutorial.html"><a href="tutorial.html#data-processing-on-the-server-side"><i class="fa fa-check"></i><b>5.3</b> Data processing on the server side</a>
+<ul>
+<li class="chapter" data-level="" data-path="tutorial.html"><a href="tutorial.html#activity-4-modily-x--and-y-axes-labels"><i class="fa fa-check"></i>Activity 4: Modily x- and y-axes labels</a></li>
+<li class="chapter" data-level="" data-path="tutorial.html"><a href="tutorial.html#challenge-4-modify-the-app-to-add-the-following-breakout."><i class="fa fa-check"></i>Challenge 4: Modify the app to add the following (breakout).</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="nextsteps.html"><a href="nextsteps.html"><i class="fa fa-check"></i><b>6</b> Next steps</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="nextsteps.html"><a href="nextsteps.html#going-fancy-with-shiny-dashboards"><i class="fa fa-check"></i><b>6.1</b> Going fancy with Shiny Dashboards</a></li>
+<li class="chapter" data-level="6.2" data-path="nextsteps.html"><a href="nextsteps.html#interactive-documents"><i class="fa fa-check"></i><b>6.2</b> Interactive Documents</a></li>
+<li class="chapter" data-level="6.3" data-path="nextsteps.html"><a href="nextsteps.html#render-ui-elements-from-the-server-sidebar"><i class="fa fa-check"></i><b>6.3</b> Render UI Elements From the Server Sidebar</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>7</b> Further Reading</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -230,38 +240,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Top ten rows of the raw data used to build the shiny app</em></p>
 <div id="setting-up-a-shiny-app" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Setting up a shiny app<a href="tutorial.html#setting-up-a-shiny-app" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Create one blank R script (Click <code>File</code> &gt; <code>New File</code> &gt; <code>R Script</code>). Save it inside the <code>demo</code> folder with the name <code>app.R</code>.</p>
-<p>Now we’re going to create a blank app. In app.R, type:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tutorial.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb2-2"><a href="tutorial.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="tutorial.html#cb2-3" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb2-4"><a href="tutorial.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-5"><a href="tutorial.html#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-6"><a href="tutorial.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="tutorial.html#cb2-7" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb2-8"><a href="tutorial.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-9"><a href="tutorial.html#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-10"><a href="tutorial.html#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="tutorial.html#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
+<p>Create one blank R script (Click <code>File</code> &gt; <code>New File</code> &gt; <code>R Script</code>). Save it inside the <code>demo</code> folder with the name <code>app.R</code>. We’ve now seen how to create a blank app with the ui and the server. We should be able to make out the layout of the app now. The top of the window is where the title panel is located and beneath it are two panels, laid out with the sidebar to the left and the larger main panel to the right.</p>
 </div>
-<div id="building-the-ui-layout" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Building the UI layout<a href="tutorial.html#building-the-ui-layout" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The ui object controls the appearance of the app. There are a number of layouts and widgets that an app can have. For this tutorial, we will use a title panel with a sidebar layout underneath. This is a common layout for Shiny apps. The sidebar layout will give the app two panels, a sidebar and a main panel. To look up more layouts, check the <a href="http://shiny.rstudio.com/gallery/">Shiny gallery.</a></p>
-<p>Update the ui object to:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tutorial.html#cb3-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb3-2"><a href="tutorial.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
-<span id="cb3-3"><a href="tutorial.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-4"><a href="tutorial.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
-<span id="cb3-5"><a href="tutorial.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>),</span>
-<span id="cb3-6"><a href="tutorial.html#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
-<span id="cb3-7"><a href="tutorial.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-8"><a href="tutorial.html#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<p>Then run app.</p>
-<p>You should be able to make out the layout of the app now. The top of the window is where the title panel is located and beneath it are two panels, laid out with the sidebar to the left and the larger main panel to the right.</p>
-<div id="using-widgets" class="section level4 hasAnchor" number="5.2.0.1">
-<h4><span class="header-section-number">5.2.0.1</span> Using widgets<a href="tutorial.html#using-widgets" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We are going to add two widgets to the ui. These will control which samples gets plotted to the x and y axis of the plot and will be located in the sidebar panel. We will use <code>selectInput</code> to create these widgets but these could easily be swapped out for other widgets such radiobuttons. To see what widgets are available, look at the <a href="http://shiny.rstudio.com/gallery/widget-gallery.html">Shiny widget gallery</a> or consult the <a href="http://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Shiny cheatsheet</a>.</p>
+<div id="using-widgets" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Using widgets<a href="tutorial.html#using-widgets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We are going to add two widgets to the ui. These will control which samples gets plotted to the x and y axis of the plot and will be located in the sidebar panel. We will use <code>selectInput</code> to create these widgets but these could easily be swapped out for other widgets such radio-buttons. To see what widgets are available, look at the <a href="http://shiny.rstudio.com/gallery/widget-gallery.html">Shiny widget gallery</a> or consult the <a href="http://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Shiny cheatsheet</a>.</p>
 <p>To start off with, let’s add just one widget to the sidebar.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tutorial.html#cb2-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb2-2"><a href="tutorial.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb2-3"><a href="tutorial.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-4"><a href="tutorial.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb2-5"><a href="tutorial.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
+<span id="cb2-6"><a href="tutorial.html#cb2-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
+<span id="cb2-7"><a href="tutorial.html#cb2-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb2-8"><a href="tutorial.html#cb2-8" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb2-9"><a href="tutorial.html#cb2-9" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb2-10"><a href="tutorial.html#cb2-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb2-11"><a href="tutorial.html#cb2-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb2-12"><a href="tutorial.html#cb2-12" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb2-13"><a href="tutorial.html#cb2-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>)</span>
+<span id="cb2-14"><a href="tutorial.html#cb2-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-15"><a href="tutorial.html#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
+<span id="cb2-16"><a href="tutorial.html#cb2-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-17"><a href="tutorial.html#cb2-17" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Let’s break down the <code>selectInput</code> function. <code>inputId</code> is the name of widget, in this case <code>x_select</code> is the name that’ll be used in the server object to access the current value of the widget. The <code>labels</code> argument takes a string that will be used to label above the widget.</p>
+<p><code>choices</code> takes a list of values and can be a bit confusing to understand. For simplicity’s sake, we have given an unnamed list, which will directly display the values themselves. <code>"sample1"</code> happens to be a column name in the data the app will be using, so this widget can be used to select which column gets plotted. However, if the names of the choices needs to be different from the values, a named list can be used.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tutorial.html#cb3-1" aria-hidden="true" tabindex="-1"></a>choices <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb3-2"><a href="tutorial.html#cb3-2" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb3-3"><a href="tutorial.html#cb3-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb3-4"><a href="tutorial.html#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb3-5"><a href="tutorial.html#cb3-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb3-6"><a href="tutorial.html#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>)</span></code></pre></div>
+<p>In <code>"Sample 1" = "sample1"</code> the string <code>"Sample 1"</code> is the text that will appear in the widget, whereas <code>"sample1"</code> is the value that will be returned from the widget. Using this would make a much neater looking widget. Think of the name as purely cosmetic and what you’ll see while the value is what’s important and will be used behind the scenes for calculations. You could change the names to whatever you wanted without having on effect the app.</p>
+<p>Finally, <code>selected</code> chooses which value the widget will start on when the app is run.</p>
+<p>Now to add the second widget. To show the difference between an unnamed and a named list, the second widget will use a named list for <code>choices</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="tutorial.html#cb4-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb4-2"><a href="tutorial.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
 <span id="cb4-3"><a href="tutorial.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -274,90 +287,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-10"><a href="tutorial.html#cb4-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
 <span id="cb4-11"><a href="tutorial.html#cb4-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
 <span id="cb4-12"><a href="tutorial.html#cb4-12" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
-<span id="cb4-13"><a href="tutorial.html#cb4-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>)</span>
-<span id="cb4-14"><a href="tutorial.html#cb4-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb4-15"><a href="tutorial.html#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
-<span id="cb4-16"><a href="tutorial.html#cb4-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-17"><a href="tutorial.html#cb4-17" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<p>This is where Shiny starts to get a little tricky, a lot of ui code will be end up being nested in more code. So far, we have the <code>selectInput</code> widget nested inside <code>sidebarPanel</code> nested inside <code>siderbarLayout</code> <strong>which is nested in</strong> <code>fluidPage</code>. So we’ve stuck a function inside a function inside a function inside a function. Phew, that’s a lot to keep track of! Many common problems that’ll prevent a shiny app from running simply come from just putting a comma or a bracket in the wrong place.</p>
-<blockquote>
-<p>We cannot emphasis this point enough - <strong>keeping track of opening and closing brackets and your commas is a good skill to cultivate when building Shiny apps!</strong> One quick way to check on your brackets is to move the cursor next to a bracket - in RStudio - that will highlight the other bracket paired with if (if one exists, that is!).</p>
-<p><img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/full_brackets.png?raw=true" /></p>
-<p><em>Fig 1. The cursor is placed next the opening bracket for <code>mainPanel</code> and the closing bracket is highlighted.</em></p>
-<p><img src="https://github.com/MonashBioinformaticsPlatform/r-more/blob/gh-pages/figures/missing_bracket.png?raw=true" /></p>
-<p><em>Fig 2. Here, though the cursor is in the same place but the original closing bracket to <code>mainPanel</code> is missing. The next closing bracket is used by <code>mainPanel</code> instead, which now means <code>sidebarLayout</code> does not have a closing bracket. The app would not work in this situation.</em></p>
-</blockquote>
-<p>Moving back to our ui, let’s break down the <code>selectInput</code> function. <code>inputId</code> is the name of widget, in this case <code>x_select</code> is the name that’ll be used in the server object to access the current value of the widget. The <code>labels</code> argument takes a string that will be used to label above the widget.</p>
-<p><code>choices</code> takes a list of values and can be a bit confusing to understand. For simplicity’s sake, we have given an unnamed list, which will directly display the values themselves. <code>"sample1"</code> happens to be a column name in the data the app will be using, so this widget can be used to select which column gets plotted. However, if the names of the choices needs to be different from the values, a named list can be used.</p>
-<p>For example:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tutorial.html#cb5-1" aria-hidden="true" tabindex="-1"></a>choices <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb5-2"><a href="tutorial.html#cb5-2" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb5-3"><a href="tutorial.html#cb5-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb5-4"><a href="tutorial.html#cb5-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb5-5"><a href="tutorial.html#cb5-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb5-6"><a href="tutorial.html#cb5-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>)</span></code></pre></div>
-<p>In <code>"Sample 1" = "sample1"</code> the string <code>"Sample 1"</code> is the text that will appear in the widget, whereas <code>"sample1"</code> is the value that will be returned from the widget. Using this would make a much neater looking widget. Think of the name as purely cosmetic and what you’ll see while the value is what’s important and will be used behind the scenes for calculations. You could change the names to whatever you wanted without having on effect the app.</p>
-<p>Finally, <code>selected</code> chooses which value the widget will start on when the app is run.</p>
-<p>Now to add the second widget. To show the difference between an unnamed and a named list, the second widget will use a named list for <code>choices</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tutorial.html#cb6-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb6-2"><a href="tutorial.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
-<span id="cb6-3"><a href="tutorial.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-4"><a href="tutorial.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
-<span id="cb6-5"><a href="tutorial.html#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
-<span id="cb6-6"><a href="tutorial.html#cb6-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
-<span id="cb6-7"><a href="tutorial.html#cb6-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb6-8"><a href="tutorial.html#cb6-8" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb6-9"><a href="tutorial.html#cb6-9" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb6-10"><a href="tutorial.html#cb6-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb6-11"><a href="tutorial.html#cb6-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb6-12"><a href="tutorial.html#cb6-12" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
-<span id="cb6-13"><a href="tutorial.html#cb6-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
-<span id="cb6-14"><a href="tutorial.html#cb6-14" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
-<span id="cb6-15"><a href="tutorial.html#cb6-15" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb6-16"><a href="tutorial.html#cb6-16" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb6-17"><a href="tutorial.html#cb6-17" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb6-18"><a href="tutorial.html#cb6-18" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb6-19"><a href="tutorial.html#cb6-19" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb6-20"><a href="tutorial.html#cb6-20" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
-<span id="cb6-21"><a href="tutorial.html#cb6-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
-<span id="cb6-22"><a href="tutorial.html#cb6-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb6-23"><a href="tutorial.html#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
-<span id="cb6-24"><a href="tutorial.html#cb6-24" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-25"><a href="tutorial.html#cb6-25" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb4-13"><a href="tutorial.html#cb4-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb4-14"><a href="tutorial.html#cb4-14" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb4-15"><a href="tutorial.html#cb4-15" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb4-16"><a href="tutorial.html#cb4-16" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb4-17"><a href="tutorial.html#cb4-17" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb4-18"><a href="tutorial.html#cb4-18" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb4-19"><a href="tutorial.html#cb4-19" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb4-20"><a href="tutorial.html#cb4-20" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
+<span id="cb4-21"><a href="tutorial.html#cb4-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb4-22"><a href="tutorial.html#cb4-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-23"><a href="tutorial.html#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>)</span>
+<span id="cb4-24"><a href="tutorial.html#cb4-24" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-25"><a href="tutorial.html#cb4-25" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>This widget is nearly identical to the first, all that has changed is the name of the widget, the use of a named list and which sample has been pre-selected. This widget has been called <code>y_select</code> and it will start on the value <code>sample2</code> so that the columns selected for the x and y axis will be different.</p>
-</div>
-<div id="adding-some-outputs" class="section level4 hasAnchor" number="5.2.0.2">
-<h4><span class="header-section-number">5.2.0.2</span> Adding some outputs<a href="tutorial.html#adding-some-outputs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="adding-some-outputs" class="section level4 hasAnchor" number="5.2.0.1">
+<h4><span class="header-section-number">5.2.0.1</span> Adding some outputs<a href="tutorial.html#adding-some-outputs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There’s one last thing to do before moving onto the server object. The app has inputs now, but it doesn’t have any outputs! For this app, we will use three outputs. Two are going to be purely diagnostic so we can check that our <code>selectInputs</code> are working. They will not be included in our final app. The one output that will remain in our final app is <code>plotOutput</code>, as we want to generate a plot and it will be located in the main panel. There are numerous types of outputs Shiny can generate - to find out what other outputs Shiny is capable of, consult the <a href="http://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Shiny cheatsheet</a> or the <a href="https://shiny.rstudio.com/reference/shiny/latest/">Shiny website</a>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tutorial.html#cb7-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb7-2"><a href="tutorial.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
-<span id="cb7-3"><a href="tutorial.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-4"><a href="tutorial.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
-<span id="cb7-5"><a href="tutorial.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
-<span id="cb7-6"><a href="tutorial.html#cb7-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
-<span id="cb7-7"><a href="tutorial.html#cb7-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb7-8"><a href="tutorial.html#cb7-8" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb7-9"><a href="tutorial.html#cb7-9" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb7-10"><a href="tutorial.html#cb7-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb7-11"><a href="tutorial.html#cb7-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb7-12"><a href="tutorial.html#cb7-12" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
-<span id="cb7-13"><a href="tutorial.html#cb7-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
-<span id="cb7-14"><a href="tutorial.html#cb7-14" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
-<span id="cb7-15"><a href="tutorial.html#cb7-15" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb7-16"><a href="tutorial.html#cb7-16" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb7-17"><a href="tutorial.html#cb7-17" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb7-18"><a href="tutorial.html#cb7-18" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb7-19"><a href="tutorial.html#cb7-19" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb7-20"><a href="tutorial.html#cb7-20" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
-<span id="cb7-21"><a href="tutorial.html#cb7-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
-<span id="cb7-22"><a href="tutorial.html#cb7-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb7-23"><a href="tutorial.html#cb7-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>,</span>
-<span id="cb7-24"><a href="tutorial.html#cb7-24" aria-hidden="true" tabindex="-1"></a>              <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;check_x_select&quot;</span>),</span>
-<span id="cb7-25"><a href="tutorial.html#cb7-25" aria-hidden="true" tabindex="-1"></a>              <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;check_y_select&quot;</span>),</span>
-<span id="cb7-26"><a href="tutorial.html#cb7-26" aria-hidden="true" tabindex="-1"></a>              <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;my_plot&quot;</span>)</span>
-<span id="cb7-27"><a href="tutorial.html#cb7-27" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-28"><a href="tutorial.html#cb7-28" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-29"><a href="tutorial.html#cb7-29" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tutorial.html#cb5-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb5-2"><a href="tutorial.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb5-3"><a href="tutorial.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-4"><a href="tutorial.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb5-5"><a href="tutorial.html#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
+<span id="cb5-6"><a href="tutorial.html#cb5-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
+<span id="cb5-7"><a href="tutorial.html#cb5-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb5-8"><a href="tutorial.html#cb5-8" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb5-9"><a href="tutorial.html#cb5-9" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb5-10"><a href="tutorial.html#cb5-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb5-11"><a href="tutorial.html#cb5-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb5-12"><a href="tutorial.html#cb5-12" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb5-13"><a href="tutorial.html#cb5-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb5-14"><a href="tutorial.html#cb5-14" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb5-15"><a href="tutorial.html#cb5-15" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb5-16"><a href="tutorial.html#cb5-16" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb5-17"><a href="tutorial.html#cb5-17" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb5-18"><a href="tutorial.html#cb5-18" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb5-19"><a href="tutorial.html#cb5-19" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb5-20"><a href="tutorial.html#cb5-20" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
+<span id="cb5-21"><a href="tutorial.html#cb5-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb5-22"><a href="tutorial.html#cb5-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb5-23"><a href="tutorial.html#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>,</span>
+<span id="cb5-24"><a href="tutorial.html#cb5-24" aria-hidden="true" tabindex="-1"></a>              <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;check_x_select&quot;</span>),</span>
+<span id="cb5-25"><a href="tutorial.html#cb5-25" aria-hidden="true" tabindex="-1"></a>              <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;check_y_select&quot;</span>),</span>
+<span id="cb5-26"><a href="tutorial.html#cb5-26" aria-hidden="true" tabindex="-1"></a>              <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;my_plot&quot;</span>)</span>
+<span id="cb5-27"><a href="tutorial.html#cb5-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-28"><a href="tutorial.html#cb5-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-29"><a href="tutorial.html#cb5-29" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p><code>my_plot</code> is the ID of the <code>plotoutput</code> and it tells the server object file where to direct data. Same goes for the two <code>textOutputs</code>. Run the app and see what you’ll get. Does it look any different?</p>
 <p>At the moment, the app will display nothing because we haven’t told it do any calculations and generate a plot or display text. To do that, we need to move on to the server side.</p>
 </div>
@@ -366,64 +341,117 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.3</span> Data processing on the server side<a href="tutorial.html#data-processing-on-the-server-side" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The app now has a full UI but nothing is happening on the backend. To make the app interactive, that’s where the server object comes into play. Think of it as the object that contains an R analysis. The structure of this object can vary immensely depending on the complexity of the app itself.</p>
 <p>First, we need to check on our two <code>selectInput</code> widgets, see if they are working correctly, before we move on to plotting. When building a Shiny app, it’s useful to have create outputs to check to see if parts of the app are doing what they should be, for both the ui and the server code. This step can be omitted, but we’ll go through it to demonstrate what the <code>selectInputs</code> are doing.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tutorial.html#cb8-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb8-2"><a href="tutorial.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-3"><a href="tutorial.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>check_x_select <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb8-4"><a href="tutorial.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(input<span class="sc">$</span>x_select)</span>
-<span id="cb8-5"><a href="tutorial.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb8-6"><a href="tutorial.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-7"><a href="tutorial.html#cb8-7" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>check_y_select <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb8-8"><a href="tutorial.html#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(input<span class="sc">$</span>y_select)</span>
-<span id="cb8-9"><a href="tutorial.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb8-10"><a href="tutorial.html#cb8-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tutorial.html#cb6-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb6-2"><a href="tutorial.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-3"><a href="tutorial.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>check_x_select <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb6-4"><a href="tutorial.html#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(input<span class="sc">$</span>x_select)</span>
+<span id="cb6-5"><a href="tutorial.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb6-6"><a href="tutorial.html#cb6-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-7"><a href="tutorial.html#cb6-7" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>check_y_select <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb6-8"><a href="tutorial.html#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(input<span class="sc">$</span>y_select)</span>
+<span id="cb6-9"><a href="tutorial.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb6-10"><a href="tutorial.html#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Now run the app.</p>
 <p>There are a number of <code>render</code> functions in Shiny, <code>renderTable</code>, <code>renderText</code>, <code>renderPrint</code>, etc, depending on what type of data needs to be output. If you want to check what render options exist, got the <a href="http://shiny.rstudio.com/reference/shiny/latest/">Shiny website reference page</a>.</p>
 <p>Whenever a <code>render</code> function is called, it needs to be directed to an output that exists in the ui object. In the case of <code>output$check_x_select</code>, we have pointed the <code>renderText</code> function to <code>check_x_select</code>, which was the id of a <code>textOutput</code> in the UI. This means that the result of <code>renderText</code> is sent to the <code>check_x_select</code> output.</p>
 <p>Inside the <code>renderText</code> function, we <code>print</code> the value of the <code>x_select</code>. To access a value of a input widget, we use <code>input$input_Id</code>. Once the app is running, every time the value of the input changes, a render function that depends on it will be re-run. So if we changed the value of the <code>x_select</code>, only the first <code>renderText</code> statement is re-calculated but the second one, which doesn’t depend on <code>x_select</code> will not be re-calculated.</p>
 <p>Notice that despite the difference between the two <code>selectInputs</code> (one uses a named list and the other doesn’t), that the values returned are the same. Once again, using a named list changes the appearance of the ui but not the actual values of the widgets.</p>
 <p>Now that we’ve seen that our widgets are working correctly, we can remove the diagnostic lines of code from both the ui and server. You can either comment them out or delete them. Your app should currently look like this:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tutorial.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb9-2"><a href="tutorial.html#cb9-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb9-3"><a href="tutorial.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
-<span id="cb9-4"><a href="tutorial.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-5"><a href="tutorial.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
-<span id="cb9-6"><a href="tutorial.html#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
-<span id="cb9-7"><a href="tutorial.html#cb9-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
-<span id="cb9-8"><a href="tutorial.html#cb9-8" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb9-9"><a href="tutorial.html#cb9-9" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb9-10"><a href="tutorial.html#cb9-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb9-11"><a href="tutorial.html#cb9-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb9-12"><a href="tutorial.html#cb9-12" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb9-13"><a href="tutorial.html#cb9-13" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
-<span id="cb9-14"><a href="tutorial.html#cb9-14" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
-<span id="cb9-15"><a href="tutorial.html#cb9-15" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
-<span id="cb9-16"><a href="tutorial.html#cb9-16" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb9-17"><a href="tutorial.html#cb9-17" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb9-18"><a href="tutorial.html#cb9-18" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb9-19"><a href="tutorial.html#cb9-19" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb9-20"><a href="tutorial.html#cb9-20" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb9-21"><a href="tutorial.html#cb9-21" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
-<span id="cb9-22"><a href="tutorial.html#cb9-22" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
-<span id="cb9-23"><a href="tutorial.html#cb9-23" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb9-24"><a href="tutorial.html#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>,</span>
-<span id="cb9-25"><a href="tutorial.html#cb9-25" aria-hidden="true" tabindex="-1"></a>              <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;my_plot&quot;</span>)</span>
-<span id="cb9-26"><a href="tutorial.html#cb9-26" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-27"><a href="tutorial.html#cb9-27" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-28"><a href="tutorial.html#cb9-28" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-29"><a href="tutorial.html#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-30"><a href="tutorial.html#cb9-30" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb9-31"><a href="tutorial.html#cb9-31" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-32"><a href="tutorial.html#cb9-32" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-33"><a href="tutorial.html#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-34"><a href="tutorial.html#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tutorial.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb7-2"><a href="tutorial.html#cb7-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb7-3"><a href="tutorial.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb7-4"><a href="tutorial.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-5"><a href="tutorial.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb7-6"><a href="tutorial.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
+<span id="cb7-7"><a href="tutorial.html#cb7-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
+<span id="cb7-8"><a href="tutorial.html#cb7-8" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb7-9"><a href="tutorial.html#cb7-9" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb7-10"><a href="tutorial.html#cb7-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb7-11"><a href="tutorial.html#cb7-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb7-12"><a href="tutorial.html#cb7-12" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb7-13"><a href="tutorial.html#cb7-13" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb7-14"><a href="tutorial.html#cb7-14" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb7-15"><a href="tutorial.html#cb7-15" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb7-16"><a href="tutorial.html#cb7-16" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb7-17"><a href="tutorial.html#cb7-17" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb7-18"><a href="tutorial.html#cb7-18" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb7-19"><a href="tutorial.html#cb7-19" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb7-20"><a href="tutorial.html#cb7-20" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb7-21"><a href="tutorial.html#cb7-21" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
+<span id="cb7-22"><a href="tutorial.html#cb7-22" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb7-23"><a href="tutorial.html#cb7-23" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-24"><a href="tutorial.html#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>,</span>
+<span id="cb7-25"><a href="tutorial.html#cb7-25" aria-hidden="true" tabindex="-1"></a>              <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;my_plot&quot;</span>)</span>
+<span id="cb7-26"><a href="tutorial.html#cb7-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-27"><a href="tutorial.html#cb7-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-28"><a href="tutorial.html#cb7-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-29"><a href="tutorial.html#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="tutorial.html#cb7-30" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb7-31"><a href="tutorial.html#cb7-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-32"><a href="tutorial.html#cb7-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-33"><a href="tutorial.html#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="tutorial.html#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
 <p>The final app will be rather simple. It will take one <code>render</code> functions and send the output to the UI. To get going, let’s create an empty <code>renderPlot</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tutorial.html#cb10-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb10-2"><a href="tutorial.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-3"><a href="tutorial.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb10-4"><a href="tutorial.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-5"><a href="tutorial.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb10-6"><a href="tutorial.html#cb10-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tutorial.html#cb8-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb8-2"><a href="tutorial.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-3"><a href="tutorial.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb8-4"><a href="tutorial.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-5"><a href="tutorial.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb8-6"><a href="tutorial.html#cb8-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Now let’s give the <code>render</code> function some data to display, the first two columns from the csv <code>shiny_sample_data.csv</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tutorial.html#cb9-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb9-2"><a href="tutorial.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-3"><a href="tutorial.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb9-4"><a href="tutorial.html#cb9-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-5"><a href="tutorial.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Read in the sample csv</span></span>
+<span id="cb9-6"><a href="tutorial.html#cb9-6" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb9-7"><a href="tutorial.html#cb9-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-8"><a href="tutorial.html#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Pull out the first and second columns in dat</span></span>
+<span id="cb9-9"><a href="tutorial.html#cb9-9" aria-hidden="true" tabindex="-1"></a>    x_axis <span class="ot">&lt;-</span> dat[, <span class="st">&quot;sample1&quot;</span>]</span>
+<span id="cb9-10"><a href="tutorial.html#cb9-10" aria-hidden="true" tabindex="-1"></a>    y_axis <span class="ot">&lt;-</span> dat[, <span class="st">&quot;sample2&quot;</span>]</span>
+<span id="cb9-11"><a href="tutorial.html#cb9-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-12"><a href="tutorial.html#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Create a basic dot plot</span></span>
+<span id="cb9-13"><a href="tutorial.html#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(<span class="at">x =</span> x_axis, y_axis)</span>
+<span id="cb9-14"><a href="tutorial.html#cb9-14" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb9-15"><a href="tutorial.html#cb9-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>The complete working code looks like:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tutorial.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>)</span>
+<span id="cb10-2"><a href="tutorial.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="tutorial.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Changed up the input and output IDs so that they don&#39;t conflict with the earlier app.  </span></span>
+<span id="cb10-4"><a href="tutorial.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebarLayout</span>(</span>
+<span id="cb10-5"><a href="tutorial.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarPanel</span>(<span class="st">&quot;App input control panel&quot;</span>,</span>
+<span id="cb10-6"><a href="tutorial.html#cb10-6" aria-hidden="true" tabindex="-1"></a>               <span class="fu">selectInput</span>(<span class="st">&quot;x_select1&quot;</span>, <span class="at">label =</span> <span class="fu">h3</span>(<span class="st">&quot;Select x-axis&quot;</span>), </span>
+<span id="cb10-7"><a href="tutorial.html#cb10-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb10-8"><a href="tutorial.html#cb10-8" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb10-9"><a href="tutorial.html#cb10-9" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb10-10"><a href="tutorial.html#cb10-10" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb10-11"><a href="tutorial.html#cb10-11" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb10-12"><a href="tutorial.html#cb10-12" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb10-13"><a href="tutorial.html#cb10-13" aria-hidden="true" tabindex="-1"></a>                           <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb10-14"><a href="tutorial.html#cb10-14" aria-hidden="true" tabindex="-1"></a>               <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select1&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb10-15"><a href="tutorial.html#cb10-15" aria-hidden="true" tabindex="-1"></a>                           <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb10-16"><a href="tutorial.html#cb10-16" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb10-17"><a href="tutorial.html#cb10-17" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb10-18"><a href="tutorial.html#cb10-18" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb10-19"><a href="tutorial.html#cb10-19" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb10-20"><a href="tutorial.html#cb10-20" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
+<span id="cb10-21"><a href="tutorial.html#cb10-21" aria-hidden="true" tabindex="-1"></a>                           <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb10-22"><a href="tutorial.html#cb10-22" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb10-23"><a href="tutorial.html#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mainPanel</span>(<span class="st">&quot;App output panel&quot;</span>,</span>
+<span id="cb10-24"><a href="tutorial.html#cb10-24" aria-hidden="true" tabindex="-1"></a>            <span class="fu">plotOutput</span>(<span class="st">&quot;plot1&quot;</span>, <span class="at">width =</span> <span class="dv">600</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
+<span id="cb10-25"><a href="tutorial.html#cb10-25" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-26"><a href="tutorial.html#cb10-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-27"><a href="tutorial.html#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="tutorial.html#cb10-28" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>plot1 <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb10-29"><a href="tutorial.html#cb10-29" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb10-30"><a href="tutorial.html#cb10-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-31"><a href="tutorial.html#cb10-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Pull out the first and second columns in dat</span></span>
+<span id="cb10-32"><a href="tutorial.html#cb10-32" aria-hidden="true" tabindex="-1"></a>    x_axis <span class="ot">&lt;-</span> dat[, <span class="st">&quot;sample1&quot;</span>]</span>
+<span id="cb10-33"><a href="tutorial.html#cb10-33" aria-hidden="true" tabindex="-1"></a>    y_axis <span class="ot">&lt;-</span> dat[, <span class="st">&quot;sample2&quot;</span>]</span>
+<span id="cb10-34"><a href="tutorial.html#cb10-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-35"><a href="tutorial.html#cb10-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(<span class="at">x =</span> x_axis, <span class="at">y =</span> y_axis)</span>
+<span id="cb10-36"><a href="tutorial.html#cb10-36" aria-hidden="true" tabindex="-1"></a>  })</span></code></pre></div>
+<p>The app has a plot now…but it isn’t interactive, if we change the widget values, it has no effect on what is plotted on the figure. That’s because the first two columns were selected directly in the <code>renderPlot</code> function. However, we could change to call the widget values instead using <code>input</code>.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tutorial.html#cb11-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb11-2"><a href="tutorial.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb11-3"><a href="tutorial.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
@@ -431,128 +459,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-5"><a href="tutorial.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Read in the sample csv</span></span>
 <span id="cb11-6"><a href="tutorial.html#cb11-6" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
 <span id="cb11-7"><a href="tutorial.html#cb11-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-8"><a href="tutorial.html#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Pull out the first and second columns in dat</span></span>
-<span id="cb11-9"><a href="tutorial.html#cb11-9" aria-hidden="true" tabindex="-1"></a>    x_axis <span class="ot">&lt;-</span> dat[, <span class="st">&quot;sample1&quot;</span>]</span>
-<span id="cb11-10"><a href="tutorial.html#cb11-10" aria-hidden="true" tabindex="-1"></a>    y_axis <span class="ot">&lt;-</span> dat[, <span class="st">&quot;sample2&quot;</span>]</span>
+<span id="cb11-8"><a href="tutorial.html#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Pull out a column for the x and y axis each</span></span>
+<span id="cb11-9"><a href="tutorial.html#cb11-9" aria-hidden="true" tabindex="-1"></a>    x_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>x_select]</span>
+<span id="cb11-10"><a href="tutorial.html#cb11-10" aria-hidden="true" tabindex="-1"></a>    y_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>y_select]</span>
 <span id="cb11-11"><a href="tutorial.html#cb11-11" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb11-12"><a href="tutorial.html#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Create a basic dot plot</span></span>
 <span id="cb11-13"><a href="tutorial.html#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(<span class="at">x =</span> x_axis, y_axis)</span>
 <span id="cb11-14"><a href="tutorial.html#cb11-14" aria-hidden="true" tabindex="-1"></a>  })</span>
 <span id="cb11-15"><a href="tutorial.html#cb11-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p><strong>The complete working code looks like:</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tutorial.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>)</span>
-<span id="cb12-2"><a href="tutorial.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="tutorial.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Changed up the input and output IDs so that they don&#39;t conflict with the earlier app.  </span></span>
-<span id="cb12-4"><a href="tutorial.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebarLayout</span>(</span>
-<span id="cb12-5"><a href="tutorial.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarPanel</span>(<span class="st">&quot;App input control panel&quot;</span>,</span>
-<span id="cb12-6"><a href="tutorial.html#cb12-6" aria-hidden="true" tabindex="-1"></a>               <span class="fu">selectInput</span>(<span class="st">&quot;x_select1&quot;</span>, <span class="at">label =</span> <span class="fu">h3</span>(<span class="st">&quot;Select x-axis&quot;</span>), </span>
-<span id="cb12-7"><a href="tutorial.html#cb12-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb12-8"><a href="tutorial.html#cb12-8" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb12-9"><a href="tutorial.html#cb12-9" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb12-10"><a href="tutorial.html#cb12-10" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb12-11"><a href="tutorial.html#cb12-11" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb12-12"><a href="tutorial.html#cb12-12" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample6&quot;</span>), </span>
-<span id="cb12-13"><a href="tutorial.html#cb12-13" aria-hidden="true" tabindex="-1"></a>                           <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
-<span id="cb12-14"><a href="tutorial.html#cb12-14" aria-hidden="true" tabindex="-1"></a>               <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select1&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
-<span id="cb12-15"><a href="tutorial.html#cb12-15" aria-hidden="true" tabindex="-1"></a>                           <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb12-16"><a href="tutorial.html#cb12-16" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb12-17"><a href="tutorial.html#cb12-17" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb12-18"><a href="tutorial.html#cb12-18" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb12-19"><a href="tutorial.html#cb12-19" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb12-20"><a href="tutorial.html#cb12-20" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
-<span id="cb12-21"><a href="tutorial.html#cb12-21" aria-hidden="true" tabindex="-1"></a>                           <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
-<span id="cb12-22"><a href="tutorial.html#cb12-22" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb12-23"><a href="tutorial.html#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mainPanel</span>(<span class="st">&quot;App output panel&quot;</span>,</span>
-<span id="cb12-24"><a href="tutorial.html#cb12-24" aria-hidden="true" tabindex="-1"></a>            <span class="fu">plotOutput</span>(<span class="st">&quot;plot1&quot;</span>, <span class="at">width =</span> <span class="dv">600</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb12-25"><a href="tutorial.html#cb12-25" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb12-26"><a href="tutorial.html#cb12-26" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-27"><a href="tutorial.html#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-28"><a href="tutorial.html#cb12-28" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>plot1 <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb12-29"><a href="tutorial.html#cb12-29" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb12-30"><a href="tutorial.html#cb12-30" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-31"><a href="tutorial.html#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Pull out the first and second columns in dat</span></span>
-<span id="cb12-32"><a href="tutorial.html#cb12-32" aria-hidden="true" tabindex="-1"></a>    x_axis <span class="ot">&lt;-</span> dat[, <span class="st">&quot;sample1&quot;</span>]</span>
-<span id="cb12-33"><a href="tutorial.html#cb12-33" aria-hidden="true" tabindex="-1"></a>    y_axis <span class="ot">&lt;-</span> dat[, <span class="st">&quot;sample2&quot;</span>]</span>
-<span id="cb12-34"><a href="tutorial.html#cb12-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-35"><a href="tutorial.html#cb12-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(<span class="at">x =</span> x_axis, <span class="at">y =</span> y_axis)</span>
-<span id="cb12-36"><a href="tutorial.html#cb12-36" aria-hidden="true" tabindex="-1"></a>  })</span></code></pre></div>
-<p>The app has a plot now…but it isn’t interactive, if we change the widget values, it has no effect on what is plotted on the figure. That’s because the first two columns were selected directly in the <code>renderPlot</code> function. However, we could change to call the widget values instead using <code>input</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tutorial.html#cb13-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb13-2"><a href="tutorial.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-3"><a href="tutorial.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb13-4"><a href="tutorial.html#cb13-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-5"><a href="tutorial.html#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Read in the sample csv</span></span>
-<span id="cb13-6"><a href="tutorial.html#cb13-6" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb13-7"><a href="tutorial.html#cb13-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-8"><a href="tutorial.html#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Pull out a column for the x and y axis each</span></span>
-<span id="cb13-9"><a href="tutorial.html#cb13-9" aria-hidden="true" tabindex="-1"></a>    x_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>x_select]</span>
-<span id="cb13-10"><a href="tutorial.html#cb13-10" aria-hidden="true" tabindex="-1"></a>    y_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>y_select]</span>
-<span id="cb13-11"><a href="tutorial.html#cb13-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-12"><a href="tutorial.html#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Create a basic dot plot</span></span>
-<span id="cb13-13"><a href="tutorial.html#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(<span class="at">x =</span> x_axis, y_axis)</span>
-<span id="cb13-14"><a href="tutorial.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb13-15"><a href="tutorial.html#cb13-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p><strong>The complete working app code looks like:</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tutorial.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb14-2"><a href="tutorial.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(utils)</span>
-<span id="cb14-3"><a href="tutorial.html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="tutorial.html#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="tutorial.html#cb14-5" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb14-6"><a href="tutorial.html#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
-<span id="cb14-7"><a href="tutorial.html#cb14-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-8"><a href="tutorial.html#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarLayout</span>(</span>
-<span id="cb14-9"><a href="tutorial.html#cb14-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
-<span id="cb14-10"><a href="tutorial.html#cb14-10" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
-<span id="cb14-11"><a href="tutorial.html#cb14-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb14-12"><a href="tutorial.html#cb14-12" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb14-13"><a href="tutorial.html#cb14-13" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb14-14"><a href="tutorial.html#cb14-14" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb14-15"><a href="tutorial.html#cb14-15" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb14-16"><a href="tutorial.html#cb14-16" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample6&quot;</span>), </span>
-<span id="cb14-17"><a href="tutorial.html#cb14-17" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
-<span id="cb14-18"><a href="tutorial.html#cb14-18" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
-<span id="cb14-19"><a href="tutorial.html#cb14-19" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb14-20"><a href="tutorial.html#cb14-20" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb14-21"><a href="tutorial.html#cb14-21" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb14-22"><a href="tutorial.html#cb14-22" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb14-23"><a href="tutorial.html#cb14-23" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb14-24"><a href="tutorial.html#cb14-24" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
-<span id="cb14-25"><a href="tutorial.html#cb14-25" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
-<span id="cb14-26"><a href="tutorial.html#cb14-26" aria-hidden="true" tabindex="-1"></a>        ),</span>
-<span id="cb14-27"><a href="tutorial.html#cb14-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>,</span>
-<span id="cb14-28"><a href="tutorial.html#cb14-28" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;check_x_select&quot;</span>),</span>
-<span id="cb14-29"><a href="tutorial.html#cb14-29" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;check_y_select&quot;</span>),</span>
-<span id="cb14-30"><a href="tutorial.html#cb14-30" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;my_plot&quot;</span>, <span class="at">width =</span> <span class="dv">600</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb14-31"><a href="tutorial.html#cb14-31" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb14-32"><a href="tutorial.html#cb14-32" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb14-33"><a href="tutorial.html#cb14-33" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-34"><a href="tutorial.html#cb14-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-35"><a href="tutorial.html#cb14-35" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb14-36"><a href="tutorial.html#cb14-36" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>check_x_select <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb14-37"><a href="tutorial.html#cb14-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(input<span class="sc">$</span>x_select)</span>
-<span id="cb14-38"><a href="tutorial.html#cb14-38" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb14-39"><a href="tutorial.html#cb14-39" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-40"><a href="tutorial.html#cb14-40" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>check_y_select <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb14-41"><a href="tutorial.html#cb14-41" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(input<span class="sc">$</span>y_select)</span>
-<span id="cb14-42"><a href="tutorial.html#cb14-42" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb14-43"><a href="tutorial.html#cb14-43" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-44"><a href="tutorial.html#cb14-44" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb14-45"><a href="tutorial.html#cb14-45" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb14-46"><a href="tutorial.html#cb14-46" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Read in the sample csv</span></span>
-<span id="cb14-47"><a href="tutorial.html#cb14-47" aria-hidden="true" tabindex="-1"></a>        dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb14-48"><a href="tutorial.html#cb14-48" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb14-49"><a href="tutorial.html#cb14-49" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Pull out a column for the x and y axis each</span></span>
-<span id="cb14-50"><a href="tutorial.html#cb14-50" aria-hidden="true" tabindex="-1"></a>        x_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>x_select]</span>
-<span id="cb14-51"><a href="tutorial.html#cb14-51" aria-hidden="true" tabindex="-1"></a>        y_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>y_select]</span>
-<span id="cb14-52"><a href="tutorial.html#cb14-52" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb14-53"><a href="tutorial.html#cb14-53" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb14-54"><a href="tutorial.html#cb14-54" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Create a basic dot plot</span></span>
-<span id="cb14-55"><a href="tutorial.html#cb14-55" aria-hidden="true" tabindex="-1"></a>        <span class="fu">plot</span>(<span class="at">x =</span> x_axis, y_axis)</span>
-<span id="cb14-56"><a href="tutorial.html#cb14-56" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb14-57"><a href="tutorial.html#cb14-57" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-58"><a href="tutorial.html#cb14-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-59"><a href="tutorial.html#cb14-59" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
-<p>Congratulations! You’ve made your first app!</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tutorial.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb12-2"><a href="tutorial.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(utils)</span>
+<span id="cb12-3"><a href="tutorial.html#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="tutorial.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="tutorial.html#cb12-5" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb12-6"><a href="tutorial.html#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">titlePanel</span>(<span class="st">&quot;My first app&quot;</span>),</span>
+<span id="cb12-7"><a href="tutorial.html#cb12-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-8"><a href="tutorial.html#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb12-9"><a href="tutorial.html#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarPanel</span>(<span class="st">&quot;This is a sidebar panel&quot;</span>,</span>
+<span id="cb12-10"><a href="tutorial.html#cb12-10" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;x_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select x-axis&quot;</span>, </span>
+<span id="cb12-11"><a href="tutorial.html#cb12-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb12-12"><a href="tutorial.html#cb12-12" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb12-13"><a href="tutorial.html#cb12-13" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb12-14"><a href="tutorial.html#cb12-14" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb12-15"><a href="tutorial.html#cb12-15" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb12-16"><a href="tutorial.html#cb12-16" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb12-17"><a href="tutorial.html#cb12-17" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb12-18"><a href="tutorial.html#cb12-18" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">&quot;y_select&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Select y-axis&quot;</span>, </span>
+<span id="cb12-19"><a href="tutorial.html#cb12-19" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;Sample 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb12-20"><a href="tutorial.html#cb12-20" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb12-21"><a href="tutorial.html#cb12-21" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 3&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb12-22"><a href="tutorial.html#cb12-22" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 4&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb12-23"><a href="tutorial.html#cb12-23" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb12-24"><a href="tutorial.html#cb12-24" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Sample 6&quot;</span> <span class="ot">=</span> <span class="st">&quot;sample6&quot;</span>),  </span>
+<span id="cb12-25"><a href="tutorial.html#cb12-25" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb12-26"><a href="tutorial.html#cb12-26" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb12-27"><a href="tutorial.html#cb12-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(<span class="st">&quot;And this is the main panel&quot;</span>,</span>
+<span id="cb12-28"><a href="tutorial.html#cb12-28" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;check_x_select&quot;</span>),</span>
+<span id="cb12-29"><a href="tutorial.html#cb12-29" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;check_y_select&quot;</span>),</span>
+<span id="cb12-30"><a href="tutorial.html#cb12-30" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;my_plot&quot;</span>, <span class="at">width =</span> <span class="dv">600</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
+<span id="cb12-31"><a href="tutorial.html#cb12-31" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb12-32"><a href="tutorial.html#cb12-32" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-33"><a href="tutorial.html#cb12-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-34"><a href="tutorial.html#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-35"><a href="tutorial.html#cb12-35" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb12-36"><a href="tutorial.html#cb12-36" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>check_x_select <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb12-37"><a href="tutorial.html#cb12-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(input<span class="sc">$</span>x_select)</span>
+<span id="cb12-38"><a href="tutorial.html#cb12-38" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb12-39"><a href="tutorial.html#cb12-39" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-40"><a href="tutorial.html#cb12-40" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>check_y_select <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb12-41"><a href="tutorial.html#cb12-41" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(input<span class="sc">$</span>y_select)</span>
+<span id="cb12-42"><a href="tutorial.html#cb12-42" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb12-43"><a href="tutorial.html#cb12-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-44"><a href="tutorial.html#cb12-44" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb12-45"><a href="tutorial.html#cb12-45" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-46"><a href="tutorial.html#cb12-46" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Read in the sample csv</span></span>
+<span id="cb12-47"><a href="tutorial.html#cb12-47" aria-hidden="true" tabindex="-1"></a>        dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb12-48"><a href="tutorial.html#cb12-48" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-49"><a href="tutorial.html#cb12-49" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Pull out a column for the x and y axis each</span></span>
+<span id="cb12-50"><a href="tutorial.html#cb12-50" aria-hidden="true" tabindex="-1"></a>        x_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>x_select]</span>
+<span id="cb12-51"><a href="tutorial.html#cb12-51" aria-hidden="true" tabindex="-1"></a>        y_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>y_select]</span>
+<span id="cb12-52"><a href="tutorial.html#cb12-52" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-53"><a href="tutorial.html#cb12-53" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-54"><a href="tutorial.html#cb12-54" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Create a basic dot plot</span></span>
+<span id="cb12-55"><a href="tutorial.html#cb12-55" aria-hidden="true" tabindex="-1"></a>        <span class="fu">plot</span>(<span class="at">x =</span> x_axis, y_axis)</span>
+<span id="cb12-56"><a href="tutorial.html#cb12-56" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb12-57"><a href="tutorial.html#cb12-57" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-58"><a href="tutorial.html#cb12-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-59"><a href="tutorial.html#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
 <div id="activity-4-modily-x--and-y-axes-labels" class="section level3 unnumbered activity hasAnchor">
 <h3>Activity 4: Modily x- and y-axes labels<a href="tutorial.html#activity-4-modily-x--and-y-axes-labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Can you figure out how to change the axis titles to the name of the selected sample. One of <code>selectInput</code> widgets also need to be changed to a named list. Other than that, you’re good to go.</p>
@@ -565,55 +539,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you want to get a shareable link of your app, so that other people can access it over the web: <code>http://biotraining.erc.monash.edu:3838/your_username/demo/</code>.</p>
 <p>Make sure to change the url to have your biotraining account name in place of <code>your_username</code>.</p>
 </div>
-<div id="challenge-2-modify-the-app-to-add-the-following" class="section level3 unnumbered challenge hasAnchor">
-<h3>Challenge 2: Modify the app to add the following<a href="tutorial.html#challenge-2-modify-the-app-to-add-the-following" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tutorial.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb15-2"><a href="tutorial.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Add ui</span></span>
-<span id="cb15-3"><a href="tutorial.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">titlePanel</span>(<span class="st">&quot;My slightly more complicated app&quot;</span>)</span>
-<span id="cb15-4"><a href="tutorial.html#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="tutorial.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebarLayout</span>(</span>
-<span id="cb15-6"><a href="tutorial.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarPanel</span>(<span class="st">&quot;App input control panel&quot;</span>,</span>
-<span id="cb15-7"><a href="tutorial.html#cb15-7" aria-hidden="true" tabindex="-1"></a>               <span class="fu">selectInput</span>(<span class="st">&quot;x_select3&quot;</span>, <span class="at">label =</span> <span class="fu">h3</span>(<span class="st">&quot;Select x-axis&quot;</span>), </span>
-<span id="cb15-8"><a href="tutorial.html#cb15-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb15-9"><a href="tutorial.html#cb15-9" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb15-10"><a href="tutorial.html#cb15-10" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb15-11"><a href="tutorial.html#cb15-11" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb15-12"><a href="tutorial.html#cb15-12" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb15-13"><a href="tutorial.html#cb15-13" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample6&quot;</span>), </span>
-<span id="cb15-14"><a href="tutorial.html#cb15-14" aria-hidden="true" tabindex="-1"></a>                           <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
-<span id="cb15-15"><a href="tutorial.html#cb15-15" aria-hidden="true" tabindex="-1"></a>               </span>
-<span id="cb15-16"><a href="tutorial.html#cb15-16" aria-hidden="true" tabindex="-1"></a>               <span class="fu">selectInput</span>(<span class="st">&quot;y_select3&quot;</span>, <span class="at">label =</span> <span class="fu">h3</span>(<span class="st">&quot;Select y-axis&quot;</span>), </span>
-<span id="cb15-17"><a href="tutorial.html#cb15-17" aria-hidden="true" tabindex="-1"></a>                           <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
-<span id="cb15-18"><a href="tutorial.html#cb15-18" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
-<span id="cb15-19"><a href="tutorial.html#cb15-19" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
-<span id="cb15-20"><a href="tutorial.html#cb15-20" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
-<span id="cb15-21"><a href="tutorial.html#cb15-21" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
-<span id="cb15-22"><a href="tutorial.html#cb15-22" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample6&quot;</span>),</span>
-<span id="cb15-23"><a href="tutorial.html#cb15-23" aria-hidden="true" tabindex="-1"></a>                           <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
-<span id="cb15-24"><a href="tutorial.html#cb15-24" aria-hidden="true" tabindex="-1"></a>               </span>
-<span id="cb15-25"><a href="tutorial.html#cb15-25" aria-hidden="true" tabindex="-1"></a>               <span class="co"># 2. Add sliderInput              </span></span>
-<span id="cb15-26"><a href="tutorial.html#cb15-26" aria-hidden="true" tabindex="-1"></a>              </span>
-<span id="cb15-27"><a href="tutorial.html#cb15-27" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb15-28"><a href="tutorial.html#cb15-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mainPanel</span>(<span class="st">&quot;App output panel&quot;</span>,</span>
-<span id="cb15-29"><a href="tutorial.html#cb15-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">plotOutput</span>(<span class="st">&quot;plot3&quot;</span>, <span class="at">width =</span> <span class="dv">600</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb15-30"><a href="tutorial.html#cb15-30" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb15-31"><a href="tutorial.html#cb15-31" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 3. Add tableOutput</span></span>
-<span id="cb15-32"><a href="tutorial.html#cb15-32" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb15-33"><a href="tutorial.html#cb15-33" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb15-34"><a href="tutorial.html#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-35"><a href="tutorial.html#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add server logic</span></span>
-<span id="cb15-36"><a href="tutorial.html#cb15-36" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>plot3 <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb15-37"><a href="tutorial.html#cb15-37" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb15-38"><a href="tutorial.html#cb15-38" aria-hidden="true" tabindex="-1"></a>  x_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>x_select3]</span>
-<span id="cb15-39"><a href="tutorial.html#cb15-39" aria-hidden="true" tabindex="-1"></a>  y_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>y_select3]</span>
-<span id="cb15-40"><a href="tutorial.html#cb15-40" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-41"><a href="tutorial.html#cb15-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">x =</span> x_axis, <span class="at">y =</span> y_axis)</span>
-<span id="cb15-42"><a href="tutorial.html#cb15-42" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb15-43"><a href="tutorial.html#cb15-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-44"><a href="tutorial.html#cb15-44" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Redirect output to a variable to be called in mainPanel</span></span></code></pre></div>
+<div id="challenge-4-modify-the-app-to-add-the-following-breakout." class="section level3 unnumbered challenge hasAnchor">
+<h3>Challenge 4: Modify the app to add the following (breakout).<a href="tutorial.html#challenge-4-modify-the-app-to-add-the-following-breakout." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tutorial.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb13-2"><a href="tutorial.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Add ui</span></span>
+<span id="cb13-3"><a href="tutorial.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">titlePanel</span>(<span class="st">&quot;My slightly more complicated app&quot;</span>)</span>
+<span id="cb13-4"><a href="tutorial.html#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="tutorial.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebarLayout</span>(</span>
+<span id="cb13-6"><a href="tutorial.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarPanel</span>(<span class="st">&quot;App input control panel&quot;</span>,</span>
+<span id="cb13-7"><a href="tutorial.html#cb13-7" aria-hidden="true" tabindex="-1"></a>               <span class="fu">selectInput</span>(<span class="st">&quot;x_select3&quot;</span>, <span class="at">label =</span> <span class="fu">h3</span>(<span class="st">&quot;Select x-axis&quot;</span>), </span>
+<span id="cb13-8"><a href="tutorial.html#cb13-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb13-9"><a href="tutorial.html#cb13-9" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb13-10"><a href="tutorial.html#cb13-10" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb13-11"><a href="tutorial.html#cb13-11" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb13-12"><a href="tutorial.html#cb13-12" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb13-13"><a href="tutorial.html#cb13-13" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample6&quot;</span>), </span>
+<span id="cb13-14"><a href="tutorial.html#cb13-14" aria-hidden="true" tabindex="-1"></a>                           <span class="at">selected =</span> <span class="st">&quot;sample1&quot;</span>),</span>
+<span id="cb13-15"><a href="tutorial.html#cb13-15" aria-hidden="true" tabindex="-1"></a>               </span>
+<span id="cb13-16"><a href="tutorial.html#cb13-16" aria-hidden="true" tabindex="-1"></a>               <span class="fu">selectInput</span>(<span class="st">&quot;y_select3&quot;</span>, <span class="at">label =</span> <span class="fu">h3</span>(<span class="st">&quot;Select y-axis&quot;</span>), </span>
+<span id="cb13-17"><a href="tutorial.html#cb13-17" aria-hidden="true" tabindex="-1"></a>                           <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">&quot;sample1&quot;</span>, </span>
+<span id="cb13-18"><a href="tutorial.html#cb13-18" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample2&quot;</span>, </span>
+<span id="cb13-19"><a href="tutorial.html#cb13-19" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample3&quot;</span>,</span>
+<span id="cb13-20"><a href="tutorial.html#cb13-20" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample4&quot;</span>,</span>
+<span id="cb13-21"><a href="tutorial.html#cb13-21" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample5&quot;</span>,</span>
+<span id="cb13-22"><a href="tutorial.html#cb13-22" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;sample6&quot;</span>),</span>
+<span id="cb13-23"><a href="tutorial.html#cb13-23" aria-hidden="true" tabindex="-1"></a>                           <span class="at">selected =</span> <span class="st">&quot;sample2&quot;</span>)</span>
+<span id="cb13-24"><a href="tutorial.html#cb13-24" aria-hidden="true" tabindex="-1"></a>               </span>
+<span id="cb13-25"><a href="tutorial.html#cb13-25" aria-hidden="true" tabindex="-1"></a>               <span class="co"># 2. Add sliderInput              </span></span>
+<span id="cb13-26"><a href="tutorial.html#cb13-26" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb13-27"><a href="tutorial.html#cb13-27" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb13-28"><a href="tutorial.html#cb13-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mainPanel</span>(<span class="st">&quot;App output panel&quot;</span>,</span>
+<span id="cb13-29"><a href="tutorial.html#cb13-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">plotOutput</span>(<span class="st">&quot;plot3&quot;</span>, <span class="at">width =</span> <span class="dv">600</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
+<span id="cb13-30"><a href="tutorial.html#cb13-30" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb13-31"><a href="tutorial.html#cb13-31" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 3. Add tableOutput</span></span>
+<span id="cb13-32"><a href="tutorial.html#cb13-32" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-33"><a href="tutorial.html#cb13-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-34"><a href="tutorial.html#cb13-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-35"><a href="tutorial.html#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add server logic</span></span>
+<span id="cb13-36"><a href="tutorial.html#cb13-36" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>plot3 <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb13-37"><a href="tutorial.html#cb13-37" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb13-38"><a href="tutorial.html#cb13-38" aria-hidden="true" tabindex="-1"></a>  x_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>x_select3]</span>
+<span id="cb13-39"><a href="tutorial.html#cb13-39" aria-hidden="true" tabindex="-1"></a>  y_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>y_select3]</span>
+<span id="cb13-40"><a href="tutorial.html#cb13-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-41"><a href="tutorial.html#cb13-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">x =</span> x_axis, <span class="at">y =</span> y_axis)</span>
+<span id="cb13-42"><a href="tutorial.html#cb13-42" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb13-43"><a href="tutorial.html#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-44"><a href="tutorial.html#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Redirect output to a variable to be called in mainPanel</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>The first step is to sort out the ui.</p></li>
-<li><p>We want to print the number of rows in the data as decided by a slider. Create a slider input widget.</p></li>
+<li><p>We want to print the number of rows in the selected data-set as decided by a slider. Create a slider input widget.</p></li>
 </ol>
 <blockquote>
 <p>Hint: The code for a slider looks something like this:
@@ -647,7 +621,7 @@ The table that is displayed is a subset of the full csv. It shows only the two c
         </div>
       </div>
 <a href="reactivity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="dashboards.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="nextsteps.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -348,7 +348,7 @@ server <- function(input, output, session) {
 ```
 
 
-### Challenge 2: Rewrite your `ui` to create a Shiny app that contains following:{- .challenge}
+### Challenge 2: Rewrite your `ui` to create a Shiny app that contains following (Breakout).{- .challenge}
 
 1. Title that says "Challenge 2"
 
@@ -366,7 +366,7 @@ server <- function(input, output, session) {
 
 Your Shiny app should look like this:
 
-![](figs/challenge1.png)
+![](figs/challenge2.png){ width=350px }
 <p>&nbsp;</p>
 > Hint: Use the Shiny skeleton code to create a new R-script and edit the UI part:
 

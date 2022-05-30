@@ -21,13 +21,14 @@ server <- function(input, output, session) {
 ![](figs/Batman.png){width=50%}
 ![](figs/Aladdin.png){width=50%}
 
-### Challenge 3: Modify `greeting.R` to print the reverse{- .challenge}
-Open `ShinyApps/reactive/greeting.R` and edit the file to print reverse of the input name. The new app should print the following:
+### Challenge 3: Modify `greeting.R` to print the uppercase letters (breakout){- .challenge}
+Open `ShinyApps/reactive/greeting.R` and edit the file to print the input name in uppercase letters. The new app should:
 
-* Hello Batman!
+* Ask your name in lowercase letters, example: "batman".
 
-* The reverse of your name is: namtaB
+* And outputs- "Your name in uppercase letters is: BATMAN".
 
+Hint: Get help on  `toupper()`
 
 ## R expressiovs vs Reactive expressions
 
@@ -87,7 +88,8 @@ y <- reactive({
 })
 ```
 
-### Workings of reactive expressions ---> Advanced [optional]--> R script
+### Advanced: Workings of reactive expressions {- .advanced}
+This is an optional section that explains the workings of reactive expressionsin a little more detail.
 
 In the following example, we have a reactive input `input$a`, where `a =1`. We create a reactive expression, `expr1` which is just a function.
 ```{r, eval =F}
@@ -114,45 +116,6 @@ expr1 <- reactive({
 
 ```{r, eval =F}
 isolate(expr1())
-```
-
-Reactivity explained using Pythagoras calculation: We have used `browser()` calls to debug the function
-```{r, eval = F}
-ui_pythagorus <- fluidPage(
-    titlePanel("Hypotenuse app"),
-    sliderInput("a", "Length a", 0, 10, 5),
-    sliderInput("b", "Length b", 0, 10, 5),
-    textOutput("result"))
-
-server_pythagorus <- function(input, output, server) {
-    a2 <- reactive({
-        cat("Compute a squared.\n")
-
-        input$a ** 2
-    })
-    browser()
-
-    b2 <- reactive({
-        cat("Compute b squared.\n")
-
-        input$b ** 2
-    })
-    browser()
-
-    output$result <- renderText({
-        cat("Compute hypotenuse.\n")
-        h <- sqrt(a2() + b2())
-        cat("Done computing hypotenuse.\n")
-
-        paste0("The hypotenuse is ", h)
-    })
-    browser()
-}
-```
-
-Now, we run the function
-```{r, eval = F}
-server_pythagorus()
 ```
 
 ## Accessing Reactivity

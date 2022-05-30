@@ -1,16 +1,15 @@
-# Uppercase/ Lowercase strings 
-library(Biostrings)
+# Convert string to uppercase
 library(shiny)
 ui <- fluidPage(
-    textInput("name", "What's your name?"),
-    textOutput("reverse")
+    textInput("name", "What's your name in lowercase?"),
+    textOutput("upper")
 )
 
 server <- function(input, output, session) {
     
-    output$reverse <- renderText({
-        rev <- reverse(input$name)
-        paste0("The reverse of your name is: ",rev , "!")
+    output$upper <- renderText({
+        upper <- toupper(input$name)
+        paste0("Your name in uppercase letters is: ",upper)
     })
 }
 
