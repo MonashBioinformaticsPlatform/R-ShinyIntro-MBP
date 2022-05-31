@@ -183,9 +183,9 @@ There are a variety of widgets available in Shiny Apps. Have a go at them!!
 
 Please Note: For now, keep the `Server Logic` and `Run the App` as it is. We'll explain these in next sections.
 
-## Output
+## UI Output
 
-The UI also contains elements for displaying output results. The list of this are not as expansive as the widgets and can be [found here (under UI outputs)](https://shiny.rstudio.com/reference/shiny/1.7.0/). The type of result you want displayed in your application determines the type of UI element that you need.
+The UI also contains elements for displaying output results. The list of this is not as expansive as the widgets and can be [found here (under UI outputs)](https://shiny.rstudio.com/reference/shiny/1.7.0/). The type of result you want displayed in your application determines the type of UI element that you need.
 
 For example, if your application is going to return a text result, then you probably want a `textOutput` element:
 

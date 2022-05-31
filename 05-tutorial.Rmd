@@ -1,9 +1,9 @@
-# Shiny tutorial{#tutorial}
+# Create Shiny App from scratch{#tutorial}
 
 We'll build a Shiny App that takes a csv file containing data for 6 samples and the raw counts for 1000 genes. Each sample is a column and each gene is a row. One sample will be plotted on the x-axis and another sample on the y-axis. We'll also want to be able to display a table of the selected columns but that will be for the challenge.
 
 ```{r head_data, echo=FALSE}
-dat <- read.csv("data-files/shiny_sample_data.csv", row.names = 1)
+dat <- read.csv("ShinyApps/demo/data-files/shiny_sample_data.csv", row.names = 1)
 head(dat, 10)
 ```
 *Top ten rows of the raw data used to build the shiny app*

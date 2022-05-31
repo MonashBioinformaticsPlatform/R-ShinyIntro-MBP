@@ -31,7 +31,6 @@ install.packages("BiocManager")
 ```
 
 ## Download files
-* [tutorial.R]() # create using purl() ?
 
 ```{r, eval = F}
 download.file(
