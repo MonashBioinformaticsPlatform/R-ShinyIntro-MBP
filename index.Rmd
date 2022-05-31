@@ -28,7 +28,6 @@ install.packages("shiny")
 install.packages("DT")
 install.packages("shinydashboard")
 install.packages("BiocManager")
-BiocManager::install("Biostrings")
 ```
 
 ## Download files

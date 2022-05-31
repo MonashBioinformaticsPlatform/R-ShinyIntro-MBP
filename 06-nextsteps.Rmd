@@ -67,7 +67,7 @@ For more information, check the [documentation here](https://shiny.rstudio.com/a
 
 
 
-## Render UI Elements From the Server Sidebar
+## Render UI Elements From the Server Side
 
 Sometimes we may to generate a UI element that is updated in response to actions we take with other UI elements or in response to calculations that have happened on the server side e.g we have a numeric widget that is filtering the number of rows in a data-frame and we also want to have an `selectInput` based on the values in a column in that data-frame.
 
