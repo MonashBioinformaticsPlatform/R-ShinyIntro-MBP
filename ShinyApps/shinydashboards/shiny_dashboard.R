@@ -30,8 +30,7 @@ ui <- dashboardPage(
                        h3("Buttons"),
                        actionButton("action", "Action"),
                        br(),
-                       br(), 
-                       submitButton("Submit")),
+                       br()),
                 
                 column(2,
                        h3("Single checkbox"),
