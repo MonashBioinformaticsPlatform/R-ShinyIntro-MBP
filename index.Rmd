@@ -36,9 +36,9 @@ BiocManager::install("Biostrings")
 
 ```{r, eval = F}
 download.file(
-  "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/ShinyApps.zip",
-  destfile="r-shiny-files.zip")
-unzip("r-shiny-files.zip")
+  "https://github.com/nkandhari/R-ShinyIntro-MBP/raw/master/ShinyApps.zip",
+  destfile="ShinyApps.zip")
+unzip("ShinyApps.zip")
 ```
 
 Download these files. tutorial.R contains all the code in the “tutorial” link below. During the tutorial, we will be stepping through tutorial.R in RStudio.
