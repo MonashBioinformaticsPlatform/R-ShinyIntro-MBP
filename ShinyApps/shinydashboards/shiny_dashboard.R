@@ -64,11 +64,6 @@ ui <- dashboardPage(
                         title = "Controls",
                         sliderInput("slider", "Number of observations:", 1, 100, 50)
                     )
-                ),
-                
-                fluidPage(
-                    textInput("name", "What's your name?"),
-                    textOutput("reverse")
                 )
         )
                 
@@ -86,10 +81,6 @@ server <- function(input, output) {
     output$plot1 <- renderPlot({
         data <- histdata[seq_len(input$slider)]
         hist(data)
-    })
-    output$reverse <- renderText({
-        rev <- reverse(input$name)
-        paste0("The reverse of your name is: ",rev , "!")
     })
 }
 
