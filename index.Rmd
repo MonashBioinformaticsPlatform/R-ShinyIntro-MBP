@@ -32,20 +32,11 @@ BiocManager::install("Biostrings")
 ```
 
 ## Download files
-* [tutorial.R](https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/data-files)
-
-* [ShinyApps.zip](https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/ShinyApps.zip) # to be created 
+* [tutorial.R]() # create using purl() ?
 
 ```{r, eval = F}
-
-url <- "https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/ShinyApps"
-destfile <- "/Users/nkan0009/BioinformaticsPlatform-MBP"
-download.file(url, destfile)
-
-# OR convert .Rmd to single.R and include Shiny folder, zip it and upload in git
-# Download data
 download.file(
-  "https://github.com/nkandhari/R-ShinyIntro-MBP/tree/master/r-shiny-files.zip",
+  "https://github.com/nkandhari/R-ShinyIntro-MBP/blob/master/ShinyApps.zip",
   destfile="r-shiny-files.zip")
 unzip("r-shiny-files.zip")
 ```
