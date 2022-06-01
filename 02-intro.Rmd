@@ -39,13 +39,12 @@ Here are some apps made by the team within the Monash Bioinformatics Platform fo
 
 * [R Studio's CRAN logs app: ](https://gallery.shinyapps.io/087-crandash/) Displays 1-week delayed streaming data from the RStudio CRAN mirror logs.
 
-And always, the [Shiny Gallery](https://shiny.rstudio.com/gallery/) is a fantastic resource for findng example apps
+And always, the [Shiny Gallery](https://shiny.rstudio.com/gallery/) is a fantastic resource for finding example apps
 
 ## Create your first Shiny App
 
 ### Activity 1: Creating a ShinyApp that prints "Hello, World!" {- .activity}
-Create a new project within RStudio called `app_hello`. Then:
-Create a new .R file, paste the following code inside, save it as app.R inside the folder `app_hello`. (RStudio recognises this is a shiny app, because of the filename `app.R` and the format of the script within, a Run App button appears upon saving)
+Create a new .R file, paste the following code inside, save it as app.R inside the folder `app_hello`. (RStudio recognizes this is a shiny app, because of the file name `app.R` and the format of the script within, a Run App button appears upon saving)
 
 ```{r, eval = F, echo = T}
 library(shiny) #1. calls the library `shiny`

@@ -38,7 +38,7 @@ Most R code typically deals with static data. What makes Shiny apps magical is t
 
 2. Reactive expressions save re-computation.
 
-Conside the following example. We assign a value of `5` to the variable `a`. Using R expressions, we add `10` to `a`, which prints the result as `15`. Then, we update the value of `a` to `10`. Even though, the new value of `a` is now `10`, nothing happens! This is because, we haven't called the expression `a + 10`. In order to see the updated output of our expression, we need to explicitly re-run the expression. This is how the R expressions work.
+Consider the following example. We assign a value of `5` to the variable `a`. Using R expressions, we add `10` to `a`, which prints the result as `15`. Then, we update the value of `a` to `10`. Even though, the new value of `a` is now `10`, nothing happens! This is because, we haven't called the expression `a + 10`. In order to see the updated output of our expression, we need to explicitly re-run the expression. This is how the R expressions work.
 
 ```{r, echo = T, eval = T}
 a <- 5

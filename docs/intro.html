@@ -181,7 +181,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="reactivity.html"><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-uppercase-letters-breakout"><i class="fa fa-check"></i>Challenge 3: Modify <code>greeting.R</code> to print the uppercase letters (breakout)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressiovs-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressiovs vs Reactive expressions</a>
+<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressions-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressions vs Reactive expressions</a>
 <ul>
 <li class="chapter" data-level="" data-path="reactivity.html"><a href="reactivity.html#advanced-workings-of-reactive-expressions"><i class="fa fa-check"></i>Advanced: Workings of reactive expressions</a></li>
 </ul></li>
@@ -256,14 +256,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><a href="https://bioinformatics3.erc.monash.edu/rsconnect/content/241/">Toy Interactive Enrichment Calculator</a></p></li>
 <li><p><a href="https://gallery.shinyapps.io/087-crandash/">R Studio’s CRAN logs app:</a> Displays 1-week delayed streaming data from the RStudio CRAN mirror logs.</p></li>
 </ul>
-<p>And always, the <a href="https://shiny.rstudio.com/gallery/">Shiny Gallery</a> is a fantastic resource for findng example apps</p>
+<p>And always, the <a href="https://shiny.rstudio.com/gallery/">Shiny Gallery</a> is a fantastic resource for finding example apps</p>
 </div>
 <div id="create-your-first-shiny-app" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Create your first Shiny App<a href="intro.html#create-your-first-shiny-app" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="activity-1-creating-a-shinyapp-that-prints-hello-world" class="section level3 unnumbered activity hasAnchor">
 <h3>Activity 1: Creating a ShinyApp that prints “Hello, World!”<a href="intro.html#activity-1-creating-a-shinyapp-that-prints-hello-world" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Create a new project within RStudio called <code>app_hello</code>. Then:
-Create a new .R file, paste the following code inside, save it as app.R inside the folder <code>app_hello</code>. (RStudio recognises this is a shiny app, because of the filename <code>app.R</code> and the format of the script within, a Run App button appears upon saving)</p>
+<p>Create a new .R file, paste the following code inside, save it as app.R inside the folder <code>app_hello</code>. (RStudio recognizes this is a shiny app, because of the file name <code>app.R</code> and the format of the script within, a Run App button appears upon saving)</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny) <span class="co">#1. calls the library `shiny`</span></span>
 <span id="cb2-2"><a href="intro.html#cb2-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>( <span class="co">#2. defines user interface, an HTML webpage</span></span>
 <span id="cb2-3"><a href="intro.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Hello, world!&quot;</span> <span class="co"># prints Hello, world! on webpage</span></span>
