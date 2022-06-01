@@ -30,7 +30,7 @@ Open `ShinyApps/reactive/greeting.R` and edit the file to print the input name i
 
 Hint: Get help on  `toupper()`
 
-## R expressiovs vs Reactive expressions
+## R expressions vs Reactive expressions
 
 Most R code typically deals with static data. What makes Shiny apps magical is the fact that they are interactive which is made possible due to  reactivity. There are two important aspects to reactivity:
 
