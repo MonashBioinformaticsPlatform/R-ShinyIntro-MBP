@@ -27,7 +27,6 @@ install.packages("tidyverse")
 install.packages("shiny")
 install.packages("DT")
 install.packages("shinydashboard")
-install.packages("BiocManager")
 ```
 
 ## Download files
