@@ -379,9 +379,9 @@ Can you figure out how to change the axis titles to the name of the selected sam
 
 Now imagine you had an experiment where you had many conditions and you needed to plot each one against each other. Instead of plotting each one individually, with a Shiny app, you could easily visualise the different conditions without having to write code for each one of them and then download them. 
 
-If you want to get a shareable link of your app, so that other people can access it over the web: `http://biotraining.erc.monash.edu:3838/your_username/demo/`. 
+<!-- If you want to get a shareable link of your app, so that other people can access it over the web: `http://biotraining.erc.monash.edu:3838/your_username/demo/`.  -->
 
-Make sure to change the url to have your biotraining account name in place of `your_username`.
+<!-- Make sure to change the url to have your biotraining account name in place of `your_username`. -->
 
 ### Challenge 5: Modify the app to add the following (breakout). {- .challenge}
 
@@ -421,15 +421,9 @@ sidebarLayout(
 )
 
 # 4. Add server logic
-output$plot3 <- renderPlot({
-  dat <- read.csv("data-files/shiny_sample_data.csv", row.names = 1)
-  x_axis <- dat[, input$x_select3]
-  y_axis <- dat[, input$y_select3]
-  
-  plot(x = x_axis, y = y_axis)
-})
 
-# 5. Redirect output to a variable to be called in mainPanel
+
+# 5. Redirect output to a variable to be called in the mainPanel
 
 ```
 
@@ -448,7 +442,7 @@ output$plot3 <- renderPlot({
 > Hint: The code for it looks like:
 >      tableOutput(outputId = "table1")
 
-4. Define the server object.
+4. Define the server function.
 
 5. You'll need to direct the result of a `renderTable` function to the new output.
 

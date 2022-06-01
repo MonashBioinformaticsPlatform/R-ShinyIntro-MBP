@@ -181,7 +181,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="reactivity.html"><a href="reactivity.html#challenge-3-modify-greeting.r-to-print-the-uppercase-letters-breakout"><i class="fa fa-check"></i>Challenge 3: Modify <code>greeting.R</code> to print the uppercase letters (breakout)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressiovs-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressiovs vs Reactive expressions</a>
+<li class="chapter" data-level="4.2" data-path="reactivity.html"><a href="reactivity.html#r-expressions-vs-reactive-expressions"><i class="fa fa-check"></i><b>4.2</b> R expressions vs Reactive expressions</a>
 <ul>
 <li class="chapter" data-level="" data-path="reactivity.html"><a href="reactivity.html#advanced-workings-of-reactive-expressions"><i class="fa fa-check"></i>Advanced: Workings of reactive expressions</a></li>
 </ul></li>
@@ -539,8 +539,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <hr />
 <p>Now imagine you had an experiment where you had many conditions and you needed to plot each one against each other. Instead of plotting each one individually, with a Shiny app, you could easily visualise the different conditions without having to write code for each one of them and then download them.</p>
-<p>If you want to get a shareable link of your app, so that other people can access it over the web: <code>http://biotraining.erc.monash.edu:3838/your_username/demo/</code>.</p>
-<p>Make sure to change the url to have your biotraining account name in place of <code>your_username</code>.</p>
+<!-- If you want to get a shareable link of your app, so that other people can access it over the web: `http://biotraining.erc.monash.edu:3838/your_username/demo/`.  -->
+<!-- Make sure to change the url to have your biotraining account name in place of `your_username`. -->
 </div>
 <div id="challenge-5-modify-the-app-to-add-the-following-breakout." class="section level3 unnumbered challenge hasAnchor">
 <h3>Challenge 5: Modify the app to add the following (breakout).<a href="tutorial.html#challenge-5-modify-the-app-to-add-the-following-breakout." class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -579,15 +579,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-33"><a href="tutorial.html#cb13-33" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb13-34"><a href="tutorial.html#cb13-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-35"><a href="tutorial.html#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add server logic</span></span>
-<span id="cb13-36"><a href="tutorial.html#cb13-36" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>plot3 <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb13-37"><a href="tutorial.html#cb13-37" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data-files/shiny_sample_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb13-38"><a href="tutorial.html#cb13-38" aria-hidden="true" tabindex="-1"></a>  x_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>x_select3]</span>
-<span id="cb13-39"><a href="tutorial.html#cb13-39" aria-hidden="true" tabindex="-1"></a>  y_axis <span class="ot">&lt;-</span> dat[, input<span class="sc">$</span>y_select3]</span>
-<span id="cb13-40"><a href="tutorial.html#cb13-40" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-41"><a href="tutorial.html#cb13-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">x =</span> x_axis, <span class="at">y =</span> y_axis)</span>
-<span id="cb13-42"><a href="tutorial.html#cb13-42" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb13-43"><a href="tutorial.html#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-44"><a href="tutorial.html#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Redirect output to a variable to be called in mainPanel</span></span></code></pre></div>
+<span id="cb13-36"><a href="tutorial.html#cb13-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-37"><a href="tutorial.html#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-38"><a href="tutorial.html#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Redirect output to a variable to be called in the mainPanel</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>The first step is to sort out the ui.</p></li>
 <li><p>We want to print the number of rows in the selected data-set as decided by a slider. Create a slider input widget.</p></li>
@@ -605,7 +599,7 @@ sliderInput(“inputIDyouwant”, label = “Slider”, min = , max = , value = 
 tableOutput(outputId = “table1”)</p>
 </blockquote>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Define the server object.</p></li>
+<li><p>Define the server function.</p></li>
 <li><p>You’ll need to direct the result of a <code>renderTable</code> function to the new output.</p></li>
 </ol>
 <blockquote>
