@@ -48,7 +48,7 @@ Download these files. tutorial.R contains all the code in the “tutorial” lin
 
 * Reactivity
 
-* Shiny tutorial
+* Create Shiny App from scratch
 
 * Next steps
 
