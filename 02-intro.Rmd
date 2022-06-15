@@ -37,8 +37,6 @@ Here are some apps made by the team within the Monash Bioinformatics Platform fo
 
 * [Toy Interactive Enrichment Calculator](https://bioinformatics3.erc.monash.edu/rsconnect/content/241/)
 
-* [R Studio's CRAN logs app: ](https://gallery.shinyapps.io/087-crandash/) Displays 1-week delayed streaming data from the RStudio CRAN mirror logs.
-
 And always, the [Shiny Gallery](https://shiny.rstudio.com/gallery/) is a fantastic resource for finding example apps
 
 ## Create your first Shiny App

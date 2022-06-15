@@ -383,7 +383,7 @@ Now imagine you had an experiment where you had many conditions and you needed t
 
 <!-- Make sure to change the url to have your biotraining account name in place of `your_username`. -->
 
-### Challenge 5: Modify the app to add the following (breakout). {- .challenge}
+### Challenge 6: Modify the app to add the following (breakout). {- .challenge}
 
 ```{r, eval = F}
 library(ggplot2)

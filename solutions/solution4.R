@@ -1,33 +1,16 @@
-# pythagoras example
-ui_pythagorus <- fluidPage(
-    titlePanel("Hypotenuse app"),
-    sliderInput("a", "Length a", 0, 10, 5),
-    sliderInput("b", "Length b", 0, 10, 5),
-    textOutput("result"))
+# Convert string to uppercase
+library(shiny)
+ui <- fluidPage(
+    textInput("name", "What's your name in lowercase?"),
+    textOutput("upper")
+)
 
-server_pythagorus <- function(input, output, server) {
-    a2 <- reactive({
-        cat("Compute a squared.\n")
-        
-        input$a ** 2
+server <- function(input, output, session) {
+    
+    output$upper <- renderText({
+        upper <- toupper(input$name)
+        paste0("Your name in uppercase letters is: ",upper)
     })
-    
-    
-    b2 <- reactive({
-        cat("Compute b squared.\n")
-        
-        input$b ** 2
-    })
-    
-    
-    output$result <- renderText({
-        cat("Compute hypotenuse.\n")
-        h <- sqrt(a2() + b2())
-        cat("Done computing hypotenuse.\n")
-        
-        paste0("The hypotenuse is ", h)
-    })
-    
 }
 
-shinyApp(ui = ui_pythagorus, server = server_pythagorus)
+shinyApp(ui,server)

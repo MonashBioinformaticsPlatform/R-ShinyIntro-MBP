@@ -21,7 +21,7 @@ server <- function(input, output, session) {
 ![](figs/Batman.png){width=50%}
 ![](figs/Aladdin.png){width=50%}
 
-### Challenge 3: Modify `greeting.R` to print the uppercase letters (breakout){- .challenge}
+### Challenge 4: Modify `greeting.R` to print the uppercase letters (breakout){- .challenge}
 Open `ShinyApps/reactive/greeting.R` and edit the file to print the input name in uppercase letters. The new app should:
 
 * Ask your name in lowercase letters, example: "batman".
@@ -190,8 +190,8 @@ shinyApp(ui, server)
 ```
 
 
-### Challenge 4: Create a function that uses pythagoras theorm to calculate hypotenuse, if height and base variables are given (breakout).{- .challenge}
-In this challenge, you have 2 input sliders for `a` and `b` in the UI. Create a server function to compute pythagoras theorm and calculate hypotenuse.
+### Challenge 5: Create a function that uses pythagoras theorm to calculate hypotenuse, if height and base variables are given (breakout).{- .challenge}
+In this challenge, you have 2 input sliders for `a` and `b` in the UI. Create a server function to compute Pythagoras theorm and calculate hypotenuse.
 ```{r, eval = F}
 ui_pythagoras <- fluidPage(
     titlePanel("Hypotenuse app"),

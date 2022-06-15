@@ -130,7 +130,8 @@ For more information about the application layout (including nav bars and lists)
 
 Another thing to note that a lot of the functions that build the UI are essentially wrapping HTML code within R functions. This means that the UI can also be customized by directly writing HTML code or by using [wrapper tag functions](https://shiny.rstudio.com/articles/tag-glossary.html). This is beyond the scope of this course but we thought it was worth mentioning.
 
-### Activity 2: Does the `tabsetPanel` need to be nested in the `sidebarLayout`? {- .activity}
+### Activity 2: UI Layouts {- .activity}
+Does the `tabsetPanel` need to be nested in the `sidebarLayout`? Modify the layout of `app_ui.R` to include a titlepanel, sidebarpanel for input and mainpanel for output. 
 
 
 ## Widgets
@@ -183,6 +184,42 @@ There are a variety of widgets available in Shiny Apps. Have a go at them!!
 
 Please Note: For now, keep the `Server Logic` and `Run the App` as it is. We'll explain these in next sections.
 
+### Challenge 2: Rewrite your `ui` to create a Shiny app that contains following (Breakout).{- .challenge}
+
+1. Title that says "Challenge 2". Use `sidebarLayout()` to include a side panel and a main panel.
+
+2. Select `airquality` from the default datasets in R (Hint: Refer to `app_ui.R`).
+
+3. Create three widgets:
+
+   * `helpText()` to write "List of variables to choose from".
+   
+   * `selectInput()` to list variables in the `airquality` dataset and pre-select `wind` dataset. 
+   
+   * `sliderInput()` to add a slider where, `min = 0`; `max = 30` and selected values are: `(5,21)`
+   
+4. Try replacing the list options in selectInput by `colnames(airquality)`.
+
+Your Shiny app should look like this:
+
+![](figs/challenge2.png){ width=350px }
+<p>&nbsp;</p>
+> Hint: Use the Shiny skeleton code to create a new R-script and edit the UI part:
+
+```{r, eval = F}
+library(shiny)
+
+ui <- fluidPage(
+  # edit this part
+)
+
+server <- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+```
+
 ## UI Output
 
 The UI also contains elements for displaying output results. The list of this is not as expansive as the widgets and can be [found here (under UI outputs)](https://shiny.rstudio.com/reference/shiny/1.7.0/). The type of result you want displayed in your application determines the type of UI element that you need.
@@ -217,6 +254,7 @@ ui <- fluidPage(
 ```
 
 While the output functions do take a few arguments, generally the most you need to do is give them an `outputId`. If you are looking at the `plot_result` function and wondering where the code to generate the plot belongs, then it's time to move on to the server function.  
+
 
 ## Server
 
@@ -348,39 +386,13 @@ server <- function(input, output, session) {
 ```
 
 
-### Challenge 2: Rewrite your `ui` to create a Shiny app that contains following (Breakout).{- .challenge}
+### Challenge 3: Shiny Output and Server logic{- .challenge}
+Modify the app you created in Challenge 2 to add output and server components.
 
-1. Title that says "Challenge 2"
+1. Add output to the main panel (Hint: use `textOutput()`)
+    Display the name of the dataset selected.
+    Display the name of variable selected.
+    Display the range of the values selected on the slider.
 
-2. Select `airquality` from the default datasets in R (Hint: Refer to `app_ui.R`).
-
-3. Create three widgets:
-
-   * `helpText()` to write "List of variables to choose from".
-   
-   * `selectInput()` to list variables in the `airquality` dataset. 
-   
-   * `sliderInput()` to add a slider where, `min = 0`; `max = 30` and selected values are: `(5,21)`
-   
-4. Try replacing the list options in selectInput by `colnames(airquality)`.
-
-Your Shiny app should look like this:
-
-![](figs/challenge2.png){ width=350px }
-<p>&nbsp;</p>
-> Hint: Use the Shiny skeleton code to create a new R-script and edit the UI part:
-
-```{r, eval = F}
-library(shiny)
-
-ui <- fluidPage(
-  # edit this part
-)
-
-server <- function(input, output, session) {
-  
-}
-
-shinyApp(ui, server)
-```
+2. Add R code in the server logic to print the dataset, variable name and the range. (Hint: use `renderText({})`)
 
