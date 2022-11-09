@@ -383,8 +383,8 @@ Now imagine you had an experiment where you had many conditions and you needed t
 
 <!-- Make sure to change the url to have your biotraining account name in place of `your_username`. -->
 
-### Challenge 6: Our collaborator saw the app we have created to show the relationship between two samples. They wants a tabular view of the data along with the plot to look at expression of individual genes in the samples. Modify your app to display the tabular data in the final output. (breakout). {- .challenge}
-
+### Challenge 6: Modify the app (breakout). {- .challenge}
+Our collaborator saw the app we have created to show the relationship between two samples. They want to view the expression of individual genes in the samples in a tabular format. Modify your app to display the tabular data in the final output.
 ```{r, eval = F}
 library(ggplot2)
 # 1. Add ui
