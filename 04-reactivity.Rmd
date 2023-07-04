@@ -190,7 +190,7 @@ shinyApp(ui, server)
 ```
 
 
-### Challenge 5: Create a function that uses pythagoras theorm to calculate hypotenuse, if height and base variables are given (breakout).{- .challenge}
+### Challenge 5: Create a function that uses Pythagoras theorm to calculate hypotenuse, if height and base variables are given (breakout).{- .challenge}
 In this challenge, you have 2 input sliders for `a` and `b` in the UI. Create a server function to compute Pythagoras theorm and calculate hypotenuse.
 ```{r, eval = F}
 ui_pythagoras <- fluidPage(

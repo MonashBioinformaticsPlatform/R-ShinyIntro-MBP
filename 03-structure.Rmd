@@ -71,7 +71,7 @@ fluidPage(
 
 The [shiny gallery](https://shiny.rstudio.com/gallery/#demos) has a section for application layouts. This is a useful of resource for ideas on how to structure the appearance of your app.
 
-To see what widgets are available, look at the [Shiny widget gallery.](http://shiny.rstudio.com/gallery/widget-gallery.html) or consult the [Shiny cheatsheet](http://shiny.rstudio.com/images/shiny-cheatsheet.pdf).
+To see what widgets are available, look at the [Shiny widget gallery.](http://shiny.rstudio.com/gallery/widget-gallery.html) or consult the [Shiny cheatsheet](https://rstudio.github.io/cheatsheets/shiny.pdf).
 
 ## Layout
 

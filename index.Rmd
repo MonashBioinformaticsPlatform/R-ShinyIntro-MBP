@@ -55,7 +55,7 @@ Download these files. tutorial.R contains all the code in the “tutorial” lin
 
 This book was created in R using the `rmarkdown` and `bookdown` packages!
 
-* [GitHub page](https://github.com/nkandhari/R-ShinyIntro-MBP)
+* [GitHub page](https://github.com/MonashDataFluency/R-ShinyIntro)
 
 ## Authors and copyright {-}
 
