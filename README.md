@@ -14,7 +14,7 @@ This workshop material is prepared by the [Monash Bioinformatics Platform](https
 
 This book was created in R using the `rmarkdown` and `bookdown` packages!
 
-* [GitHub page](https://nkandhari.github.io/R-ShinyIntro-MBP/)
+* [GitHub page](https://github.com/MonashDataFluency/R-ShinyIntro)
 
 ### Authors and copyright
 

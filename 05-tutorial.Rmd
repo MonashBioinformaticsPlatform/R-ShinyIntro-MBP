@@ -15,7 +15,7 @@ Create one blank R script (Click `File` > `New File` > `R Script`). Save it insi
 
 ## Using widgets
 
-We are going to add two widgets to the ui. These will control which samples gets plotted to the x and y axis of the plot and will be located in the sidebar panel. We will use `selectInput` to create these widgets but these could easily be swapped out for other widgets such radio-buttons. To see what widgets are available, look at the [Shiny widget gallery](http://shiny.rstudio.com/gallery/widget-gallery.html) or consult the [Shiny cheatsheet](http://shiny.rstudio.com/images/shiny-cheatsheet.pdf).
+We are going to add two widgets to the ui. These will control which samples gets plotted to the x and y axis of the plot and will be located in the sidebar panel. We will use `selectInput` to create these widgets but these could easily be swapped out for other widgets such radio-buttons. To see what widgets are available, look at the [Shiny widget gallery](http://shiny.rstudio.com/gallery/widget-gallery.html) or consult the [Shiny cheatsheet](https://rstudio.github.io/cheatsheets/shiny.pdf).
 
 To start off with, let's add just one widget to the sidebar. 
 ```{r, eval = FALSE}
@@ -94,7 +94,7 @@ This widget is nearly identical to the first, all that has changed is the name o
 
 #### Adding some outputs
 
-There's one last thing to do before moving onto the server object. The app has inputs now, but it doesn't have any outputs! For this app, we will use three outputs. Two are going to be purely diagnostic so we can check that our `selectInputs` are working. They will not be included in our final app. The one output that will remain in our final app is `plotOutput`, as we want to generate a plot and it will be located in the main panel. There are numerous types of outputs Shiny can generate - to find out what other outputs Shiny is capable of, consult the [Shiny cheatsheet](http://shiny.rstudio.com/images/shiny-cheatsheet.pdf) or the [Shiny website](https://shiny.rstudio.com/reference/shiny/latest/).
+There's one last thing to do before moving onto the server object. The app has inputs now, but it doesn't have any outputs! For this app, we will use three outputs. Two are going to be purely diagnostic so we can check that our `selectInputs` are working. They will not be included in our final app. The one output that will remain in our final app is `plotOutput`, as we want to generate a plot and it will be located in the main panel. There are numerous types of outputs Shiny can generate - to find out what other outputs Shiny is capable of, consult the [Shiny cheatsheet](https://rstudio.github.io/cheatsheets/shiny.pdf) or the [Shiny website](https://shiny.rstudio.com/reference/shiny/latest/).
 
 ```{r, eval = F}
 

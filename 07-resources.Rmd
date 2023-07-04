@@ -9,3 +9,5 @@
 [Shiny written tutorials](http://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
 
 [Shiny dashboards](https://rstudio.github.io/shinydashboard/index.html)
+
+[Shiny cheatsheet](https://rstudio.github.io/cheatsheets/shiny.pdf)
